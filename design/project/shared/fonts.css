@@ -1,0 +1,34 @@
+/* KNEADERS — official brand fonts (from uploads/, per kdrs Simple Style Guide)
+   Amnesia Distressed → headlines (all caps)
+   Archer Pro → sub-headlines
+   Barlow → main body copy
+   Barlow Condensed → supporting accent (calories, meta, eyebrows) */
+@font-face { font-family: "Amnesia Distressed"; src: url("../uploads/Amnestia.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+
+@font-face { font-family: "Archer Pro"; src: url("../uploads/Archer Pro Font/ArcherLightPro.otf") format("opentype"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Archer Pro"; src: url("../uploads/Archer Pro Font/ArcherLightItalPro.otf") format("opentype"); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: "Archer Pro"; src: url("../uploads/Archer Pro Font/ArcherBookPro.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Archer Pro"; src: url("../uploads/Archer Pro Font/ArcherBookItalPro.otf") format("opentype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Archer Pro"; src: url("../uploads/Archer Pro Font/ArcherMediumPro.otf") format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Archer Pro"; src: url("../uploads/Archer Pro Font/ArcherSemiboldPro.otf") format("opentype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Archer Pro"; src: url("../uploads/Archer Pro Font/ArcherBoldPro.otf") format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+
+@font-face { font-family: "Arvo"; src: url("../uploads/Arvo/Arvo-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Arvo"; src: url("../uploads/Arvo/Arvo-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Arvo"; src: url("../uploads/Arvo/Arvo-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Arvo"; src: url("../uploads/Arvo/Arvo-BoldItalic.ttf") format("truetype"); font-weight: 700; font-style: italic; font-display: swap; }
+
+@font-face { font-family: "Barlow"; src: url("../uploads/Barlow Font/Barlow-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../uploads/Barlow Font/Barlow-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../uploads/Barlow Font/Barlow-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../uploads/Barlow Font/Barlow-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../uploads/Barlow Font/Barlow-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../uploads/Barlow Font/Barlow-SemiBoldItalic.ttf") format("truetype"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../uploads/Barlow Font/Barlow-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow"; src: url("../uploads/Barlow Font/Barlow-ExtraBold.ttf") format("truetype"); font-weight: 800; font-style: normal; font-display: swap; }
+
+@font-face { font-family: "Barlow Condensed"; src: url("../uploads/Barlow Condensed/BarlowCondensed-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("../uploads/Barlow Condensed/BarlowCondensed-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("../uploads/Barlow Condensed/BarlowCondensed-MediumItalic.ttf") format("truetype"); font-weight: 500; font-style: italic; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("../uploads/Barlow Condensed/BarlowCondensed-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Barlow Condensed"; src: url("../uploads/Barlow Condensed/BarlowCondensed-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }

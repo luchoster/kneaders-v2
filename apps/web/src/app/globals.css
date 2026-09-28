@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+/* ============================================================
+   KNEADERS — design tokens (design/project/design.md + tokens.css)
+   Palette mirrors packages/content/src/palette.ts.
+   ============================================================ */
+
+@theme inline {
+  --font-headline: var(--font-amnesia), var(--font-arvo), Georgia, serif; /* h1 / big heads, ALL CAPS */
+  --font-display: var(--font-archer), var(--font-arvo), Georgia, serif; /* sub-heads, nav, buttons */
+  --font-body: var(--font-barlow), system-ui, -apple-system, sans-serif; /* body copy */
+  --font-condensed: var(--font-barlow-condensed), var(--font-barlow), sans-serif; /* eyebrows, meta */
+  --font-sans: var(--font-barlow), system-ui, -apple-system, sans-serif;
+}
+
+@theme {
+  /* Brand palette (kdrs Simple Style Guide) */
+  --color-k-black: #231f20;
+  --color-k-tan: #efe1c5;
+  --color-k-tan-deep: #d9c79e;
+  --color-k-cream: #fdfbf7;
+  --color-k-gold: #c7812a;
+  --color-k-gold-deep: #ab6d26;
+  --color-k-rust: #a4541c;
+  --color-k-brown: #803b24;
+  --color-k-red: #801b21;
+  --color-k-maroon: #56252a;
+  --color-k-sage: #74813b;
+  --color-k-sage-light: #afbd90;
+  --color-k-blue: #4b8496;
+  --color-k-blue-light: #b7cbda;
+  --color-k-gray: #b8bbbd;
+
+  /* Surfaces + ink (light theme) */
+  --color-k-bg: #fdfbf7;
+  --color-k-bg-warm: #f9f4e7;
+  --color-k-bg-deep: #efe1c5;
+  --color-k-line: #d9c79e;
+  --color-k-line-soft: #e9dfc6;
+  --color-k-ink-2: #56252a;
+  --color-k-ink-3: #803b24;
+  --color-k-line-dark: #4a4140; /* hairlines on black sections */
+
+  --ease-k: cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                               */
+/* ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    /* "compact" density — every v2 page */
+    --k-gutter: clamp(16px, 3vw, 28px);
+    --k-section-y: clamp(48px, 6vw, 96px);
+  }
+  /* "editorial" density — long-form article template */
+  .density-editorial {
+    --k-gutter: clamp(20px, 4vw, 40px);
+    --k-section-y: clamp(72px, 9vw, 140px);
+  }
+
+  html,
+  body {
+    background: var(--color-k-bg);
+    color: var(--color-k-black);
+  }
+  body {
+    font-family: var(--font-body);
+    font-feature-settings: "liga", "kern";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a {
+    color: inherit;
+  }
+  a:hover {
+    color: var(--color-k-brown);
+  }
+  [data-tone="ink"] a:hover {
+    color: var(--color-k-tan-deep);
+  }
+
+  * {
+    scrollbar-color: var(--color-k-line) transparent;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-k-red);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  [data-tone="ink"] :focus-visible {
+    outline-color: var(--color-k-gold);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilities that can't be expressed as plain Tailwind classes        */
+/* ------------------------------------------------------------------ */
+
+/* DaisyUI-style superellipse mask used by every food "plate". */
+@utility mask-squircle {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M100 0C20 0 0 20 0 100s20 100 100 100 100-20 100-100S180 0 100 0Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M100 0C20 0 0 20 0 100s20 100 100 100 100-20 100-100S180 0 100 0Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Diagonal-stripe image placeholder. */
+@utility bg-placeholder {
+  background-color: var(--color-k-bg-deep);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 14px,
+    rgba(35, 31, 32, 0.05) 14px 15px
+  );
+}
+
+/* Underline that draws in from the left on hover. */
+@utility link-anim {
+  position: relative;
+  color: inherit;
+  padding-bottom: 3px;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.35s var(--ease-k);
+  &:hover {
+    background-size: 100% 1px;
+  }
+}
+/* Nav/footer: the underline draws when hovering the whole link. */
+a:hover > .link-anim {
+  background-size: 100% 1px;
+}
+
+@utility animate-marquee {
+  animation: k-marquee 40s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes k-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

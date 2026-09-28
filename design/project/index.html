@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-accent="bakery-red" data-type="grotesk-serif" data-density="editorial">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kneaders Bakery & Café</title>
+<meta name="description" content="A neighborhood bakery café. Long-fermented breads, hand-shaped pastries, soup with a schedule." />
+
+<!-- Tailwind via CDN (Play CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fonts: Mona Sans (display), Source Serif 4 (body), JetBrains Mono (mono)
+     Plus Fraunces, Archivo, Newsreader for type tweaks. -->
+
+<link rel="stylesheet" href="shared/fonts.css" />
+<link rel="stylesheet" href="shared/tokens.css?v=6" />
+
+<!-- React + Babel pinned -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Framer Motion: UMD build that uses the global React (no React 19 dupe) -->
+<script src="https://unpkg.com/framer-motion@10.18.0/dist/framer-motion.js" crossorigin="anonymous"></script>
+<script>
+  // framer-motion UMD exposes "FramerMotion" or "Motion" depending on version.
+  window.framerMotion = window.framerMotion || window.FramerMotion || window.Motion;
+  if (window.framerMotion) window.dispatchEvent(new Event("fm-ready"));
+  else console.warn("framer-motion UMD globals:", Object.keys(window).filter(k=>/motion/i.test(k)));
+</script>
+
+<style>
+  html, body { background: var(--hl-bg); }
+  /* Boot splash */
+  #boot { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: var(--hl-bg); z-index: 100; transition: opacity .4s; }
+  #boot.gone { opacity: 0; pointer-events: none; }
+  #boot .b { font-family: "Archer Pro", "Arvo", Georgia, serif; font-weight: 600; letter-spacing: -0.02em; font-size: 28px; color: var(--hl-ink); }
+  #boot .s { font-family: "Barlow Condensed", sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--hl-ink-3); margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<div id="boot">
+  <div style="text-align:center">
+    <img src="shared/kneaders-logo.png" alt="Kneaders Bakery & Café" style="height:80px;width:auto;display:block;margin:0 auto 16px"/>
+    <div class="s">Warming the hearth oven…</div>
+  </div>
+</div>
+
+<div id="root"></div>
+
+<!-- Components -->
+<script type="text/babel" src="shared/data.js?v=4"></script>
+<script type="text/babel" src="shared/shell.jsx?v=2"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="shared/tweaks-app.jsx"></script>
+<script type="text/babel" src="home/sections.jsx"></script>
+
+<script type="text/babel">
+  function waitForFM() {
+    return new Promise((resolve) => {
+      if (window.framerMotion) return resolve();
+      window.addEventListener("fm-ready", resolve, { once: true });
+    });
+  }
+
+  function App() {
+    const [heroVariant, setHeroVariant] = React.useState("photo");
+    return (
+      <>
+        <window.HL_TopBar />
+        <window.HL_Nav active="home" />
+        <main>
+          <window.HL_Hero variant={heroVariant} />
+          <window.HL_SeasonalCampaign />
+          <window.HL_CategoryGrid />
+          <window.HL_SignatureItems />
+          <window.HL_CraftStory />
+          <window.HL_CateringHighlight />
+          <window.HL_MosaicBlock />
+          <window.HL_JournalTeaser />
+        </main>
+        <window.HL_Footer />
+        <window.HL_HearthlineTweaks onHeroVariant={setHeroVariant} />
+      </>
+    );
+  }
+
+  waitForFM().then(() => {
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    setTimeout(() => document.getElementById("boot").classList.add("gone"), 60);
+    setTimeout(() => document.getElementById("boot").remove(), 600);
+  });
+</script>
+
+</body>
+</html>
