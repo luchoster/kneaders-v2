@@ -1,0 +1,6074 @@
+{
+  "categories": [
+    {
+      "_id": "menuCategory-breakfast",
+      "_type": "menuCategory",
+      "title": "Breakfast",
+      "slug": {
+        "_type": "slug",
+        "current": "breakfast"
+      },
+      "tone": "gold",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "chunky-cinnamon-french-toast",
+          "_ref": "menuItem-chunky-cinnamon-french-toast"
+        },
+        {
+          "_type": "reference",
+          "_key": "acai-berry-bowl",
+          "_ref": "menuItem-acai-berry-bowl"
+        },
+        {
+          "_type": "reference",
+          "_key": "banana-fosters-french-toast",
+          "_ref": "menuItem-banana-fosters-french-toast"
+        },
+        {
+          "_type": "reference",
+          "_key": "superfoods-breakfast-bowl",
+          "_ref": "menuItem-superfoods-breakfast-bowl"
+        },
+        {
+          "_type": "reference",
+          "_key": "artisian-breakfast-sandwich",
+          "_ref": "menuItem-artisian-breakfast-sandwich"
+        },
+        {
+          "_type": "reference",
+          "_key": "farmhouse-avocado-toast",
+          "_ref": "menuItem-farmhouse-avocado-toast"
+        },
+        {
+          "_type": "reference",
+          "_key": "breakfast-potatoes-2",
+          "_ref": "menuItem-breakfast-potatoes-2"
+        },
+        {
+          "_type": "reference",
+          "_key": "ham-bacon-sausage-egg-cheese",
+          "_ref": "menuItem-ham-bacon-sausage-egg-cheese"
+        },
+        {
+          "_type": "reference",
+          "_key": "ham-bacon-sausage-cheese",
+          "_ref": "menuItem-ham-bacon-sausage-cheese"
+        },
+        {
+          "_type": "reference",
+          "_key": "egg-cheese",
+          "_ref": "menuItem-egg-cheese"
+        },
+        {
+          "_type": "reference",
+          "_key": "greek-omelet",
+          "_ref": "menuItem-greek-omelet"
+        },
+        {
+          "_type": "reference",
+          "_key": "american-omelet",
+          "_ref": "menuItem-american-omelet"
+        },
+        {
+          "_type": "reference",
+          "_key": "italian-omelet",
+          "_ref": "menuItem-italian-omelet"
+        },
+        {
+          "_type": "reference",
+          "_key": "kids-breakfast-combo-2",
+          "_ref": "menuItem-kids-breakfast-combo-2"
+        },
+        {
+          "_type": "reference",
+          "_key": "breakfast-sides",
+          "_ref": "menuItem-breakfast-sides"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/15093422/Chunky-Cinnamon-French-Toast.png"
+          }
+        },
+        "alt": "Breakfast"
+      },
+      "hero": {
+        "title": "Breakfast",
+        "subtitle": "A delicious start to the day! Breakfast Sandwiches & French Toast served ALL DAY!",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2019/01/17150418/Kneaders-Bakery-Cafe-Breakfast-Menu.jpg"
+            }
+          },
+          "alt": "Breakfast"
+        }
+      },
+      "wpId": 11
+    },
+    {
+      "_id": "menuCategory-sandwiches",
+      "_type": "menuCategory",
+      "title": "Sandwiches",
+      "slug": {
+        "_type": "slug",
+        "current": "sandwiches"
+      },
+      "tone": "gold",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "crack-chicken-sandwich",
+          "_ref": "menuItem-crack-chicken-sandwich"
+        },
+        {
+          "_type": "reference",
+          "_key": "chicken-cheese-ham",
+          "_ref": "menuItem-chicken-cheese-ham"
+        },
+        {
+          "_type": "reference",
+          "_key": "ham-swiss-cafe-sandwich",
+          "_ref": "menuItem-ham-swiss-cafe-sandwich"
+        },
+        {
+          "_type": "reference",
+          "_key": "provolone-muenster-cheese-melt",
+          "_ref": "menuItem-provolone-muenster-cheese-melt"
+        },
+        {
+          "_type": "reference",
+          "_key": "turkey-cranberry-croissant",
+          "_ref": "menuItem-turkey-cranberry-croissant"
+        },
+        {
+          "_type": "reference",
+          "_key": "chicken-salad-sandwich",
+          "_ref": "menuItem-chicken-salad-sandwich"
+        },
+        {
+          "_type": "reference",
+          "_key": "chicken-pesto",
+          "_ref": "menuItem-chicken-pesto"
+        },
+        {
+          "_type": "reference",
+          "_key": "tuna",
+          "_ref": "menuItem-tuna"
+        },
+        {
+          "_type": "reference",
+          "_key": "french-dip",
+          "_ref": "menuItem-french-dip"
+        },
+        {
+          "_type": "reference",
+          "_key": "turkey-bacon-avocado-sandwich",
+          "_ref": "menuItem-turkey-bacon-avocado-sandwich"
+        },
+        {
+          "_type": "reference",
+          "_key": "club",
+          "_ref": "menuItem-club"
+        },
+        {
+          "_type": "reference",
+          "_key": "tuna-melt",
+          "_ref": "menuItem-tuna-melt"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/11135934/Kneaders-Bakery-Cafe-Menu-Famous-Sandwiches-Turkey-Bacon-Avocado-Famous-Sandwich.jpg"
+          }
+        },
+        "alt": "Sandwiches"
+      },
+      "hero": {
+        "title": "Sandwiches",
+        "subtitle": "The best thing on sliced bread. All sandwiches are served on scratch-made artisan bread.",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/03/21210305/Ham-Swiss.jpg"
+            }
+          },
+          "alt": "Sandwiches"
+        }
+      },
+      "wpId": 8
+    },
+    {
+      "_id": "menuCategory-breads",
+      "_type": "menuCategory",
+      "title": "Breads",
+      "slug": {
+        "_type": "slug",
+        "current": "breads"
+      },
+      "tone": "red",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "pumpkin-bread",
+          "_ref": "menuItem-pumpkin-bread"
+        },
+        {
+          "_type": "reference",
+          "_key": "chunky-cinnamon",
+          "_ref": "menuItem-chunky-cinnamon"
+        },
+        {
+          "_type": "reference",
+          "_key": "french-country-sourdough",
+          "_ref": "menuItem-french-country-sourdough"
+        },
+        {
+          "_type": "reference",
+          "_key": "caramel-apple-sweet-bread",
+          "_ref": "menuItem-caramel-apple-sweet-bread"
+        },
+        {
+          "_type": "reference",
+          "_key": "paesano",
+          "_ref": "menuItem-paesano"
+        },
+        {
+          "_type": "reference",
+          "_key": "soft-rolls",
+          "_ref": "menuItem-soft-rolls"
+        },
+        {
+          "_type": "reference",
+          "_key": "french-country-soup-bun",
+          "_ref": "menuItem-french-country-soup-bun"
+        },
+        {
+          "_type": "reference",
+          "_key": "raspberry-rolls",
+          "_ref": "menuItem-raspberry-rolls"
+        },
+        {
+          "_type": "reference",
+          "_key": "honey-wheat",
+          "_ref": "menuItem-honey-wheat"
+        },
+        {
+          "_type": "reference",
+          "_key": "country-white",
+          "_ref": "menuItem-country-white"
+        },
+        {
+          "_type": "reference",
+          "_key": "asiago-cheese",
+          "_ref": "menuItem-asiago-cheese"
+        },
+        {
+          "_type": "reference",
+          "_key": "hazelnut-12-grain",
+          "_ref": "menuItem-hazelnut-12-grain"
+        },
+        {
+          "_type": "reference",
+          "_key": "baguette-seeded-baguette",
+          "_ref": "menuItem-baguette-seeded-baguette"
+        },
+        {
+          "_type": "reference",
+          "_key": "rosemary-focaccia-round",
+          "_ref": "menuItem-rosemary-focaccia-round"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/23115844/Kneaders-Bakery-Cafe-Menu-Breads-French-Country-Sourdough-Hearth-Bread.jpg"
+          }
+        },
+        "alt": "Breads"
+      },
+      "hero": {
+        "title": "Breads",
+        "subtitle": "Our scratch-made artisan hearth breads are baked in Italian hearthstone ovens",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2019/10/31183035/Kneaders-Bakery-Cafe-Menu-Breads-Header-Baguette.jpg"
+            }
+          },
+          "alt": "Breads"
+        }
+      },
+      "wpId": 13
+    },
+    {
+      "_id": "menuCategory-salads",
+      "_type": "menuCategory",
+      "title": "Salads",
+      "slug": {
+        "_type": "slug",
+        "current": "salads"
+      },
+      "tone": "sage",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "apple-cranberry-salad",
+          "_ref": "menuItem-apple-cranberry-salad"
+        },
+        {
+          "_type": "reference",
+          "_key": "southwest-salad",
+          "_ref": "menuItem-southwest-salad"
+        },
+        {
+          "_type": "reference",
+          "_key": "thai-cashew-salad",
+          "_ref": "menuItem-thai-cashew-salad"
+        },
+        {
+          "_type": "reference",
+          "_key": "avocado-ranch-salad",
+          "_ref": "menuItem-avocado-ranch-salad"
+        },
+        {
+          "_type": "reference",
+          "_key": "berry-pecan-salad",
+          "_ref": "menuItem-berry-pecan-salad"
+        },
+        {
+          "_type": "reference",
+          "_key": "fruit-salad",
+          "_ref": "menuItem-fruit-salad"
+        },
+        {
+          "_type": "reference",
+          "_key": "turkey-bacon-avocado",
+          "_ref": "menuItem-turkey-bacon-avocado"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2019/04/23101937/Kneaders-Bakery-Cafe-Menu-Salads-Turkey-Cranberry-Sunflower.jpg"
+          }
+        },
+        "alt": "Salads"
+      },
+      "hero": {
+        "title": "Salads",
+        "subtitle": "Enjoy eating your greens. All salads are made fresh to order.",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2019/04/04175634/Kneaders-Bakery-Cafe-Menu-Salads-Turkey-Bacon-Avocado-Salad-Header.jpg"
+            }
+          },
+          "alt": "Salads"
+        }
+      },
+      "wpId": 9
+    },
+    {
+      "_id": "menuCategory-soups",
+      "_type": "menuCategory",
+      "title": "Soups",
+      "slug": {
+        "_type": "slug",
+        "current": "soups"
+      },
+      "tone": "sage",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "quart-of-soup",
+          "_ref": "menuItem-quart-of-soup"
+        },
+        {
+          "_type": "reference",
+          "_key": "soup-sourdough-bun",
+          "_ref": "menuItem-soup-sourdough-bun"
+        },
+        {
+          "_type": "reference",
+          "_key": "bowl-soup-bread",
+          "_ref": "menuItem-bowl-soup-bread"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/01142422/Quart-of-Soup.jpg"
+          }
+        },
+        "alt": "Soups"
+      },
+      "hero": {
+        "title": "Soups",
+        "subtitle": "Click here to check our daily soup schedule",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2020/03/18174555/Kneaders-Bakery-Cafe-Menu-Cream-of-Broccoli-Soup-in-Sourdough-Soup-Bun.jpg"
+            }
+          },
+          "alt": "Soups"
+        }
+      },
+      "wpId": 10
+    },
+    {
+      "_id": "menuCategory-pastries-desserts",
+      "_type": "menuCategory",
+      "title": "Pastries & Desserts",
+      "slug": {
+        "_type": "slug",
+        "current": "pastries-desserts"
+      },
+      "tone": "red",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "double-decker-peanut-butter-bar",
+          "_ref": "menuItem-double-decker-peanut-butter-bar"
+        },
+        {
+          "_type": "reference",
+          "_key": "pumpkin-cheesecake",
+          "_ref": "menuItem-pumpkin-cheesecake"
+        },
+        {
+          "_type": "reference",
+          "_key": "brown-butter-chocolate-chunk-cookie",
+          "_ref": "menuItem-brown-butter-chocolate-chunk-cookie"
+        },
+        {
+          "_type": "reference",
+          "_key": "raspberry-mini-tart",
+          "_ref": "menuItem-raspberry-mini-tart"
+        },
+        {
+          "_type": "reference",
+          "_key": "raspberry-cream-cheese-croissant",
+          "_ref": "menuItem-raspberry-cream-cheese-croissant"
+        },
+        {
+          "_type": "reference",
+          "_key": "strawberry-lemon-velvet-stuffed-croissant",
+          "_ref": "menuItem-strawberry-lemon-velvet-stuffed-croissant"
+        },
+        {
+          "_type": "reference",
+          "_key": "caramel-banana-pudding-cup",
+          "_ref": "menuItem-caramel-banana-pudding-cup"
+        },
+        {
+          "_type": "reference",
+          "_key": "pretzel-toffee-cookie",
+          "_ref": "menuItem-pretzel-toffee-cookie"
+        },
+        {
+          "_type": "reference",
+          "_key": "pumpkin-chocolate-chip",
+          "_ref": "menuItem-pumpkin-chocolate-chip"
+        },
+        {
+          "_type": "reference",
+          "_key": "cream-cheese-brownie",
+          "_ref": "menuItem-cream-cheese-brownie"
+        },
+        {
+          "_type": "reference",
+          "_key": "banana-cream-pie",
+          "_ref": "menuItem-banana-cream-pie"
+        },
+        {
+          "_type": "reference",
+          "_key": "european-butter",
+          "_ref": "menuItem-european-butter"
+        },
+        {
+          "_type": "reference",
+          "_key": "twice-baked-almond-croissant",
+          "_ref": "menuItem-twice-baked-almond-croissant"
+        },
+        {
+          "_type": "reference",
+          "_key": "raspberry-bread-pudding",
+          "_ref": "menuItem-raspberry-bread-pudding"
+        },
+        {
+          "_type": "reference",
+          "_key": "raspberry-cream-cheese-pie",
+          "_ref": "menuItem-raspberry-cream-cheese-pie"
+        },
+        {
+          "_type": "reference",
+          "_key": "cinnamon-roll",
+          "_ref": "menuItem-cinnamon-roll"
+        },
+        {
+          "_type": "reference",
+          "_key": "sugar-cookie",
+          "_ref": "menuItem-sugar-cookie"
+        },
+        {
+          "_type": "reference",
+          "_key": "eclair",
+          "_ref": "menuItem-eclair"
+        },
+        {
+          "_type": "reference",
+          "_key": "double-fudge-brownie",
+          "_ref": "menuItem-double-fudge-brownie"
+        },
+        {
+          "_type": "reference",
+          "_key": "carrot-petite-cake",
+          "_ref": "menuItem-carrot-petite-cake"
+        },
+        {
+          "_type": "reference",
+          "_key": "chocolate-mousse-dome",
+          "_ref": "menuItem-chocolate-mousse-dome"
+        },
+        {
+          "_type": "reference",
+          "_key": "fruit-tart",
+          "_ref": "menuItem-fruit-tart"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2022/06/28154635/Eclair.png"
+          }
+        },
+        "alt": "Pastries & Desserts"
+      },
+      "hero": {
+        "title": "Pastries & Desserts",
+        "subtitle": "Delight in every bite. Our handmade pastry selection varies seasonally.",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2022/07/07134314/Eclair-Banner.png"
+            }
+          },
+          "alt": "Pastries & Desserts"
+        }
+      },
+      "wpId": 12
+    },
+    {
+      "_id": "menuCategory-coffee-drinks",
+      "_type": "menuCategory",
+      "title": "Coffee Drinks",
+      "slug": {
+        "_type": "slug",
+        "current": "coffee-drinks"
+      },
+      "tone": "blue",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "coffee",
+          "_ref": "menuItem-coffee"
+        },
+        {
+          "_type": "reference",
+          "_key": "caffe-latte",
+          "_ref": "menuItem-caffe-latte"
+        },
+        {
+          "_type": "reference",
+          "_key": "caffe-mocha",
+          "_ref": "menuItem-caffe-mocha"
+        },
+        {
+          "_type": "reference",
+          "_key": "chai-tea-latte",
+          "_ref": "menuItem-chai-tea-latte"
+        },
+        {
+          "_type": "reference",
+          "_key": "americano",
+          "_ref": "menuItem-americano"
+        },
+        {
+          "_type": "reference",
+          "_key": "steamer",
+          "_ref": "menuItem-steamer"
+        },
+        {
+          "_type": "reference",
+          "_key": "european-hot-chocolate",
+          "_ref": "menuItem-european-hot-chocolate"
+        },
+        {
+          "_type": "reference",
+          "_key": "pumpkin-steamer",
+          "_ref": "menuItem-pumpkin-steamer"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/05/15150857/Kneaders-Bakery-Cafe-Menu-Coffee-Drinks-Cafe-Mocha.jpg"
+          }
+        },
+        "alt": "Coffee Drinks"
+      },
+      "hero": {
+        "title": "Coffee Drinks",
+        "subtitle": "Made with Lavazza coffee, Maya Chai, and Mighty Leaf Tea. Non-dairy milk available upon request.",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/05/15150634/Kneaders-Bakery-Cafe-Menu-Coffee-Drinks-Header.jpg"
+            }
+          },
+          "alt": "Coffee Drinks"
+        }
+      },
+      "wpId": 21
+    },
+    {
+      "_id": "menuCategory-catering",
+      "_type": "menuCategory",
+      "title": "Catering",
+      "slug": {
+        "_type": "slug",
+        "current": "catering"
+      },
+      "tone": "brown",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "continental-breakfast",
+          "_ref": "menuItem-continental-breakfast"
+        },
+        {
+          "_type": "reference",
+          "_key": "croissant-sandwich-breakfast-bundle",
+          "_ref": "menuItem-croissant-sandwich-breakfast-bundle"
+        },
+        {
+          "_type": "reference",
+          "_key": "kneaders-best-breakfast",
+          "_ref": "menuItem-kneaders-best-breakfast"
+        },
+        {
+          "_type": "reference",
+          "_key": "breakfast-pastry-pairing",
+          "_ref": "menuItem-breakfast-pastry-pairing"
+        },
+        {
+          "_type": "reference",
+          "_key": "scrambled-eggs",
+          "_ref": "menuItem-scrambled-eggs"
+        },
+        {
+          "_type": "reference",
+          "_key": "breakfast-potatoes",
+          "_ref": "menuItem-breakfast-potatoes"
+        },
+        {
+          "_type": "reference",
+          "_key": "fresh-fruit-berries",
+          "_ref": "menuItem-fresh-fruit-berries"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-assorted-breakfast-pastries",
+          "_ref": "menuItem-a-la-carte-assorted-breakfast-pastries"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-chunky-cinnamon-french-toast",
+          "_ref": "menuItem-a-la-carte-chunky-cinnamon-french-toast"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-breakfast-croissant-sandwiches",
+          "_ref": "menuItem-a-la-carte-breakfast-croissant-sandwiches"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-breakfast-meat",
+          "_ref": "menuItem-a-la-carte-breakfast-meat"
+        },
+        {
+          "_type": "reference",
+          "_key": "beverages",
+          "_ref": "menuItem-beverages"
+        },
+        {
+          "_type": "reference",
+          "_key": "cookies-brownies",
+          "_ref": "menuItem-cookies-brownies"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-cookies-brownies-bars",
+          "_ref": "menuItem-a-la-carte-cookies-brownies-bars"
+        },
+        {
+          "_type": "reference",
+          "_key": "dessert-platter",
+          "_ref": "menuItem-dessert-platter"
+        },
+        {
+          "_type": "reference",
+          "_key": "regular-box-lunch",
+          "_ref": "menuItem-regular-box-lunch"
+        },
+        {
+          "_type": "reference",
+          "_key": "deluxe-box-lunch",
+          "_ref": "menuItem-deluxe-box-lunch"
+        },
+        {
+          "_type": "reference",
+          "_key": "sandwich-buffet-2",
+          "_ref": "menuItem-sandwich-buffet-2"
+        },
+        {
+          "_type": "reference",
+          "_key": "veggie-platter",
+          "_ref": "menuItem-veggie-platter"
+        },
+        {
+          "_type": "reference",
+          "_key": "quarter-sandwiches",
+          "_ref": "menuItem-quarter-sandwiches"
+        },
+        {
+          "_type": "reference",
+          "_key": "kneaders-executive-lunch",
+          "_ref": "menuItem-kneaders-executive-lunch"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-executive-sandwich-box",
+          "_ref": "menuItem-a-la-carte-executive-sandwich-box"
+        },
+        {
+          "_type": "reference",
+          "_key": "bread-platter",
+          "_ref": "menuItem-bread-platter"
+        },
+        {
+          "_type": "reference",
+          "_key": "dollar-roll-sandwiches",
+          "_ref": "menuItem-dollar-roll-sandwiches"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-sweet-bread-platter",
+          "_ref": "menuItem-a-la-carte-sweet-bread-platter"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-artisan-green-salad",
+          "_ref": "menuItem-a-la-carte-artisan-green-salad"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-gourmet-green-salad",
+          "_ref": "menuItem-a-la-carte-gourmet-green-salad"
+        },
+        {
+          "_type": "reference",
+          "_key": "parmesan-chip-bowl",
+          "_ref": "menuItem-parmesan-chip-bowl"
+        },
+        {
+          "_type": "reference",
+          "_key": "soup-by-the-gallon",
+          "_ref": "menuItem-soup-by-the-gallon"
+        },
+        {
+          "_type": "reference",
+          "_key": "a-la-carte-fruit-platter",
+          "_ref": "menuItem-a-la-carte-fruit-platter"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/18105417/Kneaders-Bakery-Cafe-Menu-Catering-Deluxe-Box-Lunch-1.jpg"
+          }
+        },
+        "alt": "Catering"
+      },
+      "hero": {
+        "title": "Catering",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/12165735/Kneaders-Bakery-Cafe-Menu-Catering-Executive-Lunch-Header.jpg"
+            }
+          },
+          "alt": "Catering"
+        }
+      },
+      "wpId": 19
+    },
+    {
+      "_id": "menuCategory-kids-meal",
+      "_type": "menuCategory",
+      "title": "Kids Meal",
+      "slug": {
+        "_type": "slug",
+        "current": "kids-meal"
+      },
+      "tone": "rust",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "kids-combo",
+          "_ref": "menuItem-kids-combo"
+        },
+        {
+          "_type": "reference",
+          "_key": "kids-breakfast-combo-2",
+          "_ref": "menuItem-kids-breakfast-combo-2"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2020/10/28183042/Kneaders-Bakery-Cafe-Menu-Kids-Meal-Combo-Grilled-Cheese.jpg"
+          }
+        },
+        "alt": "Kids Meal"
+      },
+      "hero": {
+        "title": "Kids meal",
+        "subtitle": "Breakfast, lunch and dinner made with your little ones in mind.",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2020/10/28183038/Kneaders-Bakery-Cafe-Menu-Kids-Meals.jpg"
+            }
+          },
+          "alt": "Kids meal"
+        }
+      },
+      "wpId": 16
+    },
+    {
+      "_id": "menuCategory-smoothies",
+      "_type": "menuCategory",
+      "title": "Smoothies",
+      "slug": {
+        "_type": "slug",
+        "current": "smoothies"
+      },
+      "tone": "blue",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "strawberry-tsunami",
+          "_ref": "menuItem-strawberry-tsunami"
+        },
+        {
+          "_type": "reference",
+          "_key": "mornin-sunshine",
+          "_ref": "menuItem-mornin-sunshine"
+        },
+        {
+          "_type": "reference",
+          "_key": "razzleberry",
+          "_ref": "menuItem-razzleberry"
+        },
+        {
+          "_type": "reference",
+          "_key": "no-dairy-berry",
+          "_ref": "menuItem-no-dairy-berry"
+        },
+        {
+          "_type": "reference",
+          "_key": "pink-pina-colada",
+          "_ref": "menuItem-pink-pina-colada"
+        },
+        {
+          "_type": "reference",
+          "_key": "frozen-apple-cider",
+          "_ref": "menuItem-frozen-apple-cider"
+        },
+        {
+          "_type": "reference",
+          "_key": "mango-tango",
+          "_ref": "menuItem-mango-tango"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/07/23142013/Kneaders-Bakery-Cafe-Menu-Drinks-Beveraages-Going-Guava-Smoothie.jpg"
+          }
+        },
+        "alt": "Smoothies"
+      },
+      "hero": {
+        "title": "Smoothies",
+        "subtitle": "Make your day smoother. Made with real fruit, sherbet and yogurt.",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2020/06/01214828/Kneaders-Bakery-Cafe-Menu-Smoothies.jpg"
+            }
+          },
+          "alt": "Smoothies"
+        }
+      },
+      "wpId": 20
+    },
+    {
+      "_id": "menuCategory-beverages",
+      "_type": "menuCategory",
+      "title": "Beverages",
+      "slug": {
+        "_type": "slug",
+        "current": "beverages"
+      },
+      "tone": "blue",
+      "items": [
+        {
+          "_type": "reference",
+          "_key": "fresh-oj",
+          "_ref": "menuItem-fresh-oj"
+        },
+        {
+          "_type": "reference",
+          "_key": "bottled-water",
+          "_ref": "menuItem-bottled-water"
+        },
+        {
+          "_type": "reference",
+          "_key": "milk",
+          "_ref": "menuItem-milk"
+        },
+        {
+          "_type": "reference",
+          "_key": "iced-tea",
+          "_ref": "menuItem-iced-tea"
+        },
+        {
+          "_type": "reference",
+          "_key": "frozen-apple-cider",
+          "_ref": "menuItem-frozen-apple-cider"
+        },
+        {
+          "_type": "reference",
+          "_key": "soda",
+          "_ref": "menuItem-soda"
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2020/10/28183754/Kneaders-Bakery-Cafe-Menu-Beverages-Iced-Tea.jpg"
+          }
+        },
+        "alt": "Beverages"
+      },
+      "hero": {
+        "title": "Beverages",
+        "subtitle": "Sip with a smile. Enjoy à la carte or add to any meal.",
+        "image": {
+          "_type": "media",
+          "image": {
+            "_type": "image",
+            "asset": {
+              "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/05/15144032/Kneaders-Bakery-Cafe-Menu-Drinks-Beverages-Header.jpg"
+            }
+          },
+          "alt": "Beverages"
+        }
+      },
+      "wpId": 17
+    }
+  ],
+  "items": [
+    {
+      "_id": "menuItem-chunky-cinnamon-french-toast",
+      "_type": "menuItem",
+      "title": "Chunky Cinnamon French Toast",
+      "slug": {
+        "_type": "slug",
+        "current": "chunky-cinnamon-french-toast"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Two thick slices of chunky cinnamon french toast served with sliced strawberries, whipped cream and homemade caramel syrup. *All You Can Eat, Dine-in only",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/15093422/Chunky-Cinnamon-French-Toast.png"
+          }
+        },
+        "alt": "Chunky Cinnamon French Toast"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Chunky Cinnamon French Toast",
+        "ogTitle": "Kneaders Bakery - Chunky Cinnamon French Toast",
+        "ogDescription": "Two thick slices of chunky cinnamon french toast served with sliced strawberries, whipped cream and homemade caramel syrup. *All You Can Eat, Dine-in only",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09134414/Chunky-Cinnamon-French-Toast1.jpg"
+          }
+        },
+        "seoScore": 41
+      }
+    },
+    {
+      "_id": "menuItem-acai-berry-bowl",
+      "_type": "menuItem",
+      "title": "Acai Berry Bowl",
+      "slug": {
+        "_type": "slug",
+        "current": "acai-berry-bowl"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Fresh, colorful, and packed with goodness! Our Acai Berry Bowl starts with a smooth, refreshing acai base and is topped with sweet strawberries, bananas, raspberries, crunchy chia seeds, toasted coconut, and a drizzle of honey.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wordpress.kneadersdw.com/wp-content/uploads/2026/07/Kneaders-Acai-Bowl-2026-1.jpg"
+          }
+        },
+        "alt": "Acai Berry Bowl"
+      }
+    },
+    {
+      "_id": "menuItem-banana-fosters-french-toast",
+      "_type": "menuItem",
+      "title": "Banana Fosters French Toast",
+      "slug": {
+        "_type": "slug",
+        "current": "banana-fosters-french-toast"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Thick-cut cinnamon French toast layered with warm caramelized bananas and drizzled with a rich brown sugar-rum syrup. Finished with whipped cream and candied pecans, this Bananas Foster-inspired creation is the perfect combination of cozy comfort, indulgent sweetness, and unforgettable flavor. Served warm and made for savoring every bite.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wordpress.kneadersdw.com/wp-content/uploads/2026/07/Bananas-Foster-French-Toast-2026-1.jpg"
+          }
+        },
+        "alt": "Banana Fosters French Toast"
+      }
+    },
+    {
+      "_id": "menuItem-superfoods-breakfast-bowl",
+      "_type": "menuItem",
+      "title": "Superfood’s breakfast bowl",
+      "slug": {
+        "_type": "slug",
+        "current": "superfoods-breakfast-bowl"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Fuel your morning with a nutrient-packed breakfast designed to help you feel energized and satisfied. Our Superfoods Breakfast Bowl combines protein-rich scrambled eggs and creamy cottage cheese with fresh spinach, microgreens, juicy tomatoes, antioxidant-rich blueberries, creamy avocado, and crunchy sunflower seeds. Finished with a kiss of hot honey.  Packed with wholesome ingredients, plant-based nutrients, healthy fats, and lasting protein, it’s a fresh and flavorful way to power your day.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "For a heartier version, swap spinach for kneaders breakfast potatoes",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2026/08/31232225/Superfoods-Breakfast-Bowl-2026-scaled.jpg"
+          }
+        },
+        "alt": "Superfood’s breakfast bowl"
+      }
+    },
+    {
+      "_id": "menuItem-artisian-breakfast-sandwich",
+      "_type": "menuItem",
+      "title": "Artisian breakfast sandwich",
+      "slug": {
+        "_type": "slug",
+        "current": "artisian-breakfast-sandwich"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Start your day with a handcrafted breakfast built on our signature sourdough. This wholesome sandwich features fresh eggs, creamy Muenster cheese, grilled tomatoes, ripe avocado, and delicate microgreens layered together for the perfect balance of flavor, texture, and nourishment. Made with quality ingredients and bakery-crafted care, it’s a fresh, satisfying way to fuel your morning.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2026/08/31232518/Artisan-Breakfast-Sandwich-2026.jpg"
+          }
+        },
+        "alt": "Artisian breakfast sandwich"
+      }
+    },
+    {
+      "_id": "menuItem-farmhouse-avocado-toast",
+      "_type": "menuItem",
+      "title": "Farmhouse avocado toast",
+      "slug": {
+        "_type": "slug",
+        "current": "farmhouse-avocado-toast"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "A fresh, elevated take on a breakfast classic, served on our artisan Asiago sourdough cheese bread. This hearty toast features creamy avocado, fluffy scrambled eggs, vibrant microgreens, and a flavorful pesto dressing, finished with a drizzle of pesto oil. Crafted with wholesome ingredients and layers of bakery-inspired flavor, it’s a satisfying way to start your day.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2026/08/31232704/Farmhouse-Avocado-Toast-2026.jpg"
+          }
+        },
+        "alt": "Farmhouse avocado toast"
+      }
+    },
+    {
+      "_id": "menuItem-breakfast-potatoes-2",
+      "_type": "menuItem",
+      "title": "Breakfast potatoes",
+      "slug": {
+        "_type": "slug",
+        "current": "breakfast-potatoes-2"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "A comforting breakfast favorite made with hearty potatoes, vibrant red peppers, and savory red onions, all perfectly seasoned and cooked to golden perfection. Finished with a fresh sprinkle of green onions, this satisfying side brings delicious flavor and a farmhouse-inspired touch to any morning meal.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2026/08/31232904/Breakfast-Potatoes-2026-scaled.jpg"
+          }
+        },
+        "alt": "Breakfast potatoes"
+      }
+    },
+    {
+      "_id": "menuItem-ham-bacon-sausage-egg-cheese",
+      "_type": "menuItem",
+      "title": "Ham or Bacon or Sausage, Egg & Cheese Croissant Sandwich",
+      "slug": {
+        "_type": "slug",
+        "current": "ham-bacon-sausage-egg-cheese"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Your choice of ham, sausage or bacon with cheese and two fresh-cracked eggs. Served on a European butter croissant.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/17150141/Kneaders-Bakery-Cafe-Menu-Sausage-Egg-Cheese-Croissant-Breakfast-Sandwich.jpg"
+          }
+        },
+        "alt": "Ham or Bacon or Sausage, Egg & Cheese Croissant Sandwich"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Ham or Bacon or Sausage, Egg & Cheese",
+        "ogTitle": "Kneaders Bakery - Ham or Bacon or Sausage, Egg & Cheese",
+        "ogDescription": "Your choice of ham, sausage or bacon with cheddar cheese and two fresh-cracked eggs. Served on a European butter croissant.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09134840/Ham-Egg-Cheese-Croissant-Sandwich.jpg"
+          }
+        },
+        "seoScore": 25
+      }
+    },
+    {
+      "_id": "menuItem-ham-bacon-sausage-cheese",
+      "_type": "menuItem",
+      "title": "Ham or Bacon or Sausage & Cheese Croissant Sandwich",
+      "slug": {
+        "_type": "slug",
+        "current": "ham-bacon-sausage-cheese"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Your choice of ham, sausage or bacon with cheese. Served on a European butter croissant.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/24120514/Kneaders-Bakery-Cafe-Menu-Breakfast-Ham-Sausage-or-Bacon-Cheese-Croissant-Sandwich.jpg"
+          }
+        },
+        "alt": "Ham or Bacon or Sausage & Cheese Croissant Sandwich"
+      }
+    },
+    {
+      "_id": "menuItem-egg-cheese",
+      "_type": "menuItem",
+      "title": "Egg & Cheese Croissant Sandwich",
+      "slug": {
+        "_type": "slug",
+        "current": "egg-cheese"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Cheese and two fresh-cracked eggs. Served on a European butter croissant.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/24120826/Kneaders-Bakery-Cafe-Menu-Breakfast-Egg-Cheese-Croissant-Sandwich.jpg"
+          }
+        },
+        "alt": "Egg & Cheese Croissant Sandwich"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Egg & Cheese",
+        "ogTitle": "Kneaders Bakery - Egg & Cheese",
+        "ogDescription": "Cheddar cheese and two fresh-cracked eggs. Served on a European butter croissant.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09134534/Egg-Cheese-Croissant.jpg"
+          }
+        },
+        "seoScore": 33
+      }
+    },
+    {
+      "_id": "menuItem-greek-omelet",
+      "_type": "menuItem",
+      "title": "Greek Omelet",
+      "slug": {
+        "_type": "slug",
+        "current": "greek-omelet"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "3 oz. scrambled omelet with spinach, feta cheese and portabella mushrooms. Served with wheat toast and a strawberry.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/19190115/Kneaders-Bakery-Cafe-Menu-Breakfast-Greek-Omelet.jpg"
+          }
+        },
+        "alt": "Greek Omelet"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Greek Omelet",
+        "ogTitle": "Kneaders Bakery - Greek Omelet",
+        "ogDescription": "3 oz. scrambled omelet with spinach, feta cheese and portabella mushrooms. Served with 100% wheat toast and fresh orange slices.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09132810/Greek-Omelet1.jpg"
+          }
+        },
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-american-omelet",
+      "_type": "menuItem",
+      "title": "American Omelet",
+      "slug": {
+        "_type": "slug",
+        "current": "american-omelet"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "3 oz. scrambled omelet with ham, cheddar cheese and broccoli. Served with wheat toast and a strawberry.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/19190806/Kneaders-Bakery-Cafe-Menu-Breakfast-American-Omelet.jpg"
+          }
+        },
+        "alt": "American Omelet"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "American Omelet",
+        "ogTitle": "Kneaders Bakery - American Omelet",
+        "ogDescription": "3 oz. scrambled omelet with ham, cheddar cheese and broccoli. Served with 100% wheat toast and fresh orange slices.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09132919/American-Omelet1.jpg"
+          }
+        },
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-italian-omelet",
+      "_type": "menuItem",
+      "title": "Italian Omelet",
+      "slug": {
+        "_type": "slug",
+        "current": "italian-omelet"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "3 oz. scrambled omelet with sausage, mozzarella cheese, red bell peppers and fresh basil. Served with wheat toast and a strawberry.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/19192036/Kneaders-Bakery-Cafe-Menu-Breakfast-Italian-Omelet.jpg"
+          }
+        },
+        "alt": "Italian Omelet"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Italian Omelet",
+        "ogTitle": "Kneaders Bakery - Italian Omelet",
+        "ogDescription": "3 oz. scrambled omelet with sausage, mozzarella cheese, red bell peppers and fresh basil. Served with 100% wheat toast and fresh orange slices.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09132653/Italian-Omelet1.jpg"
+          }
+        },
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-kids-breakfast-combo-2",
+      "_type": "menuItem",
+      "title": "Kids Breakfast Combo",
+      "slug": {
+        "_type": "slug",
+        "current": "kids-breakfast-combo-2"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Kneaders Chunky Cinnamon French Toast slices served with homemade caramel syrup and your choice of 2% milk or juice.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/19111538/Kids-French-Toast-Combo.jpg"
+          }
+        },
+        "alt": "Kids Breakfast Combo"
+      },
+      "orderUrl": "https://order.kneaders.com/"
+    },
+    {
+      "_id": "menuItem-breakfast-sides",
+      "_type": "menuItem",
+      "title": "Breakfast Sides",
+      "slug": {
+        "_type": "slug",
+        "current": "breakfast-sides"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Add ham, bacon, sausage, scrambled eggs, or fried eggs to any breakfast entrée",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/09103621/Breakfast-Sides-e1523479558567.jpg"
+          }
+        },
+        "alt": "Breakfast Sides"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Breakfast Sides",
+        "ogTitle": "Kneaders Bakery - Breakfast Sides",
+        "ogDescription": "Add ham, bacon, sausage, scrambled eggs, or fried eggs to any breakfast entrée",
+        "seoScore": 28
+      }
+    },
+    {
+      "_id": "menuItem-crack-chicken-sandwich",
+      "_type": "menuItem",
+      "title": "Crack Chicken Sandwich",
+      "slug": {
+        "_type": "slug",
+        "current": "crack-chicken-sandwich"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Golden-crusted sourdough sandwich, toasted to perfection with a crispy layer of melted Parmesan cheese on the outside. Inside, tender grilled chicken smothered in a rich, creamy crack chicken dressing made with cream cheese, ranch seasoning, and Parmesan. Fresh slices of ripe tomato, creamy avocado, and crispy bacon add layers of flavor and texture, balancing the savory richness with bursts of freshness and smoky crunch. Each bite offers a delightful combination of crisp, creamy, tangy, and savory goodness—a sandwich elevated to gourmet status.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2025/01/22205156/Crack-chicken.jpg"
+          }
+        },
+        "alt": "Crack Chicken Sandwich"
+      },
+      "orderUrl": "https://kneaders.orderexperience.net/locations"
+    },
+    {
+      "_id": "menuItem-chicken-cheese-ham",
+      "_type": "menuItem",
+      "title": "CHICKEN, CHEESE, & HAM",
+      "slug": {
+        "_type": "slug",
+        "current": "chicken-cheese-ham"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Grilled chicken breast, ham, mayonnaise, honey mustard, Swiss cheese, lettuce, tomatoes, red onions, salt & pepper. Served on Asiago Cheese bread.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2025/05/16114910/Chicken-Cheese-and-Ham-Asiago-2025.jpg"
+          }
+        },
+        "alt": "CHICKEN, CHEESE, & HAM"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Chicken Cheese and Ham",
+        "ogTitle": "Kneaders Bakery - Chicken, Cheese & Ham",
+        "ogDescription": "Grilled chicken breast, ham, mayonnaise, honey mustard, Swiss cheese, lettuce, tomatoes, red onions, salt & pepper. Served on Ciabatta.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/01/09152917/Chicken-Cheese-and-Ham-Sandwich1.jpg"
+          }
+        },
+        "seoScore": 39
+      }
+    },
+    {
+      "_id": "menuItem-ham-swiss-cafe-sandwich",
+      "_type": "menuItem",
+      "title": "Classic Sandwich",
+      "slug": {
+        "_type": "slug",
+        "current": "ham-swiss-cafe-sandwich"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Kneaders sauce, lettuce, tomatoes, red onions, salt and pepper, plus your choice from one of the following:  Ham and Swiss (with mayo & honey mustard), Ham, Turkey, Roast Beef, Veggie Avocado, or Dave's BLT.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "May be served as a whole or half sandwich on your choice of bread.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/20150316/Ham-Swiss.jpg"
+          }
+        },
+        "alt": "Classic Sandwich"
+      },
+      "orderUrl": "https://order.kneaders.com/"
+    },
+    {
+      "_id": "menuItem-provolone-muenster-cheese-melt",
+      "_type": "menuItem",
+      "title": "Triple Double Cheese Melt",
+      "slug": {
+        "_type": "slug",
+        "current": "provolone-muenster-cheese-melt"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Three layers of French Country Sourdough bread with muenster cheese, provolone cheese and fresh pesto butter. May be served as a whole or half sandwich.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/09145827/Provolone-Muenster-Melt.jpg"
+          }
+        },
+        "alt": "Triple Double Cheese Melt"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Provolone & Munster Melt",
+        "ogDescription": "Romaine lettuce, slow-roasted, hand-pulled turkey, crispy bacon, tomatoes, cucumbers, red onions, avocado, salt & pepper with Ranch dressing on the side. Served with a slice of bread, croutons or roll.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09145827/Provolone-Muenster-Melt.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-turkey-cranberry-croissant",
+      "_type": "menuItem",
+      "title": "Turkey Cranberry Croissant",
+      "slug": {
+        "_type": "slug",
+        "current": "turkey-cranberry-croissant"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Slow-roasted, hand-pulled turkey, cranberry sauce, Swiss cheese, lettuce, salt & pepper. Served with a complimentary side of spring greens and balsamic vinaigrette.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/21134339/Kneaders-Bakery-Cafe-Menu-Sandwiches-Turkey-Cranberry-Croissant.jpg"
+          }
+        },
+        "alt": "Turkey Cranberry Croissant"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Turkey Cranberry Croissant",
+        "ogDescription": "Slow-roasted, hand-pulled turkey, cranberry sauce, Swiss cheese, lettuce, salt & pepper. Served with a complimentary side of spring greens and balsamic vinaigrette.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09151152/Turkey-Cranberry-Croissant.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-chicken-salad-sandwich",
+      "_type": "menuItem",
+      "title": "Chicken Salad Croissant",
+      "slug": {
+        "_type": "slug",
+        "current": "chicken-salad-sandwich"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Chunks of grilled chicken breast, water chestnuts, celery, pecans, green onions and salt & pepper, mixed in a sour cream vinegar sauce, served cold. Served with a complimentary side of spring greens and balsamic vinaigrette.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/11135932/Kneaders-Bakery-Cafe-Menu-Sandwiches-Chicken-Salad-Croissant-Sandwich.jpg"
+          }
+        },
+        "alt": "Chicken Salad Croissant"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Chicken Salad Sandwich",
+        "ogDescription": "Chunks of grilled chicken breast, water chestnuts, celery, pecans, green onions and salt & pepper, mixed in a sour cream vinegar sauce, served cold. Served with a complimentary side of spring greens and balsamic vinaigrette.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09151325/Chicken-Salad-Croissant.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-chicken-pesto",
+      "_type": "menuItem",
+      "title": "Chicken Pesto",
+      "slug": {
+        "_type": "slug",
+        "current": "chicken-pesto"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Grilled chicken breast, fresh pesto butter, provolone cheese, fresh basil, tomatoes, red onions, salt & pepper on French Country Sourdough. Served hot with parmesan chips.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/27091259/Chicken-Pesto-Panini-w-chips-2021-scaled.jpg"
+          }
+        },
+        "alt": "Chicken Pesto"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Chicken Pesto",
+        "ogDescription": "Grilled chicken breast, fresh pesto butter, provolone cheese, fresh basil, tomatoes, red onions, salt & pepper on French Country Sourdough. Served hot with parmesan chips and a pickle.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09151754/Coming-Soon-1.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-tuna",
+      "_type": "menuItem",
+      "title": "Tuna",
+      "slug": {
+        "_type": "slug",
+        "current": "tuna"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Albacore tuna mixed with dill, red onions, celery, salt & pepper, mayonnaise, lemon juice, and lettuce. Served on Hazelnut 12 Grain.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/01/09152615/Tuna-on-Hazelnut-12-Grain1.jpg"
+          }
+        },
+        "alt": "Tuna"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Tuna",
+        "ogDescription": "Albacore tuna mixed with dill, red onions, celery, salt & pepper, mayonnaise, lemon juice, and lettuce. Served on Hazelnut 12 Grain."
+      }
+    },
+    {
+      "_id": "menuItem-french-dip",
+      "_type": "menuItem",
+      "title": "FRENCH DIP",
+      "slug": {
+        "_type": "slug",
+        "current": "french-dip"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Roast beef, Swiss cheese, au jus, salt & pepper. Served on Baguette.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/01/14111059/French-Dip-Sandwich.png"
+          }
+        },
+        "alt": "FRENCH DIP"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - French Dip",
+        "ogDescription": "Roast beef, Swiss cheese, au jus, salt & pepper. Served on Baguette.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/01/09152754/French-Dip-Sandwich1.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-turkey-bacon-avocado-sandwich",
+      "_type": "menuItem",
+      "title": "Turkey Bacon Avocado",
+      "slug": {
+        "_type": "slug",
+        "current": "turkey-bacon-avocado-sandwich"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Slow-roasted, hand-pulled turkey, bacon, Kneaders sauce, provolone cheese, lettuce, tomatoes, red onions, salt & pepper, avocado. Served on Focaccia.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/11135934/Kneaders-Bakery-Cafe-Menu-Famous-Sandwiches-Turkey-Bacon-Avocado-Famous-Sandwich.jpg"
+          }
+        },
+        "alt": "Turkey Bacon Avocado"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Turkey Bacon Avocado",
+        "ogTitle": "Kneaders Bakery - Turkey, Bacon, Avocado Sandwich",
+        "ogDescription": "Slow-roasted, hand-pulled turkey, bacon, Kneaders sauce, provolone cheese, lettuce, tomatoes, red onions, salt & pepper, avocado. Served on Focaccia.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/01/09153142/Turkey-Bacon-Acocado-Sandwich1.jpg"
+          }
+        },
+        "seoScore": 41
+      }
+    },
+    {
+      "_id": "menuItem-club",
+      "_type": "menuItem",
+      "title": "Club",
+      "slug": {
+        "_type": "slug",
+        "current": "club"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Slow-roasted, hand-pulled turkey, roast beef, ham, Kneaders sauce, provolone cheese, lettuce, tomatoes, red onions, salt & pepper. Served on French Country Sourdough.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/01/09153040/Club-Sandwich1.jpg"
+          }
+        },
+        "alt": "Club"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Club",
+        "ogDescription": "Slow-roasted, hand-pulled turkey, roast beef, ham, Kneaders sauce, provolone cheese, lettuce, tomatoes, red onions, salt & pepper. Served on French Country Sourdough.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/01/09153040/Club-Sandwich1.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-tuna-melt",
+      "_type": "menuItem",
+      "title": "Tuna Melt",
+      "slug": {
+        "_type": "slug",
+        "current": "tuna-melt"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Albacore tuna mixed with dill, red onions, celery, salt & pepper, mayonnaise, lemon juice and lettuce. Served hot on hazelnut 12 grain.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/09153250/Tuna-Melt.jpg"
+          }
+        },
+        "alt": "Tuna Melt"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Tuna Melt",
+        "ogDescription": "Albacore tuna mixed with dill, red onions, celery, salt & pepper, mayonnaise, lemon juice and lettuce. Served hot on hazelnut 12 grain. May be served as a whole or half sandwich.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09153250/Tuna-Melt.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-pumpkin-bread",
+      "_type": "menuItem",
+      "title": "Pumpkin Sweet Bread",
+      "slug": {
+        "_type": "slug",
+        "current": "pumpkin-bread"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Our famous pumpkin bread lightly spiced with cinnamon, nutmeg, and clove.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/30190203/Kneaders-Bakery-Cafe-Menu-Pumpkin-Sweet-Bread.jpg"
+          }
+        },
+        "alt": "Pumpkin Sweet Bread"
+      },
+      "orderUrl": "https://kneaders.orderexperience.net/locations",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Pumpkin Sweet Bread",
+        "seoScore": 54
+      }
+    },
+    {
+      "_id": "menuItem-chunky-cinnamon",
+      "_type": "menuItem",
+      "title": "Chunky Cinnamon",
+      "slug": {
+        "_type": "slug",
+        "current": "chunky-cinnamon"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Our delicious white bread swirled with cinnamon then frosted. We use this bread to make our award-winning Chunky Cinnamon French Toast.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/11135936/Kneaders-Bakery-Cafe-Menu-Breads-Chunky-Cinnamon-Bread.jpg"
+          }
+        },
+        "alt": "Chunky Cinnamon"
+      }
+    },
+    {
+      "_id": "menuItem-french-country-sourdough",
+      "_type": "menuItem",
+      "title": "French Country Sourdough",
+      "slug": {
+        "_type": "slug",
+        "current": "french-country-sourdough"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "A classic sourdough start is the secret to this crusty bread.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/23115844/Kneaders-Bakery-Cafe-Menu-Breads-French-Country-Sourdough-Hearth-Bread.jpg"
+          }
+        },
+        "alt": "French Country Sourdough"
+      }
+    },
+    {
+      "_id": "menuItem-caramel-apple-sweet-bread",
+      "_type": "menuItem",
+      "title": "Caramel Apple Sweet Bread",
+      "slug": {
+        "_type": "slug",
+        "current": "caramel-apple-sweet-bread"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Cinnamon-spiced caramel sweet bread with Granny Smith apples and caramel icing drizzle.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/10/16095858/5A4A9650.jpg"
+          }
+        },
+        "alt": "Caramel Apple Sweet Bread"
+      },
+      "orderUrl": "https://kneaders.orderexperience.net/locations"
+    },
+    {
+      "_id": "menuItem-paesano",
+      "_type": "menuItem",
+      "title": "Paesano",
+      "slug": {
+        "_type": "slug",
+        "current": "paesano"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "A thin cornmeal crust surrounding a soft, inviting crumb.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/23092641/Paesano-Bread.png"
+          }
+        },
+        "alt": "Paesano"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Paesano Bread",
+        "seoScore": 30
+      }
+    },
+    {
+      "_id": "menuItem-soft-rolls",
+      "_type": "menuItem",
+      "title": "Soft Rolls",
+      "slug": {
+        "_type": "slug",
+        "current": "soft-rolls"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "This classic roll is soft and fluffy, making it a Kneaders favorite.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/20215523/Kneaders-Bakery-Cafe-Menu-Breads-Soft-Rolls.jpg"
+          }
+        },
+        "alt": "Soft Rolls"
+      }
+    },
+    {
+      "_id": "menuItem-french-country-soup-bun",
+      "_type": "menuItem",
+      "title": "French Country Soup Bun",
+      "slug": {
+        "_type": "slug",
+        "current": "french-country-soup-bun"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Enjoy any of your favorite soups or stews in an irresistible soup bun.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/18174213/Kneaders-Bakery-Cafe-Menu-Bread-Cream-Broccoli-Sourdough-Soup-Bun.jpg"
+          }
+        },
+        "alt": "French Country Soup Bun"
+      }
+    },
+    {
+      "_id": "menuItem-raspberry-rolls",
+      "_type": "menuItem",
+      "title": "Raspberry Rolls",
+      "slug": {
+        "_type": "slug",
+        "current": "raspberry-rolls"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Delicate, flaky dough is layered with raspberry filling and frosted to perfection.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wordpress.kneadersdw.com/wp-content/uploads/2018/02/KNDRS_Easter_Individual-2026-12.jpg"
+          }
+        },
+        "alt": "Raspberry Rolls"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Raspberry Rolls",
+        "seoScore": 51
+      }
+    },
+    {
+      "_id": "menuItem-honey-wheat",
+      "_type": "menuItem",
+      "title": "Honey Wheat",
+      "slug": {
+        "_type": "slug",
+        "current": "honey-wheat"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Made in a pan, no preservatives, no added fat.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/12163720/Kneaders-Bakery-Cafe-Menu-Breads-Honey-Wheat-Bread.jpg"
+          }
+        },
+        "alt": "Honey Wheat"
+      }
+    },
+    {
+      "_id": "menuItem-country-white",
+      "_type": "menuItem",
+      "title": "Country White",
+      "slug": {
+        "_type": "slug",
+        "current": "country-white"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Made in a pan, no preservatives, no added fat.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/12163722/Kneaders-Bakery-Cafe-Menu-Breads-Country-White-Bread.jpg"
+          }
+        },
+        "alt": "Country White"
+      }
+    },
+    {
+      "_id": "menuItem-asiago-cheese",
+      "_type": "menuItem",
+      "title": "Asiago Cheese",
+      "slug": {
+        "_type": "slug",
+        "current": "asiago-cheese"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "The perfect blend of asiago and parmesan cheeses baked in the bread.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/25143109/Kneaders-Bakery-Cafe-Menu-Breads-Asiago-Hearth-Bread.jpg"
+          }
+        },
+        "alt": "Asiago Cheese"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Asiago Cheese",
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-hazelnut-12-grain",
+      "_type": "menuItem",
+      "title": "Hazelnut 12 Grain",
+      "slug": {
+        "_type": "slug",
+        "current": "hazelnut-12-grain"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Packed with sunflower seeds, sesame seeds, wheat, oats, triticale, flax, rice, millet, barley, corn, rye, and buckwheat.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/25142840/Kneaders-Bakery-Cafe-Menu-Breads-Hazelnut-12-Grain-Hearth-Bread.jpg"
+          }
+        },
+        "alt": "Hazelnut 12 Grain"
+      }
+    },
+    {
+      "_id": "menuItem-baguette-seeded-baguette",
+      "_type": "menuItem",
+      "title": "Baguette",
+      "slug": {
+        "_type": "slug",
+        "current": "baguette-seeded-baguette"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Classic long, French loaf made in the traditional European style.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/17112041/Kneaders-Bakery-Cafe-Menu-Breads-Plain-Seeded-Baguette.jpg"
+          }
+        },
+        "alt": "Baguette"
+      }
+    },
+    {
+      "_id": "menuItem-rosemary-focaccia-round",
+      "_type": "menuItem",
+      "title": "Rosemary Focaccia Round",
+      "slug": {
+        "_type": "slug",
+        "current": "rosemary-focaccia-round"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "This round loaf is topped with fresh rosemary and sea salt.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/20215444/Kneaders-Bakery-Cafe-Menu-Breads-Rosemary-Focaccia-Hearth-Bread.jpg"
+          }
+        },
+        "alt": "Rosemary Focaccia Round"
+      }
+    },
+    {
+      "_id": "menuItem-apple-cranberry-salad",
+      "_type": "menuItem",
+      "title": "Apple Cranberry Salad",
+      "slug": {
+        "_type": "slug",
+        "current": "apple-cranberry-salad"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Kneaders greens, mozzarella cheese, sunflower seeds, cranberries, green apple and red onions. Served with a side of poppy seed dressing. Served with a slice of bread, croutons, or roll on the side.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "Recommended protein: Turkey",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2023/04/12095251/Apple-Cranberry-Salad.jpg"
+          }
+        },
+        "alt": "Apple Cranberry Salad"
+      },
+      "orderUrl": "https://order.kneaders.com/"
+    },
+    {
+      "_id": "menuItem-southwest-salad",
+      "_type": "menuItem",
+      "title": "Southwest Salad",
+      "slug": {
+        "_type": "slug",
+        "current": "southwest-salad"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Kneaders Greens, Black Bean, Corn, Onion Mixture, 8 cherry tomatoes, ½ avocado, 2 oz scoop tortilla strips, 2 oz cilantro, divided, 1 Cojita Cilantro Dressing.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "Recommended Protein: Chicken",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2023/04/12100552/Southwest.jpg"
+          }
+        },
+        "alt": "Southwest Salad"
+      },
+      "orderUrl": "https://order.kneaders.com/"
+    },
+    {
+      "_id": "menuItem-thai-cashew-salad",
+      "_type": "menuItem",
+      "title": "Thai Cashew Salad",
+      "slug": {
+        "_type": "slug",
+        "current": "thai-cashew-salad"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Kneaders  greens, sliced carrots, red cabbage, red bell peppers, cashews, fresh cilantro, salt, and pepper. Served with spicy Thai dressing on the side. Served with a slice of bread, croutons, or roll on the side.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "Recommended protein: Chicken",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2023/04/12101309/Thai-Cashew.jpg"
+          }
+        },
+        "alt": "Thai Cashew Salad"
+      },
+      "orderUrl": "https://order.kneaders.com/"
+    },
+    {
+      "_id": "menuItem-avocado-ranch-salad",
+      "_type": "menuItem",
+      "title": "Avocado Ranch Salad",
+      "slug": {
+        "_type": "slug",
+        "current": "avocado-ranch-salad"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Mozzarella Cheese, cherry tomatoes, cucumbers, onion rings, avocado, and creamy ranch dressing.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "Similar to the Turkey Bacon Avocado Salad, just without the turkey and bacon.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-2-s",
+              "text": "Recommended Protein: Turkey",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2023/04/12104544/Avocado-Ranch.jpg"
+          }
+        },
+        "alt": "Avocado Ranch Salad"
+      },
+      "orderUrl": "https://order.kneaders.com/"
+    },
+    {
+      "_id": "menuItem-berry-pecan-salad",
+      "_type": "menuItem",
+      "title": "Berry Pecan Salad",
+      "slug": {
+        "_type": "slug",
+        "current": "berry-pecan-salad"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Feta Cheese, whole raspberries, Candied Pecans, Strawberries, Blueberries, Onion Slices and Raspberry Walnut Vinaigrette dressing.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "Recommended Protein: Chicken",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2023/04/12104800/Berry-Pecan.jpg"
+          }
+        },
+        "alt": "Berry Pecan Salad"
+      },
+      "orderUrl": "https://order.kneaders.com/"
+    },
+    {
+      "_id": "menuItem-fruit-salad",
+      "_type": "menuItem",
+      "title": "Fresh Fruit",
+      "slug": {
+        "_type": "slug",
+        "current": "fruit-salad"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "A mixture of fresh strawberries, grapes, melon, blueberries, and pineapple. Enjoy by the quart, gallon, or as a side to your favorite sandwich or gourmet salad.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/26165321/Kneaders-Bakery-Cafe-Menu-Catering-A-la-Carte-Fresh-Fruit-Berries.jpg"
+          }
+        },
+        "alt": "Fresh Fruit"
+      }
+    },
+    {
+      "_id": "menuItem-turkey-bacon-avocado",
+      "_type": "menuItem",
+      "title": "Turkey Bacon Avocado",
+      "slug": {
+        "_type": "slug",
+        "current": "turkey-bacon-avocado"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Kneaders greens, slow-roasted, hand-pulled turkey, bacon, avocado, mozzarella cheese, tomatoes, red onions, cucumbers, salt & pepper and Creamy Ranch dressing on the side. Served with a slice of bread, croutons or roll.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/12103944/Turkey-Bacon-Avocado.jpg"
+          }
+        },
+        "alt": "Turkey Bacon Avocado"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Turkey Bacon Avocado Salad",
+        "ogDescription": "Romaine lettuce, slow-roasted, hand-pulled turkey, crispy bacon, tomatoes, cucumbers, red onions, avocado, salt & pepper with Ranch dressing on the side. Served with a slice of bread, croutons or roll.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09145615/Turkey-Bacon-Avocado-Salad_11.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-quart-of-soup",
+      "_type": "menuItem",
+      "title": "Quart of Soup",
+      "slug": {
+        "_type": "slug",
+        "current": "quart-of-soup"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Your choice of soup in a to-go quart container.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/09153638/Quart-of-Soup1.jpg"
+          }
+        },
+        "alt": "Quart of Soup"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Quart of Soup",
+        "ogDescription": "Your choice of soup in a to-go quart container.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09153638/Quart-of-Soup1.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-soup-sourdough-bun",
+      "_type": "menuItem",
+      "title": "Soup in a Sourdough Bun",
+      "slug": {
+        "_type": "slug",
+        "current": "soup-sourdough-bun"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Your choice of soup in a 12 oz. bowl. Served with the sourdough bun on the side.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/25112409/Broccoli-Cheddar-Soup-Sourdough-Soup-Bun-850x565-1.png"
+          }
+        },
+        "alt": "Soup in a Sourdough Bun"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Soup in a Sourdough Bun",
+        "ogDescription": "Your choice or soup in a 12 oz. bowl. Served with the sourdough bun on the side.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09153740/Soup-in-a-Bun-Cream-of-Broccoli1.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-bowl-soup-bread",
+      "_type": "menuItem",
+      "title": "Bowl of Soup with Bread",
+      "slug": {
+        "_type": "slug",
+        "current": "bowl-soup-bread"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Your choice of soup in a 12 oz. bowl. Served with a choice of bread, croutons or roll.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/09153851/Bowl-of-Soup-with-Bread-Tomato.jpg"
+          }
+        },
+        "alt": "Bowl of Soup with Bread"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Bowl of Soup with Bread",
+        "ogDescription": "Your choice of soup in a 12 oz. bowl. Served with a choice of bread, croutons or roll.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09153851/Bowl-of-Soup-with-Bread-Tomato.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-double-decker-peanut-butter-bar",
+      "_type": "menuItem",
+      "title": "Double Decker Peanut Butter Bar",
+      "slug": {
+        "_type": "slug",
+        "current": "double-decker-peanut-butter-bar"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Two layers of chewy peanut butter oat bars sandwiched with peanut butter, frosted with chocolate icing, and topped with a crunchy crumble.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2025/08/16172105/Double-Decker-Peanut-Butter.jpg"
+          }
+        },
+        "alt": "Double Decker Peanut Butter Bar"
+      },
+      "orderUrl": "https://order.kneaders.com/",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Double Decker Peanut Butter Bar",
+        "seoScore": 49
+      }
+    },
+    {
+      "_id": "menuItem-pumpkin-cheesecake",
+      "_type": "menuItem",
+      "title": "Pumpkin Cheesecake",
+      "slug": {
+        "_type": "slug",
+        "current": "pumpkin-cheesecake"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Rich and creamy cheesecake topped with pumpkin chocolate chip cake, cream cheese icing, chocolate ganache, and chocolate curls.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2022/09/30130458/Pumpkin-Cheesecake.jpg"
+          }
+        },
+        "alt": "Pumpkin Cheesecake"
+      },
+      "orderUrl": "https://order.thanx.com/kneaders",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Pumpkin Cheesecake",
+        "seoScore": 61
+      }
+    },
+    {
+      "_id": "menuItem-brown-butter-chocolate-chunk-cookie",
+      "_type": "menuItem",
+      "title": "Brown Butter Chocolate Chunk Cookie",
+      "slug": {
+        "_type": "slug",
+        "current": "brown-butter-chocolate-chunk-cookie"
+      },
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2022/01/11151322/Brown-Butter-Chocolate-Chunk-Cookies-2022.jpg"
+          }
+        },
+        "alt": "Brown Butter Chocolate Chunk Cookie"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Brown Butter Chocolate Chunk Cookie",
+        "seoScore": 32
+      }
+    },
+    {
+      "_id": "menuItem-raspberry-mini-tart",
+      "_type": "menuItem",
+      "title": "Raspberry Mini Tart",
+      "slug": {
+        "_type": "slug",
+        "current": "raspberry-mini-tart"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "A sweet combination of soft cream cheese and puréed raspberries in a mini shortbread tart shell.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2022/07/30131105/Raspberry-Mini.png"
+          }
+        },
+        "alt": "Raspberry Mini Tart"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Raspberry Mini Tart",
+        "seoScore": 39
+      }
+    },
+    {
+      "_id": "menuItem-raspberry-cream-cheese-croissant",
+      "_type": "menuItem",
+      "title": "Raspberry Cream Cheese Croissant",
+      "slug": {
+        "_type": "slug",
+        "current": "raspberry-cream-cheese-croissant"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "This golden flaky croissant is filled with a sweet cream cheese and raspberry filling and topped with powdered sugar sprinkled on top.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2022/06/28095316/Raspberry-Cream-Cheese-Croissant.png"
+          }
+        },
+        "alt": "Raspberry Cream Cheese Croissant"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Raspberry Cream Cheese Croissant",
+        "seoScore": 41
+      }
+    },
+    {
+      "_id": "menuItem-strawberry-lemon-velvet-stuffed-croissant",
+      "_type": "menuItem",
+      "title": "Strawberry Lemon Velvet Stuffed Croissant",
+      "slug": {
+        "_type": "slug",
+        "current": "strawberry-lemon-velvet-stuffed-croissant"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Buttery flakey croissant filled with from scratch tangy lemon velvet filling and market fresh strawberries.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2024/07/16095859/Strawberry-Lemon-Velvet-Croissant.jpg"
+          }
+        },
+        "alt": "Strawberry Lemon Velvet Stuffed Croissant"
+      }
+    },
+    {
+      "_id": "menuItem-caramel-banana-pudding-cup",
+      "_type": "menuItem",
+      "title": "Caramel Banana Pudding Cup",
+      "slug": {
+        "_type": "slug",
+        "current": "caramel-banana-pudding-cup"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Our Caramel Banana Pudding Cup takes a Southern classic to the next level with layers of silky caramel-infused vanilla pudding, fresh bananas, and crunchy Nilla Wafers. Finished with fluffy whipped cream, buttery salted caramel drizzle, and a sprinkle of cookie crumbs, every spoonful is the perfect mix of creamy, crunchy, and nostalgic. It's everything you love about our traditional homemade banana pudding made even sweeter. Handmade daily in house by our pastry chefs. Available for a limited time",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2026/08/04131018/2026-07-15_Caramel-Banana-Pudding-Cups-for-website.jpg"
+          }
+        },
+        "alt": "Caramel Banana Pudding Cup"
+      }
+    },
+    {
+      "_id": "menuItem-pretzel-toffee-cookie",
+      "_type": "menuItem",
+      "title": "Pretzel Toffee Cookie",
+      "slug": {
+        "_type": "slug",
+        "current": "pretzel-toffee-cookie"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Delicious new Pretzel Toffee Cookie at Kneaders!",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2024/04/16095903/Web-Menu-Image-1.jpg"
+          }
+        },
+        "alt": "Pretzel Toffee Cookie"
+      }
+    },
+    {
+      "_id": "menuItem-pumpkin-chocolate-chip",
+      "_type": "menuItem",
+      "title": "Pumpkin Chocolate Chip Cookie",
+      "slug": {
+        "_type": "slug",
+        "current": "pumpkin-chocolate-chip"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "A rich pumpkin cookie folded with semi-sweet chocolate chips.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2019/08/26143815/Kneaders-Bakery-Cafe-Menu-Pastries-Desserts-Pumpkin-Chocolate-Chip-Cookies.jpg"
+          }
+        },
+        "alt": "Pumpkin Chocolate Chip Cookie"
+      },
+      "orderUrl": "https://order.thanx.com/kneaders",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Pumpkin Chocolate Chip Cookie",
+        "seoScore": 51
+      }
+    },
+    {
+      "_id": "menuItem-cream-cheese-brownie",
+      "_type": "menuItem",
+      "title": "Cream Cheese Brownie",
+      "slug": {
+        "_type": "slug",
+        "current": "cream-cheese-brownie"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Chocolate brownies swirled with cream cheese filling, topped with chocolate chips.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2023/04/02145548/CreamCheeseBrownie.png"
+          }
+        },
+        "alt": "Cream Cheese Brownie"
+      },
+      "orderUrl": "https://order.thanx.com/kneaders",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Cream Cheese Brownie",
+        "ogTitle": "Kneaders Bakery - Cream Cheese Brownie",
+        "ogDescription": "Chocolate brownies swirled with cream cheese filling, topped with chocolate chips.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09141855/Cream-Cheese-Brownies.jpg"
+          }
+        },
+        "seoScore": 52
+      }
+    },
+    {
+      "_id": "menuItem-banana-cream-pie",
+      "_type": "menuItem",
+      "title": "Banana Cream Pie",
+      "slug": {
+        "_type": "slug",
+        "current": "banana-cream-pie"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Freshly-sliced bananas covered with smooth banana cream and whipped topping. *Available on select days. Contact your local Kneaders for availability.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/31112228/16.jpg"
+          }
+        },
+        "alt": "Banana Cream Pie"
+      },
+      "orderUrl": "https://kneaders.orderexperience.net/locations",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Banana Cream Pie",
+        "ogTitle": "Kneaders Bakery - Banana Cream",
+        "ogDescription": "We slice fresh bananas and cover them with smooth banana cream and whipped topping. *Available seasonally. Contact your local Kneaders for availability.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/05171911/Banana-Cream-Pie.jpg"
+          }
+        },
+        "seoScore": 36
+      }
+    },
+    {
+      "_id": "menuItem-european-butter",
+      "_type": "menuItem",
+      "title": "European Butter Croissant",
+      "slug": {
+        "_type": "slug",
+        "current": "european-butter"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Flaky, buttery European croissant.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/04115237/Kneaders-Bakery-Cafe-Menu-Pastries-Desserts-Butter-Croissant.jpg"
+          }
+        },
+        "alt": "European Butter Croissant"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "European Butter",
+        "ogTitle": "Kneaders Bakery - European Butter",
+        "ogDescription": "Yeasted dough layered with butter resulting in a flaky texture.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09135939/Butter-Croissants.jpg"
+          }
+        },
+        "seoScore": 44
+      }
+    },
+    {
+      "_id": "menuItem-twice-baked-almond-croissant",
+      "_type": "menuItem",
+      "title": "Twice Baked Almond Croissant",
+      "slug": {
+        "_type": "slug",
+        "current": "twice-baked-almond-croissant"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "European flaky butter croissant filled with a imported almond mousse twice baked with toasted almonds and dusted with powdered sugar.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/04120022/Kneaders-Bakery-Cafe-Menu-Pastries-Desserts-Twice-Baked-Almond-Croissant.jpg"
+          }
+        },
+        "alt": "Twice Baked Almond Croissant"
+      }
+    },
+    {
+      "_id": "menuItem-raspberry-bread-pudding",
+      "_type": "menuItem",
+      "title": "Raspberry Bread Pudding",
+      "slug": {
+        "_type": "slug",
+        "current": "raspberry-bread-pudding"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Kneaders Country White bread in traditional vanilla custard, filled with raspberries, and served with our homemade vanilla bean sauce.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2020/07/19194938/Kneaders-Bakery-Cafe-Menu-Pastries-Desserts-Raspberry-Bread-Pudding.jpg"
+          }
+        },
+        "alt": "Raspberry Bread Pudding"
+      }
+    },
+    {
+      "_id": "menuItem-raspberry-cream-cheese-pie",
+      "_type": "menuItem",
+      "title": "Raspberry Cream Cheese Pie",
+      "slug": {
+        "_type": "slug",
+        "current": "raspberry-cream-cheese-pie"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "A sweet combination of soft cream cheese and puréed raspberries makes this pie a Kneaders team favorite. *Available on select days. Contact your local Kneaders for availability.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/31111410/13.jpg"
+          }
+        },
+        "alt": "Raspberry Cream Cheese Pie"
+      }
+    },
+    {
+      "_id": "menuItem-cinnamon-roll",
+      "_type": "menuItem",
+      "title": "Cinnamon Roll",
+      "slug": {
+        "_type": "slug",
+        "current": "cinnamon-roll"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Traditional cinnamon rolls glazed and iced with homemade cream cheese icing.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/08132845/Kneaders-Bakery-Cafe-Menu-Pastries-Desserts-Breakfast-Cinnamon-Roll.jpg"
+          }
+        },
+        "alt": "Cinnamon Roll"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Cinnamon Roll",
+        "ogDescription": "Traditional cinnamon rolls glazed and iced with homemade cream cheese icing.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09143633/Coffee-and-Pastry-Combo1.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-sugar-cookie",
+      "_type": "menuItem",
+      "title": "Sugar Cookie",
+      "slug": {
+        "_type": "slug",
+        "current": "sugar-cookie"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Classic sugar cookies frosted and hand-decorated with buttercream. *Sugar Cookie designs vary seasonally and by location.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/08201824/Kneaders-Bakery-Cafe-Menu-Pastries-Desserts-Sugar-Cookies.jpg"
+          }
+        },
+        "alt": "Sugar Cookie"
+      }
+    },
+    {
+      "_id": "menuItem-eclair",
+      "_type": "menuItem",
+      "title": "Éclair",
+      "slug": {
+        "_type": "slug",
+        "current": "eclair"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Egg flour shell with a vanilla custard filling, dipped in imported Swiss chocolate ganache.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/03095044/Eclairs-1200x800-1.jpg"
+          }
+        },
+        "alt": "Éclair"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Éclair",
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-double-fudge-brownie",
+      "_type": "menuItem",
+      "title": "Double Fudge Brownie",
+      "slug": {
+        "_type": "slug",
+        "current": "double-fudge-brownie"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Brownies with chocolate chips melted inside, topped with a chocolate fudge icing.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/02094543/Double-Fudge-Brownies-1200x800-1.jpg"
+          }
+        },
+        "alt": "Double Fudge Brownie"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Double Fudge Brownie",
+        "ogTitle": "Kneaders Bakery - Double Fudge Brownie",
+        "ogDescription": "Brownies with chocolate chips melted inside, topped with a chocolate fudge icing.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09142149/Double-Fudge-Brownies.jpg"
+          }
+        },
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-carrot-petite-cake",
+      "_type": "menuItem",
+      "title": "Carrot Petite Cake",
+      "slug": {
+        "_type": "slug",
+        "current": "carrot-petite-cake"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Our moist carrot cake loaded with pecans and raisins, decorated with homemade cream cheese icing.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/03140400/Kneaders-Bakery-Cafe-Menu-Pastries-Desserts-Carrot-Petite-Cake-Cumble-Topping.jpg"
+          }
+        },
+        "alt": "Carrot Petite Cake"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "metaDescription": "The carrot petite cake is best for carrot cake lovers with cream cheese icing to top it off. This pastry is offered in stores year-round.",
+        "focusKeyword": "Carrot Petite Cake",
+        "seoScore": 47
+      }
+    },
+    {
+      "_id": "menuItem-chocolate-mousse-dome",
+      "_type": "menuItem",
+      "title": "Chocolate Mousse Dome",
+      "slug": {
+        "_type": "slug",
+        "current": "chocolate-mousse-dome"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Chocolate cake with a mound of imported Swiss chocolate mousse, covered with imported chocolate ganache and topped with whipped topping.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/11161956/Kneaders-Bakery-Cafe-Menu-Pastries-Chocolate-Mousse-Dome.png"
+          }
+        },
+        "alt": "Chocolate Mousse Dome"
+      }
+    },
+    {
+      "_id": "menuItem-fruit-tart",
+      "_type": "menuItem",
+      "title": "Fruit Tart",
+      "slug": {
+        "_type": "slug",
+        "current": "fruit-tart"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Shortbread tart shell imported from Switzerland with raspberry currant marmalade, imported Swiss vanilla mousse, fresh fruit and apricot glaze.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/16172110/Fruit-Tarts-2024.jpg"
+          }
+        },
+        "alt": "Fruit Tart"
+      }
+    },
+    {
+      "_id": "menuItem-coffee",
+      "_type": "menuItem",
+      "title": "Coffee",
+      "slug": {
+        "_type": "slug",
+        "current": "coffee"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "16 oz. of gourmet drip coffee.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/15151032/Kneaders-Bakery-Cafe-Menu-Coffee-Drinks-Lavazza-Coffee.jpg"
+          }
+        },
+        "alt": "Coffee"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Coffee",
+        "seoScore": 41
+      }
+    },
+    {
+      "_id": "menuItem-caffe-latte",
+      "_type": "menuItem",
+      "title": "Cafe Latte",
+      "slug": {
+        "_type": "slug",
+        "current": "caffe-latte"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "16 oz. latte with two shots of espresso. Served with whole milk.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/18103348/Kneaders-Bakery-Cafe-Menu-Coffee-Drinks-Cafe-Latte.jpg"
+          }
+        },
+        "alt": "Cafe Latte"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Cafe Latte",
+        "seoScore": 35
+      }
+    },
+    {
+      "_id": "menuItem-caffe-mocha",
+      "_type": "menuItem",
+      "title": "Cafe Mocha",
+      "slug": {
+        "_type": "slug",
+        "current": "caffe-mocha"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "16 oz. latte with two shots of espresso, Monin Chocolate, whipped cream and mini chocolate chips. Served with whole milk. Nonfat milk and soy milk available upon request.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/05/15150857/Kneaders-Bakery-Cafe-Menu-Coffee-Drinks-Cafe-Mocha.jpg"
+          }
+        },
+        "alt": "Cafe Mocha"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Cafe Mocha",
+        "seoScore": 35
+      }
+    },
+    {
+      "_id": "menuItem-chai-tea-latte",
+      "_type": "menuItem",
+      "title": "Chai Tea Latte",
+      "slug": {
+        "_type": "slug",
+        "current": "chai-tea-latte"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "16 oz. latte flavored with Maya Chai. Served with whole milk.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/15151146/Kneaders-Bakery-Cafe-Menu-Coffee-Drinks-Chai-Tea-Latte.jpg"
+          }
+        },
+        "alt": "Chai Tea Latte"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Chai Tea Latte",
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-americano",
+      "_type": "menuItem",
+      "title": "Americano",
+      "slug": {
+        "_type": "slug",
+        "current": "americano"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "16 oz. of espresso and hot water.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/18101133/Kneaders-Bakery-Cafe-Menu-Coffee-Drinks-Americano.jpg"
+          }
+        },
+        "alt": "Americano"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Americano",
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-steamer",
+      "_type": "menuItem",
+      "title": "Steamer",
+      "slug": {
+        "_type": "slug",
+        "current": "steamer"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "16 oz. of steamed whole milk and your choice of flavor, topped with whipped cream.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/18103000/Kneaders-Bakery-Cafe-Menu-Coffee-Drinks-Steamer.jpg"
+          }
+        },
+        "alt": "Steamer"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Steamer",
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-european-hot-chocolate",
+      "_type": "menuItem",
+      "title": "European Hot Chocolate",
+      "slug": {
+        "_type": "slug",
+        "current": "european-hot-chocolate"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "16 oz. of European-inspired gourmet sipping chocolate. Topped with whipped cream and mini chocolate chips. Served with whole milk.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/26162205/Kneaders-Bakery-Cafe-Menu-Drinks-Beverages-European-Hot-Chocolate.jpg"
+          }
+        },
+        "alt": "European Hot Chocolate"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "European Hot Chocolate",
+        "seoScore": 37
+      }
+    },
+    {
+      "_id": "menuItem-pumpkin-steamer",
+      "_type": "menuItem",
+      "title": "Pumpkin Steamer",
+      "slug": {
+        "_type": "slug",
+        "current": "pumpkin-steamer"
+      },
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2022/06/28102919/Pumpkin-Steamers.png"
+          }
+        },
+        "alt": "Pumpkin Steamer"
+      },
+      "orderUrl": "https://kneaders.orderexperience.net/locations",
+      "seo": {
+        "_type": "menuSeo",
+        "focusKeyword": "Pumpkin Steamer",
+        "seoScore": 48
+      }
+    },
+    {
+      "_id": "menuItem-continental-breakfast",
+      "_type": "menuItem",
+      "title": "Continental Breakfast",
+      "slug": {
+        "_type": "slug",
+        "current": "continental-breakfast"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Assorted pastries, fresh fruit & berries, vanilla greek yogurt & sliced strawberries, choice of fresh orange juice or coffee. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/04120022/Kneaders-Bakery-Cafe-Menu-Pastries-Desserts-Twice-Baked-Almond-Croissant.jpg"
+          }
+        },
+        "alt": "Continental Breakfast"
+      }
+    },
+    {
+      "_id": "menuItem-croissant-sandwich-breakfast-bundle",
+      "_type": "menuItem",
+      "title": "Croissant Sandwich Breakfast",
+      "slug": {
+        "_type": "slug",
+        "current": "croissant-sandwich-breakfast-bundle"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Assortment of ham, egg & cheese croissants, sausage, egg & cheese croissants, and bacon, egg & cheese croissants. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/17150141/Kneaders-Bakery-Cafe-Menu-Sausage-Egg-Cheese-Croissant-Breakfast-Sandwich.jpg"
+          }
+        },
+        "alt": "Croissant Sandwich Breakfast"
+      }
+    },
+    {
+      "_id": "menuItem-kneaders-best-breakfast",
+      "_type": "menuItem",
+      "title": "Kneaders Best Breakfast",
+      "slug": {
+        "_type": "slug",
+        "current": "kneaders-best-breakfast"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Chunky Cinnamon French Toast, sliced strawberries, whipped topping, homemade caramel syrup, scrambled eggs with green onions, breakfast potatoes, choice of hardwood smoked bacon or breakfast sausage, choice of fresh orange juice or coffee. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/14114703/Kneaders-Bakery-Cafe-Menu-Catering-Best-Breafkast-Chunky-Cinnamon-French-Toast.jpg"
+          }
+        },
+        "alt": "Kneaders Best Breakfast"
+      }
+    },
+    {
+      "_id": "menuItem-breakfast-pastry-pairing",
+      "_type": "menuItem",
+      "title": "Breakfast Pastry Platter",
+      "slug": {
+        "_type": "slug",
+        "current": "breakfast-pastry-pairing"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "20 assorted filled croissants and muffin tops.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/15102907/Kneaders-Bakery-Cafe-Menu-Pastries-Pain-au-Chocolate-Croissant.jpg"
+          }
+        },
+        "alt": "Breakfast Pastry Platter"
+      }
+    },
+    {
+      "_id": "menuItem-scrambled-eggs",
+      "_type": "menuItem",
+      "title": "À La Carte: Scrambled Eggs",
+      "slug": {
+        "_type": "slug",
+        "current": "scrambled-eggs"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Scrambled eggs with green onions. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/14120015/Kneaders-Bakery-Cafe-Menu-Catering-Scrambled-Eggs.jpg"
+          }
+        },
+        "alt": "À La Carte: Scrambled Eggs"
+      }
+    },
+    {
+      "_id": "menuItem-breakfast-potatoes",
+      "_type": "menuItem",
+      "title": "À La Carte: Breakfast Potatoes",
+      "slug": {
+        "_type": "slug",
+        "current": "breakfast-potatoes"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Breakfast potatoes with onions and peppers. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/14120305/Kneaders-Bakery-Cafe-Menu-Catering-Breakfast-Potatoes.jpg"
+          }
+        },
+        "alt": "À La Carte: Breakfast Potatoes"
+      }
+    },
+    {
+      "_id": "menuItem-fresh-fruit-berries",
+      "_type": "menuItem",
+      "title": "À La Carte: Fresh Fruit & Berries",
+      "slug": {
+        "_type": "slug",
+        "current": "fresh-fruit-berries"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Sliced fresh cantaloupe, honeydew, pineapple, grapes, strawberries, blueberries. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/26165321/Kneaders-Bakery-Cafe-Menu-Catering-A-la-Carte-Fresh-Fruit-Berries.jpg"
+          }
+        },
+        "alt": "À La Carte: Fresh Fruit & Berries"
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-assorted-breakfast-pastries",
+      "_type": "menuItem",
+      "title": "À La Carte: Assorted Breakfast Pastries",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-assorted-breakfast-pastries"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Assorted filled croissants, muffin tops and seasonal scones. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/08132521/Kneaders-Bakery-Cafe-Menu-Breakfast-Pastries-Lemon-Kolache-Muffin-Top.jpg"
+          }
+        },
+        "alt": "À La Carte: Assorted Breakfast Pastries"
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-chunky-cinnamon-french-toast",
+      "_type": "menuItem",
+      "title": "À La Carte: Chunky Cinnamon French Toast",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-chunky-cinnamon-french-toast"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Chunky Cinnamon French Toast, sliced strawberries, whipped topping, homemade caramel syrup.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "Serves 12.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/14121716/Kneaders-Bakery-Cafe-Menu-Catering-Chunky-Cinnamon-French-Toast.jpg"
+          }
+        },
+        "alt": "À La Carte: Chunky Cinnamon French Toast"
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-breakfast-croissant-sandwiches",
+      "_type": "menuItem",
+      "title": "À La Carte: Breakfast Croissant Sandwiches",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-breakfast-croissant-sandwiches"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Choice of ham, egg & cheese croissant, sausage, egg & cheese croissant, and bacon, egg & cheese croissant sandwiches. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/24120514/Kneaders-Bakery-Cafe-Menu-Breakfast-Ham-Sausage-or-Bacon-Cheese-Croissant-Sandwich.jpg"
+          }
+        },
+        "alt": "À La Carte: Breakfast Croissant Sandwiches"
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-breakfast-meat",
+      "_type": "menuItem",
+      "title": "À La Carte: Breakfast Protein",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-breakfast-meat"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Choice of hardwood smoked bacon or breakfast sausage. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/14122700/Kneaders-Bakery-Cafe-Menu-Catering-Bacon-Sausage.jpg"
+          }
+        },
+        "alt": "À La Carte: Breakfast Protein"
+      }
+    },
+    {
+      "_id": "menuItem-beverages",
+      "_type": "menuItem",
+      "title": "Beverages",
+      "slug": {
+        "_type": "slug",
+        "current": "beverages"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Choice of fresh orange juice, coffee with cream & sugar, iced tea with lemon & sugar, lemonade, bottled water, and canned soda.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/14122903/Kneaders-Bakery-Cafe-Menu-Catering-Orange-Juice-Beverages.jpg"
+          }
+        },
+        "alt": "Beverages"
+      }
+    },
+    {
+      "_id": "menuItem-cookies-brownies",
+      "_type": "menuItem",
+      "title": "Cookies & Brownies",
+      "slug": {
+        "_type": "slug",
+        "current": "cookies-brownies"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Bring home the perfect finishing touch to any meal with our fresh-baked cookies and rich, fudgy brownies.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "Order in bulk and enjoy our Buy 5, Get 1 Free deal!because one is never enough. Great for family gatherings, office celebrations, or simply treating yourself.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/14123824/Kneaders-Bakery-Cafe-Menu-Catering-Cookies-Brownies.jpg"
+          }
+        },
+        "alt": "Cookies & Brownies"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "metaDescription": "Bring home the perfect finishing touch to any meal with our fresh-baked cookies and rich, fudgy brownies. Order in bulk and enjoy our Buy 5, Get 1 Free deal! Because one is never enough. Great for family gatherings, office celebrations, or simply treating yourself."
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-cookies-brownies-bars",
+      "_type": "menuItem",
+      "title": "Dessert Platter",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-cookies-brownies-bars"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "20 assorted eclairs, seasonal tarts, chocolate domes, gourmet cookies, brownies, bars.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/11161956/Kneaders-Bakery-Cafe-Menu-Pastries-Chocolate-Mousse-Dome.png"
+          }
+        },
+        "alt": "Dessert Platter"
+      }
+    },
+    {
+      "_id": "menuItem-dessert-platter",
+      "_type": "menuItem",
+      "title": "Deluxe Dessert Platter",
+      "slug": {
+        "_type": "slug",
+        "current": "dessert-platter"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "20 assorted seasonal tarts, chocolate domes, eclairs.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/29141303/Deluxe-Dessert-Platter.jpg"
+          }
+        },
+        "alt": "Deluxe Dessert Platter"
+      }
+    },
+    {
+      "_id": "menuItem-regular-box-lunch",
+      "_type": "menuItem",
+      "title": "Regular Box Lunch",
+      "slug": {
+        "_type": "slug",
+        "current": "regular-box-lunch"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Choice of half cafe sandwich; bag of chips, gourmet cookie.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "*Add a green salad or side of fruit for additional charge.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/18105300/Kneaders-Bakery-Cafe-Menu-Catering-Regular-Box-Lunch.jpg"
+          }
+        },
+        "alt": "Regular Box Lunch"
+      }
+    },
+    {
+      "_id": "menuItem-deluxe-box-lunch",
+      "_type": "menuItem",
+      "title": "Deluxe Box Lunch",
+      "slug": {
+        "_type": "slug",
+        "current": "deluxe-box-lunch"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Choice of whole cafe, turkey bacon avocado, club, tuna, or croissant sandwich; bag of chips, gourmet cookie.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "*Add a green salad or side of fruit for additional charge.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/18105417/Kneaders-Bakery-Cafe-Menu-Catering-Deluxe-Box-Lunch-1.jpg"
+          }
+        },
+        "alt": "Deluxe Box Lunch"
+      }
+    },
+    {
+      "_id": "menuItem-sandwich-buffet-2",
+      "_type": "menuItem",
+      "title": "Sandwich Buffet",
+      "slug": {
+        "_type": "slug",
+        "current": "sandwich-buffet-2"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Sandwich Buffet (Serves 20–25)",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-1-s",
+              "text": "Our Sandwich Buffet makes it easy to feed a crowd with fresh, customizable flavor.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-2-s",
+              "text": "Guests can build their own sandwiches with:",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-3",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-3-s",
+              "text": "Slow-roasted, hand-pulled turkey",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-4",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-4-s",
+              "text": "high quality ham and beef",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-5",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-5-s",
+              "text": "American, provolone, and Swiss cheeses",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-6",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-6-s",
+              "text": "Crisp lettuce, tomatoes, onions, and cucumbers.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-7",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-7-s",
+              "text": "Freshly baked hearth bread made from scratch daily.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "desc-8",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-8-s",
+              "text": "Perfect for gatherings, meetings, or celebrations, this buffet has something for everyone to enjoy.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/14135824/Kneaders-Bakery-Cafe-Menu-Catering-Sandwich-Buffet.jpg"
+          }
+        },
+        "alt": "Sandwich Buffet"
+      }
+    },
+    {
+      "_id": "menuItem-veggie-platter",
+      "_type": "menuItem",
+      "title": "Veggie Platter",
+      "slug": {
+        "_type": "slug",
+        "current": "veggie-platter"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Fresh veggies served with Kneaders ranch dressing in a Sourdough Soup Bun. Serves 20-25.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/03/16143149/Veggie-Platter-2.jpg"
+          }
+        },
+        "alt": "Veggie Platter"
+      }
+    },
+    {
+      "_id": "menuItem-quarter-sandwiches",
+      "_type": "menuItem",
+      "title": "Quarter Sandwich Platter",
+      "slug": {
+        "_type": "slug",
+        "current": "quarter-sandwiches"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "24 quarter cafe sandwiches on focaccia.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/03/16143222/Quarter-Sandwiches-3.jpg"
+          }
+        },
+        "alt": "Quarter Sandwich Platter"
+      }
+    },
+    {
+      "_id": "menuItem-kneaders-executive-lunch",
+      "_type": "menuItem",
+      "title": "Executive Lunch",
+      "slug": {
+        "_type": "slug",
+        "current": "kneaders-executive-lunch"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Turkey bacon avocado, club, & roast beef ranch sandwiches, artisan green salad with balsamic vinaigrette & Kneaders ranch dressing, parmesan chips, assorted gourmet cookies. 15 person minimum.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/14140723/Kneaders-Bakery-Cafe-Menu-Catering-Executive-Lunch.jpg"
+          }
+        },
+        "alt": "Executive Lunch"
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-executive-sandwich-box",
+      "_type": "menuItem",
+      "title": "Sandwich Platter",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-executive-sandwich-box"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "12 half cafe sandwiches.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/19183309/Kneaders-Bakery-Cafe-Menu-Catering-Sandwich-Platter-Catering.jpg"
+          }
+        },
+        "alt": "Sandwich Platter"
+      }
+    },
+    {
+      "_id": "menuItem-bread-platter",
+      "_type": "menuItem",
+      "title": "Hearth Bread Platter",
+      "slug": {
+        "_type": "slug",
+        "current": "bread-platter"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Sliced French Country Sourdough, Asiago Cheese, and Hazelnut 12 Grain hearth bread with savory dip. Serves 10-15.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/09213953/Kneaders-Bakery-Cafe-Menu-Catering-Hearth-Bread-Platter.jpg"
+          }
+        },
+        "alt": "Hearth Bread Platter"
+      }
+    },
+    {
+      "_id": "menuItem-dollar-roll-sandwiches",
+      "_type": "menuItem",
+      "title": "Á La Carte: Dollar Rolls",
+      "slug": {
+        "_type": "slug",
+        "current": "dollar-roll-sandwiches"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Petite soft roll sandwiches with turkey, ham, and roast beef. 48 minimum, 24-hour notice required.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/03/16143344/Dollar-Rolls-2.jpg"
+          }
+        },
+        "alt": "Á La Carte: Dollar Rolls"
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-sweet-bread-platter",
+      "_type": "menuItem",
+      "title": "Sweet Bread Platter",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-sweet-bread-platter"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Three sliced loaves of seasonal sweet bread on a platter. Serves 10-15.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/17094245/Kneaders-Bakery-Cafe-Menu-Catering-Sweet-Bread-Platter.jpg"
+          }
+        },
+        "alt": "Sweet Bread Platter"
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-artisan-green-salad",
+      "_type": "menuItem",
+      "title": "À La Carte: Artisan Green Salad",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-artisan-green-salad"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Spring mix with tomatoes, cucumbers, mozzarella cheese, and red onions topped with homemade croutons and served with balsamic and Kneaders ranch dressing. Serves 10-15.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/09/14141646/Kneaders-Bakery-Cafe-Menu-Catering-Artisan-Green-Salad.jpg"
+          }
+        },
+        "alt": "À La Carte: Artisan Green Salad"
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-gourmet-green-salad",
+      "_type": "menuItem",
+      "title": "À La Carte: Gourmet Green Salad",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-gourmet-green-salad"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Choice of Kneaders Gourmet Salad. Serves 10-15.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/23102438/Kneaders-Bakery-Cafe-Menu-Salads-Thai-Chicken.jpg"
+          }
+        },
+        "alt": "À La Carte: Gourmet Green Salad"
+      }
+    },
+    {
+      "_id": "menuItem-parmesan-chip-bowl",
+      "_type": "menuItem",
+      "title": "Parmesan Chip Bowl",
+      "slug": {
+        "_type": "slug",
+        "current": "parmesan-chip-bowl"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Kettle chips dusted with parmesan cheese. Serves 10-12.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2020/10/22214932/Kneaders-Bakery-Cafe-Catering-Parmesan-Chip-Bowl-Lunch-A-La-Carte_Desktop.jpg"
+          }
+        },
+        "alt": "Parmesan Chip Bowl"
+      }
+    },
+    {
+      "_id": "menuItem-soup-by-the-gallon",
+      "_type": "menuItem",
+      "title": "À La Carte: Seasonal Soup",
+      "slug": {
+        "_type": "slug",
+        "current": "soup-by-the-gallon"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Choice of seasonal soup. Serves 10-15.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/14142340/Kneaders-Bakery-Cafe-Menu-Gallon-Seasonal-Soup.jpg"
+          }
+        },
+        "alt": "À La Carte: Seasonal Soup"
+      }
+    },
+    {
+      "_id": "menuItem-a-la-carte-fruit-platter",
+      "_type": "menuItem",
+      "title": "Fruit Platter",
+      "slug": {
+        "_type": "slug",
+        "current": "a-la-carte-fruit-platter"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Sliced seasonal fruit. Serves 20-25.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/03094944/Coming-Soon-2-1-e1522774713202.jpg"
+          }
+        },
+        "alt": "Fruit Platter"
+      }
+    },
+    {
+      "_id": "menuItem-kids-combo",
+      "_type": "menuItem",
+      "title": "Kids Combo",
+      "slug": {
+        "_type": "slug",
+        "current": "kids-combo"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Choice of Ham & Cheese Sandwich, Grilled Cheese Sandwich or Peanut Butter & Jam Sandwich. Includes applesauce or chips, choice of soda, milk or juice, and a frosted kids sugar cookie.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2020/10/28183042/Kneaders-Bakery-Cafe-Menu-Kids-Meal-Combo-Grilled-Cheese.jpg"
+          }
+        },
+        "alt": "Kids Combo"
+      }
+    },
+    {
+      "_id": "menuItem-strawberry-tsunami",
+      "_type": "menuItem",
+      "title": "Strawberry Tsunami",
+      "slug": {
+        "_type": "slug",
+        "current": "strawberry-tsunami"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Cranberry juice, pineapple sherbet, peaches, strawberries.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/21115539/Web-Menu-Image-1.jpg"
+          }
+        },
+        "alt": "Strawberry Tsunami"
+      }
+    },
+    {
+      "_id": "menuItem-mornin-sunshine",
+      "_type": "menuItem",
+      "title": "Mornin' Sunshine",
+      "slug": {
+        "_type": "slug",
+        "current": "mornin-sunshine"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Orange juice, nonfat vanilla yogurt, strawberry, banana.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/15101814/Kneaders-Bakery-Cafe-Menu-Drinks-Mornin-Sunshine-Smoothie.jpg"
+          }
+        },
+        "alt": "Mornin' Sunshine"
+      }
+    },
+    {
+      "_id": "menuItem-razzleberry",
+      "_type": "menuItem",
+      "title": "Razzleberry",
+      "slug": {
+        "_type": "slug",
+        "current": "razzleberry"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Apple juice, raspberry sherbet, nonfat vanilla yogurt, raspberries, banana.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/07/23142010/Kneaders-Bakery-Cafe-Menu-Drinks-Beverages-Razzleberry-Smoothie.jpg"
+          }
+        },
+        "alt": "Razzleberry"
+      }
+    },
+    {
+      "_id": "menuItem-no-dairy-berry",
+      "_type": "menuItem",
+      "title": "No Dairy Berry",
+      "slug": {
+        "_type": "slug",
+        "current": "no-dairy-berry"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Guava juice, peaches, strawberry, banana.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/07/23142018/Kneaders-Bakery-Cafe-Menu-Drinks-Beverages-No-Dairy-Berry-Smoothie.jpg"
+          }
+        },
+        "alt": "No Dairy Berry"
+      }
+    },
+    {
+      "_id": "menuItem-pink-pina-colada",
+      "_type": "menuItem",
+      "title": "Pink Piña Colada",
+      "slug": {
+        "_type": "slug",
+        "current": "pink-pina-colada"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Guava juice, pineapple sherbet, strawberries, cream of coconut, banana.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/07/23142020/Kneaders-Bakery-Cafe-Menu-Beverages-Drinks-Pink-Pina-Colada-Smoothie.jpg"
+          }
+        },
+        "alt": "Pink Piña Colada"
+      }
+    },
+    {
+      "_id": "menuItem-frozen-apple-cider",
+      "_type": "menuItem",
+      "title": "Frozen Apple Cider",
+      "slug": {
+        "_type": "slug",
+        "current": "frozen-apple-cider"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Cool off and refresh with our Frozen Apple Cider! A deliciously chilled twist on a classic favorite, this icy treat combines the crisp, sweet flavors of apple with a smooth, slushy texture. Perfect for hot days or as a fun, fruity beverage for any gathering, it’s a delightful way to enjoy the taste of fall all year long!",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2025/07/01110349/5A4A1644-scaled-e1754417183983.jpg"
+          }
+        },
+        "alt": "Frozen Apple Cider"
+      }
+    },
+    {
+      "_id": "menuItem-mango-tango",
+      "_type": "menuItem",
+      "title": "Mango Tango",
+      "slug": {
+        "_type": "slug",
+        "current": "mango-tango"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Peach juice, pineapple sherbet, mango.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/07/23142015/Kneaders-Bakery-Cafe-Menu-Drinks-Beverages-Mango-Tango-Smoothie.jpg"
+          }
+        },
+        "alt": "Mango Tango"
+      },
+      "seo": {
+        "_type": "menuSeo",
+        "ogTitle": "Kneaders Bakery - Mango Tango",
+        "ogDescription": "Peach juice, pineapple sherbet, mango.",
+        "ogImage": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://s3.amazonaws.com/kneaders.com/wp-content/uploads/2018/02/09153430/Smoothies_Pink-Pina-Colada_Mango-Tango1.jpg"
+          }
+        }
+      }
+    },
+    {
+      "_id": "menuItem-fresh-oj",
+      "_type": "menuItem",
+      "title": "Fresh OJ",
+      "slug": {
+        "_type": "slug",
+        "current": "fresh-oj"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "12 oz. of fresh orange juice.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/15143631/Kneaders-Bakery-Cafe-Menu-Drinks-Beverages-Fresh-OJ.jpg"
+          }
+        },
+        "alt": "Fresh OJ"
+      }
+    },
+    {
+      "_id": "menuItem-bottled-water",
+      "_type": "menuItem",
+      "title": "Bottled Water",
+      "slug": {
+        "_type": "slug",
+        "current": "bottled-water"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Purified Dasani water, enhanced with minerals for a pure, fresh taste.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/15143717/Kneaders-Bakery-Cafe-Menu-Beverages-Drinks-Bottled-Water.jpg"
+          }
+        },
+        "alt": "Bottled Water"
+      }
+    },
+    {
+      "_id": "menuItem-milk",
+      "_type": "menuItem",
+      "title": "Milk",
+      "slug": {
+        "_type": "slug",
+        "current": "milk"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "12 oz. of whole or skim milk by the glass. Milk Chugs available in 2% and chocolate.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/04/15143853/Kneaders-Bakery-Cafe-Menu-Beverages-Drinks-Milk.jpg"
+          }
+        },
+        "alt": "Milk"
+      }
+    },
+    {
+      "_id": "menuItem-iced-tea",
+      "_type": "menuItem",
+      "title": "Iced Tea",
+      "slug": {
+        "_type": "slug",
+        "current": "iced-tea"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "Iced organic unsweetened tea in 22 oz. and 32 oz. servings.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2020/10/28183754/Kneaders-Bakery-Cafe-Menu-Beverages-Iced-Tea.jpg"
+          }
+        },
+        "alt": "Iced Tea"
+      }
+    },
+    {
+      "_id": "menuItem-soda",
+      "_type": "menuItem",
+      "title": "Soda",
+      "slug": {
+        "_type": "slug",
+        "current": "soda"
+      },
+      "description": [
+        {
+          "_type": "block",
+          "_key": "desc-0",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "desc-0-s",
+              "text": "A variety of Coca-Cola products available in 20 oz. and 32 oz. servings.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "media",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_wpImage": "https://wp.kneaders.com/wp-content/uploads/2018/02/15143928/Kneaders-Bakery-Cafe-Menu-Drinks-Beverages-Soda.jpg"
+          }
+        },
+        "alt": "Soda"
+      }
+    }
+  ]
+}
