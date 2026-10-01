@@ -16,8 +16,11 @@ const SECTIONS = /* groq */ `
       "post": coalesce(post->, ${ALL_POSTS}[0]){ ${POST_CARD} }
     },
     _type == "menuBoard" => {
-      "categories": *[_type == "menuCategory"] | order(orderRank asc){
-        _id, title, "slug": slug.current, description, tone, items
+      "categories": categories[]->{
+        _id, title, "slug": slug.current, tone, description, "subtitle": hero.subtitle,
+        "items": items[]->{
+          "_key": _id, "name": title, description, image, orderUrl, price, calories, allergens, pairsWith
+        }
       }
     }
   }

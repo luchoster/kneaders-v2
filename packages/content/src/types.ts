@@ -136,14 +136,17 @@ export interface PostDetail extends PostCard {
 
 export interface MenuItem {
   name: string;
-  price: number;
+  price?: number | null;
   calories?: number | null;
-  description: string;
-  allergens?: string[];
-  pairsWith?: string[];
-  image: Media;
+  description?: PortableTextBlock[] | null;
+  allergens?: string[] | null;
+  pairsWith?: string[] | null;
+  image?: Media | null;
+  /** Per-item order link; falls back to the menu board's order button. */
+  orderUrl?: string | null;
 }
 
+/** Bundled seed shape (items inline). In Sanity, items are separate `menuItem` documents. */
 export interface MenuCategoryDocument {
   _id: string;
   _type: "menuCategory";
@@ -152,14 +155,19 @@ export interface MenuCategoryDocument {
   description?: string;
   tone?: Tone;
   orderRank: number;
-  items: Keyed<MenuItem>[];
+  items: Keyed<SeedMenuItem>[];
 }
+
+/** Seed copy is written as plain strings; the web seed resolver converts it to Portable Text. */
+export type SeedMenuItem = Omit<MenuItem, "description"> & { description: string };
 
 export interface MenuCategory {
   _id: string;
   title: string;
   slug: string;
-  description?: string;
+  description?: PortableTextBlock[] | null;
+  /** Hero subtitle — shown when there's no description. */
+  subtitle?: string | null;
   tone?: Tone;
   items: Keyed<MenuItem>[];
 }

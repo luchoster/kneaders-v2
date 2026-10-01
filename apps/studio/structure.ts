@@ -2,6 +2,8 @@ import { CogIcon } from "@sanity/icons/Cog";
 import { DocumentIcon } from "@sanity/icons/Document";
 import { DocumentTextIcon } from "@sanity/icons/DocumentText";
 import { HomeIcon } from "@sanity/icons/Home";
+import { InlineIcon } from "@sanity/icons/Inline";
+import { MenuIcon } from "@sanity/icons/Menu";
 import { TagIcon } from "@sanity/icons/Tag";
 import type { StructureResolver } from "sanity/structure";
 
@@ -20,12 +22,30 @@ export const structure: StructureResolver = (S) =>
         .child(S.document().schemaType("homePage").documentId("homePage")),
       S.documentTypeListItem("page").title("Pages").icon(DocumentIcon),
       S.documentTypeListItem("post").title("Journal").icon(DocumentTextIcon),
+      S.divider(),
       S.listItem()
-        .title("Menu categories")
-        .icon(TagIcon)
+        .title("Menu")
+        .icon(MenuIcon)
         .child(
-          S.documentTypeList("menuCategory")
-            .title("Menu categories")
-            .defaultOrdering([{ field: "orderRank", direction: "asc" }]),
+          S.list()
+            .title("Menu")
+            .items([
+              S.listItem()
+                .title("Categories")
+                .icon(TagIcon)
+                .child(
+                  S.documentTypeList("menuCategory")
+                    .title("Categories")
+                    .defaultOrdering([{ field: "title", direction: "asc" }]),
+                ),
+              S.listItem()
+                .title("Menu items")
+                .icon(InlineIcon)
+                .child(
+                  S.documentTypeList("menuItem")
+                    .title("Menu items")
+                    .defaultOrdering([{ field: "title", direction: "asc" }]),
+                ),
+            ]),
         ),
     ]);

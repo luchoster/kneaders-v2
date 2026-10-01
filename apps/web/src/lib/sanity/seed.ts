@@ -22,7 +22,15 @@ const sortedPosts = () => [...seed.posts].sort(byDateDesc);
 function categories(): MenuCategory[] {
   return [...seed.menuCategories]
     .sort((a, b) => a.orderRank - b.orderRank)
-    .map(({ _type, slug, orderRank: _o, ...rest }) => ({ ...rest, slug: slug.current }));
+    .map(({ _type, slug, orderRank: _o, description, items, ...rest }) => ({
+      ...rest,
+      slug: slug.current,
+      description: description ? seed.portableText(slug.current, [["normal", description]]) : null,
+      items: items.map((it) => ({
+        ...it,
+        description: seed.portableText(it._key, [["normal", it.description]]),
+      })),
+    }));
 }
 
 function resolveSection(section: KeyedSection): KeyedSection {

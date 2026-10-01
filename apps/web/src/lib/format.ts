@@ -1,4 +1,4 @@
-export const formatPrice = (price: number) => `$${price.toFixed(2)}`;
+export const formatPrice = (price: number | null | undefined) => (price == null ? "" : `$${price.toFixed(2)}`);
 
 /** "2026-04-03" → "April 3, 2026" */
 export function formatDate(date: string | undefined) {

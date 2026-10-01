@@ -50,7 +50,24 @@ object in `apps/studio/schemaTypes/sections/` with a matching React component in
 | `colorCardGrid` | Contact, Careers, Giving |
 
 Other documents: `homePage` (singleton, `/`), `siteSettings` (top bar, nav, footer), `post` (journal articles →
-`/journal/[slug]`), `menuCategory` (menu items, color-coded per the style guide).
+`/journal/[slug]`), `menuCategory` + `menuItem` (Studio → **Menu**).
+
+### Menu
+
+Each `menuCategory` holds an ordered list of `menuItem` references (drag to reorder); an
+item can sit in several categories. The `menuBoard` section ("Menu categories") takes an
+ordered list of categories and renders each with its items in the category's order.
+
+The menu was imported from the old WordPress site:
+
+```bash
+pnpm --filter @kneaders/studio menu:fetch               # snapshot WP → scripts/wp-menu/data/wp-menu.json
+pnpm --filter @kneaders/studio menu:import -- --dry-run # preview transformed docs
+pnpm --filter @kneaders/studio menu:import              # upload images + write documents
+```
+
+Re-running is safe (stable IDs; images are matched by source URL), but it **overwrites**
+category/item documents — including any reordering done in the Studio.
 
 To add a section: define the object schema, add it to `sectionTypes`, add its type to
 `packages/content/src/types.ts`, build the component, and add a `case` to `PageBuilder`.

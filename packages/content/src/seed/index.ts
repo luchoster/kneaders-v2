@@ -6,8 +6,8 @@ export { keyed, unsplash, ticket, portableText } from "./helpers";
 
 import { siteSettings } from "./settings";
 import { posts } from "./posts";
-import { menuCategories } from "./menu";
 import { homePage, pages } from "./pages";
 
-/** Every seed document — used by the Studio import script. */
-export const allSeedDocuments = [siteSettings, homePage, ...pages, ...posts, ...menuCategories];
+/** Every seed document — used by the Studio import script. The menu is imported
+ *  from WordPress instead (`pnpm --filter @kneaders/studio menu:import`). */
+export const allSeedDocuments = [siteSettings, homePage, ...pages, ...posts];

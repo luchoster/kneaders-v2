@@ -19,6 +19,7 @@ import { Plate } from "../ui/plate";
 import { RuledHeading } from "../ui/ruled-heading";
 import { Sticker } from "../ui/sticker";
 import { Button } from "../ui/button";
+import { RichText } from "../ui/rich-text";
 
 /** 3 columns ≥1024px, otherwise 2 — used to open the detail panel in the right row. */
 function useColumns() {
@@ -88,10 +89,17 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
         <RuledHeading tone={tone} size="category" className="mb-3" nowrap>
           {category.title}
         </RuledHeading>
-        {category.description && (
-          <p className="mx-auto mb-10 max-w-[520px] text-center font-body text-base text-k-maroon">
-            {category.description}
-          </p>
+        {category.description?.length ? (
+          <RichText
+            value={category.description}
+            className="mx-auto mb-10 max-w-[520px] text-center font-body text-base text-k-maroon"
+          />
+        ) : (
+          category.subtitle && (
+            <p className="mx-auto mb-10 max-w-[520px] text-center font-body text-base text-k-maroon">
+              {category.subtitle}
+            </p>
+          )
         )}
         <div className="grid grid-cols-2 items-start gap-x-6 gap-y-12 lg:grid-cols-3">
           {items.map((it, i) => (
@@ -109,9 +117,11 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
                   <span className="font-headline text-[clamp(17px,1.6vw,22px)] uppercase leading-[1.05] tracking-[-0.01em] text-k-black">
                     {it.name}
                   </span>
-                  <span className="font-condensed text-sm font-semibold" style={{ color }}>
-                    {formatPrice(it.price)}
-                  </span>
+                  {it.price != null && (
+                    <span className="font-condensed text-sm font-semibold" style={{ color }}>
+                      {formatPrice(it.price)}
+                    </span>
+                  )}
                   <span className="font-condensed text-xs uppercase tracking-[0.16em] text-k-maroon underline underline-offset-[3px]">
                     {open === i ? "Close" : "See more"}
                   </span>
@@ -176,11 +186,14 @@ function ItemDetail({
             <h3 className="font-headline text-[clamp(28px,3vw,44px)] uppercase leading-[0.95] tracking-[-0.01em] text-(--ink)">
               {item.name}
             </h3>
-            <span className="font-condensed text-lg font-semibold text-(--ink)">{formatPrice(item.price)}</span>
+            {item.price != null && (
+              <span className="font-condensed text-lg font-semibold text-(--ink)">{formatPrice(item.price)}</span>
+            )}
           </div>
-          <p className="max-w-[560px] font-body text-[17px] leading-normal text-pretty text-(--ink) opacity-94">
-            {item.description}
-          </p>
+          <RichText
+            value={item.description}
+            className="max-w-[560px] font-body text-[17px] leading-normal text-pretty text-(--ink) opacity-94"
+          />
           <div className="flex flex-wrap items-center gap-2">
             {item.calories != null && (
               <span className="rounded-full border border-(--ink) px-3 py-1 font-condensed text-xs uppercase tracking-[0.12em] text-(--ink) opacity-85">
@@ -209,7 +222,7 @@ function ItemDetail({
             </div>
           )}
           {orderCta && (
-            <Button href={orderCta.href} tone={inkTone} ink={tone} arrow className="mt-2">
+            <Button href={item.orderUrl || orderCta.href} tone={inkTone} ink={tone} arrow className="mt-2">
               {orderCta.label}
             </Button>
           )}

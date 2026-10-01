@@ -5,6 +5,9 @@ export default defineCliConfig({
     projectId: process.env.SANITY_STUDIO_PROJECT_ID || "your-project-id",
     dataset: process.env.SANITY_STUDIO_DATASET || "production",
   },
+  deployment: {
+    appId: 'cgk6chxpitjjvpc4q39wjiea',
+  },
   typegen: {
     path: "../web/src/**/*.{ts,tsx}",
     generates: "../web/sanity.types.ts",

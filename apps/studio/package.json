@@ -9,7 +9,9 @@
     "deploy": "sanity deploy",
     "typecheck": "tsc --noEmit",
     "seed:export": "sanity exec scripts/export-seed.ts",
-    "seed:import": "pnpm seed:export && sanity dataset import seed/seed.ndjson production --replace"
+    "seed:import": "pnpm seed:export && sanity dataset import seed/seed.ndjson production --replace",
+    "menu:fetch": "sanity exec scripts/wp-menu/fetch.ts",
+    "menu:import": "sanity exec scripts/wp-menu/import.ts --with-user-token"
   },
   "dependencies": {
     "@kneaders/content": "workspace:*",
