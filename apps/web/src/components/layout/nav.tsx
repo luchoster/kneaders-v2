@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Button as AriaButton, Link } from "react-aria-components";
 import type { SiteSettings } from "@kneaders/content";
 import { Button } from "../ui/button";
 import { Container } from "../ui/container";
@@ -10,6 +10,7 @@ import { Wordmark } from "./wordmark";
 export function Nav({ settings, active }: { settings: SiteSettings; active?: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -17,6 +18,19 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Escape closes the mobile menu and hands focus back to its toggle.
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   const { navLinks, orderCta, rewardsLink } = settings;
 
@@ -54,24 +68,25 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
             {orderCta.label}
           </Button>
         </div>
-        <button
-          type="button"
+        <AriaButton
+          ref={toggleRef}
           className="inline-flex cursor-pointer items-center rounded-full border border-k-black px-3.5 py-2 font-display text-[13px] font-bold uppercase tracking-[0.04em] text-k-black transition-colors duration-200 hover:bg-k-black hover:text-k-bg md:hidden"
-          onClick={() => setOpen((o) => !o)}
+          onPress={() => setOpen((o) => !o)}
           aria-expanded={open}
-          aria-label="Open menu"
+          aria-controls="mobile-menu"
         >
           {open ? "Close" : "Menu"}
-        </button>
+        </AriaButton>
       </Container>
       {open && (
-        <div className="border-t border-k-line-soft md:hidden">
+        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-k-line-soft md:hidden">
           <Container className="flex flex-col gap-3 py-4">
             {navLinks.map((l) => (
               <Link
                 key={l._key}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onPress={() => setOpen(false)}
+                aria-current={active === l.key ? "page" : undefined}
                 className="font-display text-lg tracking-[-0.01em]"
               >
                 {l.label}
@@ -81,7 +96,7 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
               {orderCta.label} →
             </Button>
           </Container>
-        </div>
+        </nav>
       )}
     </header>
   );

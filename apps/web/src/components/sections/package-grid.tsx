@@ -27,7 +27,7 @@ export function PackageGrid({ anchorId, heading, headingTone = "brown", packages
                 style={toneVars({ field: palette[tone], ink, rule: `${ink}55` })}
               >
                 <div className="mx-auto -mt-1 w-[78%]">
-                  <Plate media={p.image} alt={p.title} disc="rgba(35,31,32,0.22)" sizes="280px" />
+                  <Plate media={p.image} alt="" disc="rgba(35,31,32,0.22)" sizes="280px" />
                 </div>
                 <div className="flex items-baseline justify-between gap-2">
                   <span className="font-condensed text-xs font-semibold uppercase tracking-[0.18em] text-(--ink) opacity-85">

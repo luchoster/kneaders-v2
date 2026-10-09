@@ -1,8 +1,29 @@
-import Link from "next/link";
-import type { ComponentProps } from "react";
+"use client";
 
-/** next/link for internal paths, plain <a> for external / mailto / tel. */
-export function SmartLink({ href, ...props }: ComponentProps<"a"> & { href: string }) {
-  if (href.startsWith("/") || href.startsWith("#")) return <Link href={href} {...props} />;
-  return <a href={href} {...props} />;
+import type { ReactNode } from "react";
+import { Link } from "react-aria-components";
+
+/**
+ * React Aria link: client-side routing for internal paths (via `Providers`),
+ * a plain anchor for external / mailto / tel. Renders a real `<a href>`.
+ */
+export function SmartLink({
+  href,
+  className,
+  children,
+  ...props
+}: {
+  href: string;
+  className?: string;
+  children?: ReactNode;
+  target?: string;
+  rel?: string;
+  "aria-label"?: string;
+  "aria-current"?: "page" | undefined;
+}) {
+  return (
+    <Link href={href} className={className} {...props}>
+      {children}
+    </Link>
+  );
 }

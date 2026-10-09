@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { Fragment, useEffect, useState } from "react";
+import { Button as AriaButton } from "react-aria-components";
 import {
   categoryTone,
   palette,
@@ -51,7 +52,7 @@ export function MenuBoard({ categories = [], orderCta }: Keyed<MenuBoardSection>
 
 function CategoryBar({ categories }: { categories: MenuCategory[] }) {
   return (
-    <div className="sticky top-[72px] z-40 bg-k-black">
+    <nav aria-label="Menu categories" className="sticky top-[72px] z-40 bg-k-black">
       <Container className="no-scrollbar flex items-center gap-x-6 gap-y-1 overflow-x-auto py-3">
         {categories.map((c) => (
           <a
@@ -60,13 +61,13 @@ function CategoryBar({ categories }: { categories: MenuCategory[] }) {
             className="whitespace-nowrap font-display text-[15px] font-bold tracking-[-0.01em] text-k-tan"
           >
             <span className="link-anim inline-flex items-center gap-2">
-              <span className="size-2 rounded-full" style={{ background: palette[toneOf(c)] }} />
+              <span aria-hidden className="size-2 rounded-full" style={{ background: palette[toneOf(c)] }} />
               {c.title}
             </span>
           </a>
         ))}
       </Container>
-    </div>
+    </nav>
   );
 }
 
@@ -77,6 +78,11 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
   const color = palette[tone];
   const items = category.items;
   // The detail panel is inserted after the last card of the clicked card's row.
+  // Closing returns focus to the card that opened the panel.
+  const closeDetail = (cardIndex: number) => {
+    setOpen(null);
+    document.getElementById(`item-${category.slug}-${cardIndex}`)?.focus();
+  };
   const rowEnd = open == null ? -1 : Math.min(Math.floor(open / cols) * cols + cols - 1, items.length - 1);
 
   return (
@@ -104,14 +110,14 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
         <div className="grid grid-cols-2 items-start gap-x-6 gap-y-12 lg:grid-cols-3">
           {items.map((it, i) => (
             <Fragment key={it._key}>
-              <button
-                type="button"
-                onClick={() => setOpen(open === i ? null : i)}
+              <AriaButton
+                id={`item-${category.slug}-${i}`}
+                onPress={() => setOpen(open === i ? null : i)}
                 aria-expanded={open === i}
                 className="group flex cursor-pointer flex-col items-center gap-x-4 gap-y-[22px] text-center"
               >
                 <motion.div whileHover={{ y: -8, rotate: i % 2 ? 1.5 : -1.5 }} className="w-[min(100%,250px)]">
-                  <Plate media={it.image} alt={it.name} disc={open === i ? palette.black : color} sizes="250px" />
+                  <Plate media={it.image} alt="" disc={open === i ? palette.black : color} sizes="250px" />
                 </motion.div>
                 <div className="flex flex-col items-center gap-1">
                   <span className="font-headline text-[clamp(17px,1.6vw,22px)] uppercase leading-[1.05] tracking-[-0.01em] text-k-black">
@@ -126,7 +132,7 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
                     {open === i ? "Close" : "See more"}
                   </span>
                 </div>
-              </button>
+              </AriaButton>
               {i === rowEnd && open != null && (
                 <AnimatePresence>
                   <ItemDetail
@@ -134,7 +140,7 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
                     item={items[open]}
                     tone={tone}
                     orderCta={orderCta}
-                    onClose={() => setOpen(null)}
+                    onClose={() => closeDetail(open)}
                   />
                 </AnimatePresence>
               )}
@@ -166,18 +172,22 @@ function ItemDetail({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
+      role="region"
+      aria-label={`${item.name} details`}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") onClose();
+      }}
       className="col-span-full"
       style={style}
     >
       <div className="relative mt-1 grid grid-cols-12 items-center gap-x-4 gap-y-8 md:gap-x-8 rounded-3xl bg-(--field) p-[clamp(24px,3.4vw,44px)]">
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
+        <AriaButton
+          onPress={onClose}
+          aria-label={`Close ${item.name} details`}
           className="absolute top-4 right-5 size-10 cursor-pointer rounded-full bg-(--ink) font-display text-base font-bold text-(--field)"
         >
-          ✕
-        </button>
+          <span aria-hidden>✕</span>
+        </AriaButton>
         <div className="col-span-12 md:col-span-4">
           <Plate media={item.image} alt={item.name} disc="rgba(35,31,32,0.22)" sizes="(min-width: 768px) 30vw, 90vw" />
         </div>
