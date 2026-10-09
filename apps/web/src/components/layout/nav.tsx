@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Button as AriaButton, Link } from "react-aria-components";
 import type { SiteSettings } from "@kneaders/content";
 import { Button } from "../ui/button";
 import { Container } from "../ui/container";
@@ -10,6 +10,7 @@ import { Wordmark } from "./wordmark";
 export function Nav({ settings, active }: { settings: SiteSettings; active?: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -22,6 +23,13 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
 
   return (
     <header
+      onKeyDown={(e) => {
+        // Escape closes the mobile menu and hands focus back to its toggle.
+        if (e.key === "Escape" && open) {
+          setOpen(false);
+          toggleRef.current?.focus();
+        }
+      }}
       className={`sticky top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${
         scrolled
           ? "border-k-line-soft bg-[color-mix(in_oklab,var(--color-k-bg)_88%,transparent)] backdrop-blur-[10px] backdrop-saturate-[1.4]"
@@ -54,24 +62,25 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
             {orderCta.label}
           </Button>
         </div>
-        <button
-          type="button"
+        <AriaButton
+          ref={toggleRef}
           className="inline-flex cursor-pointer items-center rounded-full border border-k-black px-3.5 py-2 font-display text-[13px] font-bold uppercase tracking-[0.04em] text-k-black transition-colors duration-200 hover:bg-k-black hover:text-k-bg md:hidden"
-          onClick={() => setOpen((o) => !o)}
+          onPress={() => setOpen((o) => !o)}
           aria-expanded={open}
-          aria-label="Open menu"
+          aria-controls="mobile-menu"
         >
           {open ? "Close" : "Menu"}
-        </button>
+        </AriaButton>
       </Container>
       {open && (
-        <div className="border-t border-k-line-soft md:hidden">
+        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-k-line-soft md:hidden">
           <Container className="flex flex-col gap-3 py-4">
             {navLinks.map((l) => (
               <Link
                 key={l._key}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onPress={() => setOpen(false)}
+                aria-current={active === l.key ? "page" : undefined}
                 className="font-display text-lg tracking-[-0.01em]"
               >
                 {l.label}
@@ -81,7 +90,7 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
               {orderCta.label} →
             </Button>
           </Container>
-        </div>
+        </nav>
       )}
     </header>
   );

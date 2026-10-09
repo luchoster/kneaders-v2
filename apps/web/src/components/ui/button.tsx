@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
+import { Button as AriaButton, Link } from "react-aria-components";
 import type { Tone } from "@kneaders/content";
 import { hex, toneVars } from "@/lib/tones";
 
@@ -56,19 +56,14 @@ export function Button({
   );
   if (!href) {
     return (
-      <button type={type} onClick={onClick} className={cls} style={style}>
+      <AriaButton type={type} onPress={onClick} className={cls} style={style}>
         {content}
-      </button>
+      </AriaButton>
     );
   }
-  const internal = href.startsWith("/") || href.startsWith("#");
-  return internal ? (
+  return (
     <Link href={href} className={cls} style={style}>
       {content}
     </Link>
-  ) : (
-    <a href={href} className={cls} style={style}>
-      {content}
-    </a>
   );
 }

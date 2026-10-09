@@ -13,7 +13,7 @@ export function FeaturedPost({ post, sticker, ctaLabel = "Read the story" }: Key
     <section data-cms-block="featuredPost" className="bg-k-tan py-[72px]">
       <Container className="grid grid-cols-12 items-center gap-x-4 gap-y-10 md:gap-x-10">
         <div className="relative col-span-12 md:col-span-5">
-          <Plate media={post.image} alt={post.title} disc={color} eager />
+          <Plate media={post.image} alt="" disc={color} eager />
           {sticker && (
             <div className="absolute top-2.5 right-1.5">
               <Sticker tone={sticker.tone ?? "red"} textTone={sticker.textTone ?? "tan"} rotate={7}>

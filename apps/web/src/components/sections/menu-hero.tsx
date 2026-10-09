@@ -28,7 +28,7 @@ export function MenuHero({ headline, bullets, featured, ticket }: Keyed<MenuHero
             )}
           </div>
           <div className="relative col-span-12 md:col-span-5">
-            <Plate media={featured.image} alt={featured.title} disc={hex(featured.tone, "sage")} eager />
+            <Plate media={featured.image} alt="" disc={hex(featured.tone, "sage")} eager />
             {featured.sticker && (
               <div className="absolute top-3 right-0">
                 <Sticker tone={featured.sticker.tone ?? "red"} textTone={featured.sticker.textTone ?? "tan"} rotate={7}>
