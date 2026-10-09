@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { Button as AriaButton, Link } from "react-aria-components";
 import type { Tone } from "@kneaders/content";

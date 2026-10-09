@@ -1,3 +1,5 @@
+"use client";
+
 import { Link } from "react-aria-components";
 import type { PostDetail } from "@kneaders/content";
 import { formatDate } from "@/lib/format";

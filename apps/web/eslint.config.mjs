@@ -9,6 +9,12 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    // Destructuring-to-omit (`{ _type, ...rest }`) is intentional in the seed mappers.
+    rules: {
+      "@typescript-eslint/no-unused-vars": ["error", { ignoreRestSiblings: true }],
+    },
+  },
+  {
     files: ["src/**/*.{ts,tsx}"],
     ...jsxA11y.flatConfigs.recommended,
     settings: {

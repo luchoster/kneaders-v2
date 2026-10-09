@@ -19,17 +19,23 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Escape closes the mobile menu and hands focus back to its toggle.
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   const { navLinks, orderCta, rewardsLink } = settings;
 
   return (
     <header
-      onKeyDown={(e) => {
-        // Escape closes the mobile menu and hands focus back to its toggle.
-        if (e.key === "Escape" && open) {
-          setOpen(false);
-          toggleRef.current?.focus();
-        }
-      }}
       className={`sticky top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${
         scrolled
           ? "border-k-line-soft bg-[color-mix(in_oklab,var(--color-k-bg)_88%,transparent)] backdrop-blur-[10px] backdrop-saturate-[1.4]"
