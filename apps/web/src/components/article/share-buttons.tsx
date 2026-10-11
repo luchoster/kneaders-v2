@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "react-aria-components";
 
 const btn =
   "cursor-pointer rounded-full border border-k-line bg-transparent px-2.5 py-1.5 font-condensed text-[10px] uppercase tracking-[0.14em]";
@@ -8,29 +9,30 @@ const btn =
 export function ShareButtons({ title }: { title: string }) {
   const [copied, setCopied] = useState(false);
   return (
-    <div className="mt-3 flex gap-2">
-      <button
-        type="button"
+    <div role="group" aria-label="Share this article" className="mt-3 flex gap-2">
+      <Button
         className={btn}
-        onClick={async () => {
+        onPress={async () => {
           await navigator.clipboard?.writeText(window.location.href);
           setCopied(true);
         }}
       >
         {copied ? "Copied" : "Copy link"}
-      </button>
-      <button
-        type="button"
+      </Button>
+      <Button
         className={btn}
-        onClick={() => {
+        onPress={() => {
           window.location.href = `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(window.location.href)}`;
         }}
       >
         Email
-      </button>
-      <button type="button" className={btn} onClick={() => window.print()}>
+      </Button>
+      <Button className={btn} onPress={() => window.print()}>
         Print
-      </button>
+      </Button>
+      <span role="status" className="sr-only">
+        {copied && "Link copied to clipboard."}
+      </span>
     </div>
   );
 }

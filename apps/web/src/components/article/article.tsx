@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "react-aria-components";
 import type { PostDetail } from "@kneaders/content";
 import { formatDate } from "@/lib/format";
 import { Chip } from "../ui/chip";
@@ -51,7 +53,7 @@ export function Article({ post }: { post: PostDetail }) {
               </div>
             </div>
           </div>
-          <FrameImage media={post.image} alt={post.title} ratio="21/9" eager sizes="(min-width: 1440px) 1440px, 100vw" />
+          <FrameImage media={post.image} alt={post.image?.alt ?? ""} ratio="21/9" eager sizes="(min-width: 1440px) 1440px, 100vw" />
         </Container>
       </section>
 
@@ -106,7 +108,7 @@ export function Article({ post }: { post: PostDetail }) {
                   href={`/journal/${p.slug}`}
                   className="col-span-12 flex flex-col gap-3 sm:col-span-6 md:col-span-4"
                 >
-                  <FrameImage media={p.image} alt={p.title} ratio="5/4" />
+                  <FrameImage media={p.image} alt="" ratio="5/4" />
                   <Chip className="self-start">{p.tag}</Chip>
                   <h3 className="font-display text-[22px] font-semibold leading-[1.15] tracking-[-0.018em]">{p.title}</h3>
                   <span className="font-condensed text-[10px] uppercase tracking-[0.14em] text-k-ink-3">

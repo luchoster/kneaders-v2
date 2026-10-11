@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { Button as AriaButton } from "react-aria-components";
 import { categoryTone, palette, type Keyed, type PromoCarouselSection } from "@kneaders/content";
 import { Button } from "../ui/button";
 import { Container } from "../ui/container";
@@ -13,24 +14,49 @@ import { Sticker } from "../ui/sticker";
 export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCarouselSection>) {
   const [i, setI] = useState(0);
   const count = slides?.length ?? 0;
+  // WCAG 2.2.2: auto-rotation stops while the pointer or keyboard focus is inside,
+  // and never starts for people who prefer reduced motion.
+  const [paused, setPaused] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
-    if (count < 2) return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const set = () => setReduceMotion(mq.matches);
+    set();
+    mq.addEventListener("change", set);
+    return () => mq.removeEventListener("change", set);
+  }, []);
+
+  useEffect(() => {
+    if (count < 2 || paused || reduceMotion) return;
     const t = setInterval(() => setI((x) => (x + 1) % count), intervalSeconds * 1000);
     return () => clearInterval(t);
-  }, [count, intervalSeconds]);
+  }, [count, intervalSeconds, paused, reduceMotion]);
 
   if (!count) return null;
   const s = slides[i % count];
 
   return (
-    <section data-cms-block="promoCarousel" className="relative overflow-hidden bg-k-cream">
+    <section
+      data-cms-block="promoCarousel"
+      aria-roledescription="carousel"
+      aria-label="Featured promotions"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+      className="relative overflow-hidden bg-k-cream"
+    >
       <Container>
         <div className="grid grid-cols-12 items-center gap-x-4 gap-y-8 md:gap-x-8 pt-14 pb-[72px]">
           <div className="order-2 col-span-12 md:order-1 md:col-span-5">
             <AnimatePresence mode="wait">
               <motion.div
                 key={s._key}
+                role="group"
+                aria-roledescription="slide"
+                aria-label={`${i + 1} of ${count}`}
+                aria-live={paused || reduceMotion ? "polite" : "off"}
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
@@ -56,14 +82,13 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
               </motion.div>
             </AnimatePresence>
             {count > 1 && (
-              <div className="mt-8 flex gap-2">
+              <div role="group" aria-label="Choose slide" className="mt-8 flex gap-2">
                 {slides.map((x, j) => (
-                  <button
+                  <AriaButton
                     key={x._key}
-                    type="button"
-                    onClick={() => setI(j)}
-                    aria-label={`Slide ${j + 1}`}
-                    aria-current={j === i}
+                    onPress={() => setI(j)}
+                    aria-label={`Slide ${j + 1} of ${count}`}
+                    aria-current={j === i ? "true" : undefined}
                     className={`h-2.5 cursor-pointer rounded-full transition-[width,background-color] duration-300 ${
                       j === i ? "w-7 bg-k-red" : "w-2.5 bg-k-tan-deep"
                     }`}

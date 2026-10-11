@@ -80,6 +80,18 @@ To add a section: define the object schema, add it to `sectionTypes`, add its ty
 - Fonts: official Amnesia Distressed / Archer Pro / Barlow / Barlow Condensed via `next/font/local`
   (`apps/web/src/app/fonts.ts`) → `font-headline`, `font-display`, `font-body`, `font-condensed`.
 
+## Accessibility
+
+The site targets **WCAG 2.1 Level AA** (ADA). The full checklist lives in [`AGENTS.md`](./AGENTS.md); in short:
+
+- Interactive components are built on [React Aria Components](https://react-spectrum.adobe.com/react-aria/components.html)
+  (`Button`, `Link`, `TextField`, `Form`…), restyled with the existing Tailwind classes. Reuse `ui/button.tsx`
+  and `ui/smart-link.tsx` instead of raw `<button>` / `<a>`.
+- Semantic landmarks, one `h1` per page, a "Skip to main content" link, visible `:focus-visible` rings.
+- Decorative images use `alt=""`; form fields have labels, required state and announced errors.
+- `prefers-reduced-motion` is honored (`MotionConfig` in `components/providers.tsx`, CSS overrides in `globals.css`).
+- `pnpm lint` runs `eslint-plugin-jsx-a11y`.
+
 ## Open items
 
 - Form + newsletter submissions are UI-only stubs (see `InquiryForm`, `NewsletterForm`).

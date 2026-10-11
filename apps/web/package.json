@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src"
   },
   "dependencies": {
     "@kneaders/content": "workspace:*",
@@ -17,15 +18,20 @@
     "motion": "^13.4.4",
     "next": "^16.3.6",
     "react": "^19.2.3",
+    "react-aria-components": "^1.13.0",
     "react-dom": "^19.2.3",
     "server-only": "^0.0.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^22.10.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.0"
   }
 }

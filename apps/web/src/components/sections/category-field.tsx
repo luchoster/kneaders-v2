@@ -19,7 +19,7 @@ export function CategoryField({ tiles, tagline, cta }: Keyed<CategoryFieldSectio
               className="col-span-6 flex flex-col items-center gap-5 md:col-span-3"
             >
               <div className="w-[min(100%,240px)]">
-                <Plate media={c.image} alt={c.label} disc={palette[categoryTone(c.category)]} sizes="240px" />
+                <Plate media={c.image} alt="" disc={palette[categoryTone(c.category)]} sizes="240px" />
               </div>
               <span className="text-center font-headline text-[clamp(20px,2vw,28px)] uppercase tracking-[0.03em] text-k-cream">
                 {c.label}

@@ -74,6 +74,42 @@
   html {
     scroll-behavior: smooth;
   }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* "Skip to main content" — hidden until it receives keyboard focus. */
+  .skip-link {
+    position: absolute;
+    left: 8px;
+    top: -100px;
+    z-index: 100;
+    padding: 10px 16px;
+    border-radius: 9999px;
+    background: var(--color-k-black);
+    color: var(--color-k-bg);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .skip-link:focus {
+    top: 8px;
+  }
+  .skip-link:hover {
+    color: var(--color-k-bg);
+  }
+  main:focus {
+    outline: none;
+  }
 
   a {
     color: inherit;

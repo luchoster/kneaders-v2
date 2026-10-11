@@ -23,7 +23,7 @@ export function TeamGrid({ heading, members }: Keyed<TeamGridSection>) {
                 className="col-span-12 flex flex-col gap-4 rounded-[20px] border border-k-line bg-k-cream p-5 md:col-span-4"
               >
                 <div className="mx-auto w-[64%]">
-                  <Plate media={m.photo} alt={m.name} disc={color} sizes="260px" />
+                  <Plate media={m.photo} alt="" disc={color} sizes="260px" />
                 </div>
                 <div className="flex flex-col gap-1 text-center">
                   <h3 className="font-headline text-[22px] uppercase leading-[1.05] tracking-[-0.01em] text-k-black">{m.name}</h3>
