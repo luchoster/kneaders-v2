@@ -37,6 +37,15 @@ function useColumns() {
 
 const toneOf = (c: MenuCategory): Tone => c.tone ?? categoryTone(c.slug);
 
+/**
+ * WCAG AA: these category tones are too dark for black text and too light for
+ * tan, so the detail panel uses a lighter tone from the same family (≥ 7:1 with
+ * black). The category color still marks the band, plates and nav dots.
+ */
+const PANEL_TONE: Partial<Record<Tone, Tone>> = { blue: "blueLight", sage: "sageLight", rust: "tanDeep" };
+/** Gold is under 3:1 on the tan bands; deep gold passes on both tan and cream. */
+const HEADING_TONE: Partial<Record<Tone, Tone>> = { gold: "goldDeep" };
+
 /** Menu 02 + 03 — sticky category bar and one color-coded band per category. */
 export function MenuBoard({ categories = [], orderCta }: Keyed<MenuBoardSection>) {
   const cats = categories.filter((c) => c.items?.length);
@@ -92,7 +101,7 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
       className={`scroll-mt-[130px] pt-[72px] pb-20 ${index % 2 ? "bg-k-tan" : "bg-k-cream"}`}
     >
       <Container>
-        <RuledHeading tone={tone} size="category" className="mb-3" nowrap>
+        <RuledHeading tone={HEADING_TONE[tone] ?? tone} size="category" className="mb-3" nowrap>
           {category.title}
         </RuledHeading>
         {category.description?.length ? (
@@ -124,7 +133,7 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
                     {it.name}
                   </span>
                   {it.price != null && (
-                    <span className="font-condensed text-sm font-semibold" style={{ color }}>
+                    <span className="font-condensed text-sm font-semibold text-k-black">
                       {formatPrice(it.price)}
                     </span>
                   )}
@@ -152,7 +161,7 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
   );
 }
 
-/** Expanded detail panel — spans the full row, flooded with the category color. */
+/** Expanded detail panel — spans the full row, flooded with the category color (or `PANEL_TONE`). */
 function ItemDetail({
   item,
   tone,
@@ -164,8 +173,9 @@ function ItemDetail({
   orderCta?: Cta;
   onClose: () => void;
 }) {
-  const inkTone = inkOnField(tone);
-  const style = toneVars({ field: palette[tone], ink: palette[inkTone] });
+  const field = PANEL_TONE[tone] ?? tone;
+  const inkTone = inkOnField(field);
+  const style = toneVars({ field: palette[field], ink: palette[inkTone] });
   return (
     <motion.div
       initial={{ opacity: 0, y: -12 }}
@@ -202,18 +212,18 @@ function ItemDetail({
           </div>
           <RichText
             value={item.description}
-            className="max-w-[560px] font-body text-[17px] leading-normal text-pretty text-(--ink) opacity-94"
+            className="max-w-[560px] font-body text-[17px] leading-normal text-pretty text-(--ink)"
           />
           <div className="flex flex-wrap items-center gap-2">
             {item.calories != null && (
-              <span className="rounded-full border border-(--ink) px-3 py-1 font-condensed text-xs uppercase tracking-[0.12em] text-(--ink) opacity-85">
+              <span className="rounded-full border border-(--ink) px-3 py-1 font-condensed text-xs uppercase tracking-[0.12em] text-(--ink)">
                 {item.calories} cal
               </span>
             )}
             {(item.allergens ?? []).map((a) => (
               <span
                 key={a}
-                className="rounded-full border border-(--ink) px-3 py-1 font-condensed text-xs uppercase tracking-[0.12em] text-(--ink) opacity-65"
+                className="rounded-full border border-(--ink) px-3 py-1 font-condensed text-xs uppercase tracking-[0.12em] text-(--ink)"
               >
                 {a}
               </span>
@@ -225,14 +235,14 @@ function ItemDetail({
                 Pairs with
               </span>
               {item.pairsWith.map((p) => (
-                <Sticker key={p} tone={inkTone} textTone={tone} rotate={-2} size="tag">
+                <Sticker key={p} tone={inkTone} textTone={field} rotate={-2} size="tag">
                   {p}
                 </Sticker>
               ))}
             </div>
           )}
           {orderCta && (
-            <Button href={item.orderUrl || orderCta.href} tone={inkTone} ink={tone} arrow className="mt-2">
+            <Button href={item.orderUrl || orderCta.href} tone={inkTone} ink={field} arrow className="mt-2">
               {orderCta.label}
             </Button>
           )}
