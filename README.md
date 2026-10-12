@@ -18,7 +18,9 @@ pnpm dev:studio   # http://localhost:3333
 ```
 
 The site works with **no CMS configured** — when `NEXT_PUBLIC_SANITY_PROJECT_ID`
-is empty it renders the bundled seed content from `packages/content`.
+is empty it renders the bundled seed content from `packages/content`, **except the home
+page**: `/` renders only the Sanity `homePage` document. Without a project ID, or when that
+document is missing or has no sections, `/` shows just the site shell (top bar, nav, footer).
 
 ### Connecting Sanity
 

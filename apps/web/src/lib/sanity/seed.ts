@@ -1,5 +1,6 @@
 /* Resolves the bundled seed documents into the same shapes the GROQ queries return.
-   Used whenever NEXT_PUBLIC_SANITY_PROJECT_ID is not set. */
+   Used whenever NEXT_PUBLIC_SANITY_PROJECT_ID is not set (except for the home page,
+   which comes only from Sanity). */
 import {
   seed,
   type MenuCategory,
@@ -55,11 +56,6 @@ export function seedPage(slug: string): Page | null {
   if (!doc) return null;
   const { _type, slug: s, sections, ...rest } = doc;
   return { ...rest, slug: s.current, sections: sections.map(resolveSection) };
-}
-
-export function seedHomePage(): Page {
-  const { _type, sections, ...rest } = seed.homePage;
-  return { ...rest, slug: "home", navKey: "home", sections: sections.map(resolveSection) };
 }
 
 export const seedPageSlugs = () => seed.pages.map((p) => p.slug.current);
