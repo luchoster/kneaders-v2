@@ -7,7 +7,7 @@ export const valuesGrid = defineType({
   title: "Values grid",
   type: "object",
   icon: StarIcon,
-  description: "Numbered value cards with colored top rules.",
+  description: "Numbered value cards with colored numbers.",
   fields: [
     defineField({ name: "heading", type: "string", validation: (r) => r.required() }),
     defineField({ name: "values", type: "array", of: [defineArrayMember({ type: "valueItem" })] }),
