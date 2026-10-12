@@ -7,7 +7,7 @@ import { RuledHeading } from "../ui/ruled-heading";
 
 const CYCLE: Tone[] = ["gold", "sage", "blue", "red"];
 
-/** Numbered value cards with a colored top rule. */
+/** Numbered value cards; each number takes the card's accent color. */
 export function ValuesGrid({ heading, values }: Keyed<ValuesGridSection>) {
   return (
     <section data-cms-block="valuesGrid" className="bg-k-cream pt-20 pb-[88px]">
@@ -19,7 +19,7 @@ export function ValuesGrid({ heading, values }: Keyed<ValuesGridSection>) {
               key={v._key}
               y={-6}
               rotate={i % 2 ? 0.8 : -0.8}
-              className="col-span-12 flex flex-col gap-3 rounded-[20px] border-t-[6px] border-(--accent) bg-k-tan p-6 sm:col-span-6 lg:col-span-3"
+              className="col-span-12 flex flex-col gap-3 rounded-[20px] bg-k-tan p-6 sm:col-span-6 lg:col-span-3"
               style={toneVars({ accent: palette[v.tone ?? CYCLE[i % CYCLE.length]] })}
             >
               <span className="font-headline text-[34px] tracking-[-0.01em] text-(--accent)">{v.number}</span>
