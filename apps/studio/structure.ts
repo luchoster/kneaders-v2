@@ -1,6 +1,7 @@
 import { CogIcon } from "@sanity/icons/Cog";
 import { DocumentIcon } from "@sanity/icons/Document";
 import { DocumentTextIcon } from "@sanity/icons/DocumentText";
+import { EnvelopeIcon } from "@sanity/icons/Envelope";
 import { HomeIcon } from "@sanity/icons/Home";
 import { InlineIcon } from "@sanity/icons/Inline";
 import { MenuIcon } from "@sanity/icons/Menu";
@@ -47,5 +48,14 @@ export const structure: StructureResolver = (S) =>
                     .defaultOrdering([{ field: "title", direction: "asc" }]),
                 ),
             ]),
+        ),
+      S.divider(),
+      S.listItem()
+        .title("Form submissions")
+        .icon(EnvelopeIcon)
+        .child(
+          S.documentTypeList("formSubmission")
+            .title("Form submissions")
+            .defaultOrdering([{ field: "submittedAt", direction: "desc" }]),
         ),
     ]);
