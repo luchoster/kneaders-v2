@@ -10,7 +10,7 @@ import {
   POST_SLUGS_QUERY,
   SETTINGS_QUERY,
 } from "./queries";
-import { seedHomePage, seedPage, seedPageSlugs, seedPost, seedPostSlugs, seedSettings } from "./seed";
+import { seedPage, seedPageSlugs, seedPost, seedPostSlugs, seedSettings } from "./seed";
 
 const revalidate = 60;
 
@@ -23,8 +23,9 @@ export async function getSettings(): Promise<SiteSettings> {
   return (await query<SiteSettings | null>(SETTINGS_QUERY)) ?? seedSettings();
 }
 
+/** The home page comes only from the Sanity `homePage` document; there is no seed fallback. */
 export async function getHomePage(): Promise<Page | null> {
-  if (!isSanityConfigured) return seedHomePage();
+  if (!isSanityConfigured) return null;
   return query<Page | null>(HOME_QUERY);
 }
 

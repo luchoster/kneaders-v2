@@ -7,6 +7,7 @@ import { SplitHeadline } from "../ui/split-headline";
 
 /** Home 06 — latest journal posts on a tan field. */
 export function JournalStrip({ headline, cta, limit = 3, posts = [] }: Keyed<JournalStripSection>) {
+  if (!posts?.length) return null;
   return (
     <section data-cms-block="journalStrip" className="bg-k-tan py-[88px]">
       <Container>
