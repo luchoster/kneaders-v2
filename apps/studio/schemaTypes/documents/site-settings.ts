@@ -1,8 +1,9 @@
 import { CogIcon } from "@sanity/icons/Cog";
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { menuLinkFields, menuLinkPreview } from "../objects/menu-link";
 
 const linkList = (name: string, title: string) =>
-  defineField({ name, title, type: "array", of: [defineArrayMember({ type: "cta" })] });
+  defineField({ name, title, type: "array", of: [defineArrayMember({ type: "menuLink" })] });
 
 export const siteSettings = defineType({
   name: "siteSettings",
@@ -33,16 +34,15 @@ export const siteSettings = defineType({
           name: "navLink",
           type: "object",
           fields: [
+            ...menuLinkFields,
             defineField({ name: "key", type: "string", description: "Matches a page's “Highlighted nav item”." }),
-            defineField({ name: "label", type: "string" }),
-            defineField({ name: "href", title: "Link", type: "string" }),
           ],
-          preview: { select: { title: "label", subtitle: "href" } },
+          preview: menuLinkPreview,
         }),
       ],
     }),
-    defineField({ name: "rewardsLink", title: "Rewards link", type: "cta", group: "header" }),
-    defineField({ name: "orderCta", title: "Order button", type: "cta", group: "header" }),
+    defineField({ name: "rewardsLink", title: "Rewards link", type: "menuLink", group: "header" }),
+    defineField({ name: "orderCta", title: "Order button", type: "menuLink", group: "header" }),
     defineField({
       name: "footer",
       type: "object",

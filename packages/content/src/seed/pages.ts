@@ -379,7 +379,7 @@ const story: PageDocument = {
       _type: "colorBlocks",
       tuckUnder: true,
       blocks: keyed("door", [
-        { title: "Giving back", body: "Charitable giving is part of the company's foundation — hunger relief, schools, and the September fight against childhood cancer with Huntsman Cancer Institute.", cta: { label: "See how we give", href: "/giving" }, tone: "sage", textTone: "cream" },
+        { title: "Giving back", body: "Charitable giving is part of the company's foundation — hunger relief, schools, and the September fight against childhood cancer with Huntsman Cancer Institute.", cta: { label: "See how we give", href: "/community-giving" }, tone: "sage", textTone: "cream" },
         { title: "Join the family", body: "Bakers, bench hands, and morning people. Around 40 jobs per café, and a bench that teaches.", cta: { label: "Open roles", href: "/careers" }, tone: "blue", textTone: "cream" },
       ]),
     },
@@ -461,10 +461,10 @@ const contact: PageDocument = {
 /* ------------------------------------------------------------------ */
 
 const giving: PageDocument = {
-  _id: "page-giving",
+  _id: "page-community-giving",
   _type: "page",
   title: "Giving Back",
-  slug: slug("giving"),
+  slug: slug("community-giving"),
   navKey: "story",
   seo: {
     title: "Giving Back",
