@@ -39,7 +39,30 @@ export const HOME_QUERY = /* groq */ `
 export const PAGE_SLUGS_QUERY = /* groq */ `
 *[_type == "page" && defined(slug.current)].slug.current`;
 
-export const SETTINGS_QUERY = /* groq */ `*[_type == "siteSettings"][0]`;
+/** A `menuLink` → href: page path (+ #anchor), external URL, or the legacy plain `href`. */
+const LINK_HREF = /* groq */ `coalesce(
+  select(
+    linkType == "external" => url,
+    defined(page) => select(page->_type == "homePage" => "/", "/" + page->slug.current)
+      + select(defined(anchor) => "#" + anchor, "")
+  ),
+  href
+)`;
+
+const MENU_LINK = /* groq */ `_key, label, "href": ${LINK_HREF}`;
+
+export const SETTINGS_QUERY = /* groq */ `
+*[_type == "siteSettings"][0]{
+  ...,
+  "navLinks": navLinks[]{ key, ${MENU_LINK} },
+  "rewardsLink": rewardsLink{ ${MENU_LINK} },
+  "orderCta": orderCta{ ${MENU_LINK} },
+  footer{
+    ...,
+    "columns": columns[]{ _key, heading, "links": links[]{ ${MENU_LINK} } },
+    "legalLinks": legalLinks[]{ ${MENU_LINK} }
+  }
+}`;
 
 export const POST_QUERY = /* groq */ `
 *[_type == "post" && slug.current == $slug][0]{

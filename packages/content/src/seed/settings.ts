@@ -44,7 +44,7 @@ export const siteSettings: SiteSettings = {
           { label: "Our Story", href: "/our-story" },
           { label: "Careers", href: "/careers" },
           { label: "Press", href: "/contact" },
-          { label: "Community Giving", href: "/giving" },
+          { label: "Community Giving", href: "/community-giving" },
           { label: "Sustainability", href: "#" },
         ]),
       },

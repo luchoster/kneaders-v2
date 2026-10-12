@@ -54,6 +54,12 @@ object in `apps/studio/schemaTypes/sections/` with a matching React component in
 Other documents: `homePage` (singleton, `/`), `siteSettings` (top bar, nav, footer), `post` (journal articles →
 `/journal/[slug]`), `menuCategory` + `menuItem` (Studio → **Menu**).
 
+Header and footer links (`siteSettings` nav, rewards link, order button, footer columns, social
+links) are `menuLink` objects: each points either to **a page on this site** (a reference to a
+`page` or the home page, plus an optional `#section` anchor) or to **an external URL**.
+`SETTINGS_QUERY` resolves them to plain `href`s, so a renamed page slug updates every menu
+automatically. Older links that only have a plain-text `href` still work.
+
 ### Forms
 
 `formSection` forms post to `POST /api/forms`. The route looks up the published form
