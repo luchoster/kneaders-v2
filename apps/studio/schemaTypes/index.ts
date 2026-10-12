@@ -1,3 +1,4 @@
+import { formSubmission } from "./documents/form-submission";
 import { homePage } from "./documents/home-page";
 import { menuCategory } from "./documents/menu-category";
 import { menuItem } from "./documents/menu-item";
@@ -7,4 +8,4 @@ import { siteSettings } from "./documents/site-settings";
 import { objectTypes } from "./objects";
 import { sectionTypes } from "./sections";
 
-export const schemaTypes = [siteSettings, homePage, page, post, menuCategory, menuItem, ...objectTypes, ...sectionTypes];
+export const schemaTypes = [siteSettings, homePage, page, post, menuCategory, menuItem, formSubmission, ...objectTypes, ...sectionTypes];

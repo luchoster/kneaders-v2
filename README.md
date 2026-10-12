@@ -54,6 +54,15 @@ object in `apps/studio/schemaTypes/sections/` with a matching React component in
 Other documents: `homePage` (singleton, `/`), `siteSettings` (top bar, nav, footer), `post` (journal articles →
 `/journal/[slug]`), `menuCategory` + `menuItem` (Studio → **Menu**).
 
+### Forms
+
+`formSection` forms post to `POST /api/forms`. The route looks up the published form
+definition by `formId`, keeps only the fields defined there, validates them (required,
+email, select options, number minimum, length), and saves a `formSubmission` document
+(Studio → **Form submissions**, with a status and internal notes). It needs
+`SANITY_API_WRITE_TOKEN` (a token with the Editor role, server-side only); without it the
+route answers 503 and the form shows an error. Email notifications are not set up yet.
+
 ### Menu
 
 Each `menuCategory` holds an ordered list of `menuItem` references (drag to reorder); an

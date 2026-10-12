@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FieldError, Form, Input, Label, TextArea, TextField } from "react-aria-components";
 import type { FormField, Keyed, Tone } from "@kneaders/content";
+import { HONEYPOT } from "@/lib/forms";
 import { Button } from "./button";
 import { Eyebrow } from "./eyebrow";
 
@@ -13,9 +14,18 @@ const autoComplete: Partial<Record<FormField["kind"], string>> = { email: "email
 
 const fieldWidth = (f: FormField) => (f.width === "full" ? "col-span-2" : "col-span-2 sm:col-span-1");
 
+type Status = "idle" | "sending" | "sent" | "error";
+
+const messages: Record<Status, string> = {
+  idle: "",
+  sending: "Sending…",
+  sent: "Thanks! Your message was sent.",
+  error: "Sorry, your message couldn't be sent. Please try again.",
+};
+
 /**
- * CMS-configured form. Submission is a stub for now —
- * TODO: post to an API route / form service keyed by `formId`.
+ * CMS-configured form. Submissions go to `POST /api/forms`, which stores them
+ * in Sanity as `formSubmission` documents keyed by `formId`.
  *
  * Built on React Aria `Form` / `TextField`: every control has an associated
  * label, `required` is exposed to assistive tech, and validation errors are
@@ -34,17 +44,59 @@ export function InquiryForm({
   submitTone: Tone;
   className?: string;
 }) {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
+  const [message, setMessage] = useState("");
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
+
+  async function submit(form: HTMLFormElement) {
+    if (status === "sending") return;
+    setStatus("sending");
+    setMessage(messages.sending);
+    setValidationErrors({});
+    const values = Object.fromEntries(
+      [...new FormData(form).entries()].map(([k, v]) => [k, typeof v === "string" ? v : ""]),
+    );
+    try {
+      const res = await fetch("/api/forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ formId, page: window.location.pathname, values }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string; fieldErrors?: Record<string, string> };
+      if (!res.ok) {
+        if (data.fieldErrors) setValidationErrors(data.fieldErrors);
+        setStatus("error");
+        setMessage(data.fieldErrors && data.error ? data.error : messages.error);
+        return;
+      }
+      form.reset();
+      setStatus("sent");
+      setMessage(messages.sent);
+    } catch {
+      setStatus("error");
+      setMessage(messages.error);
+    }
+  }
+
   return (
     <Form
       data-form-id={formId}
       aria-label={`${submitLabel} form`}
+      aria-busy={status === "sending"}
+      validationErrors={validationErrors}
       className={`grid grid-cols-2 gap-4 rounded-[20px] border border-k-line p-[clamp(20px,3vw,36px)] ${className}`}
       onSubmit={(e) => {
         e.preventDefault();
-        setSent(true);
+        void submit(e.currentTarget);
       }}
     >
+      {/* Honeypot: off-screen and hidden from assistive tech; real visitors never fill it in. */}
+      <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label>
+          Leave this empty
+          <input type="text" name={HONEYPOT} tabIndex={-1} autoComplete="off" defaultValue="" />
+        </label>
+      </div>
       {fields.map((f) =>
         f.kind === "select" ? (
           // Native <select>: fully accessible and keeps the OS picker the design already uses.
@@ -80,7 +132,7 @@ export function InquiryForm({
       <div className="col-span-2 flex items-center justify-end gap-4">
         {/* Always mounted so screen readers announce the message when it appears. */}
         <span role="status" className="font-body text-sm italic text-k-maroon empty:absolute">
-          {sent && "Thanks — we'll be in touch within one business day."}
+          {message}
         </span>
         <Button type="submit" tone={submitTone} ink="tan" arrow>
           {submitLabel}
