@@ -229,6 +229,20 @@ function ItemDetail({
   const ref = useRef<HTMLDivElement>(null);
   // MotionConfig only drops transforms for reduced motion; height and opacity are made instant here.
   const reduceMotion = useReducedMotion();
+  // An instant (duration 0) transition doesn't reliably fire onAnimationComplete, so under reduced
+  // motion reveal after mount instead: two frames lets the panel reach full height and any
+  // panel closing elsewhere be removed before measuring.
+  const onExpandedRef = useRef(onExpanded);
+  onExpandedRef.current = onExpanded;
+  useEffect(() => {
+    if (!reduceMotion) return;
+    let frame = requestAnimationFrame(() => {
+      frame = requestAnimationFrame(() => {
+        if (ref.current) onExpandedRef.current(ref.current);
+      });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [reduceMotion]);
   const field = PANEL_TONE[tone] ?? tone;
   const inkTone = inkOnField(field);
   const style = toneVars({ field: palette[field], ink: palette[inkTone] });
@@ -242,7 +256,7 @@ function ItemDetail({
       exit="collapsed"
       transition={reduceMotion ? { duration: 0 } : { duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       onAnimationComplete={(definition) => {
-        if (definition === "open" && ref.current) onExpanded(ref.current);
+        if (!reduceMotion && definition === "open" && ref.current) onExpanded(ref.current);
       }}
       role="region"
       aria-label={`${item.name} details`}
