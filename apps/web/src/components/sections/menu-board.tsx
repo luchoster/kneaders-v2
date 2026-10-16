@@ -266,11 +266,11 @@ function ItemDetail({
       className="col-span-full overflow-hidden"
       style={style}
     >
-      <div className="relative mt-1 grid grid-cols-12 items-center gap-x-4 gap-y-8 md:gap-x-8 rounded-3xl bg-(--field) p-[clamp(24px,3.4vw,44px)]">
+      <div className="relative isolate mt-1 grid grid-cols-12 items-center gap-x-4 gap-y-8 md:gap-x-8 rounded-3xl bg-(--field) p-[clamp(24px,3.4vw,44px)]">
         <AriaButton
           onPress={onClose}
           aria-label={`Close ${item.name} details`}
-          className="absolute top-4 right-5 size-10 cursor-pointer rounded-full bg-(--ink) font-display text-base font-bold text-(--field)"
+          className="absolute top-4 right-5 z-20 size-10 cursor-pointer rounded-full bg-(--ink) font-display text-base font-bold text-(--field)"
         >
           <span aria-hidden>✕</span>
         </AriaButton>
