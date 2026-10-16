@@ -1,7 +1,7 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
-import { Fragment, useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { Fragment, useEffect, useRef, useState, type RefObject } from "react";
 import { Button as AriaButton } from "react-aria-components";
 import {
   categoryTone,
@@ -49,19 +49,20 @@ const HEADING_TONE: Partial<Record<Tone, Tone>> = { gold: "goldDeep" };
 /** Menu 02 + 03 — sticky category bar and one color-coded band per category. */
 export function MenuBoard({ categories = [], orderCta }: Keyed<MenuBoardSection>) {
   const cats = categories.filter((c) => c.items?.length);
+  const navRef = useRef<HTMLElement>(null);
   return (
     <div data-cms-block="menuBoard">
-      <CategoryBar categories={cats} />
+      <CategoryBar categories={cats} navRef={navRef} />
       {cats.map((c, i) => (
-        <CategoryBand key={c._id} category={c} index={i} orderCta={orderCta} />
+        <CategoryBand key={c._id} category={c} index={i} orderCta={orderCta} navRef={navRef} />
       ))}
     </div>
   );
 }
 
-function CategoryBar({ categories }: { categories: MenuCategory[] }) {
+function CategoryBar({ categories, navRef }: { categories: MenuCategory[]; navRef: RefObject<HTMLElement | null> }) {
   return (
-    <nav aria-label="Menu categories" className="sticky top-[72px] z-40 bg-k-black">
+    <nav ref={navRef} aria-label="Menu categories" className="sticky top-[72px] z-40 bg-k-black">
       <Container className="no-scrollbar flex items-center gap-x-6 gap-y-1 overflow-x-auto py-3">
         {categories.map((c) => (
           <a
@@ -80,19 +81,58 @@ function CategoryBar({ categories }: { categories: MenuCategory[] }) {
   );
 }
 
-function CategoryBand({ category, index, orderCta }: { category: MenuCategory; index: number; orderCta?: Cta }) {
+function CategoryBand({
+  category,
+  index,
+  orderCta,
+  navRef,
+}: {
+  category: MenuCategory;
+  index: number;
+  orderCta?: Cta;
+  navRef: RefObject<HTMLElement | null>;
+}) {
   const [open, setOpen] = useState<number | null>(null);
+  // The card whose panel should be scrolled into view once it finishes expanding.
+  const pendingReveal = useRef<number | null>(null);
+  const reduceMotion = useReducedMotion();
   const cols = useColumns();
   const tone = toneOf(category);
   const color = palette[tone];
   const items = category.items;
-  // The detail panel is inserted after the last card of the clicked card's row.
+  const cardId = (i: number) => `item-${category.slug}-${i}`;
+  const panelId = (i: number) => `${cardId(i)}-details`;
+  const openRow = open == null ? -1 : Math.floor(open / cols);
+
+  const toggle = (i: number) => {
+    const next = open === i ? null : i;
+    pendingReveal.current = next;
+    setOpen(next);
+  };
   // Closing returns focus to the card that opened the panel.
   const closeDetail = (cardIndex: number) => {
+    pendingReveal.current = null;
     setOpen(null);
-    document.getElementById(`item-${category.slug}-${cardIndex}`)?.focus();
+    document.getElementById(cardId(cardIndex))?.focus();
   };
-  const rowEnd = open == null ? -1 : Math.min(Math.floor(open / cols) * cols + cols - 1, items.length - 1);
+  // Scroll just enough to show the card and its panel below the sticky navs.
+  const revealDetail = (cardIndex: number, panel: HTMLElement) => {
+    if (pendingReveal.current !== cardIndex) return;
+    pendingReveal.current = null;
+    const card = document.getElementById(cardId(cardIndex));
+    if (!card) return;
+    // Height of the sticky bars once stuck: the category nav's `top` (the main nav) plus its own height.
+    const nav = navRef.current;
+    const viewTop = nav ? parseFloat(getComputedStyle(nav).top) + nav.offsetHeight : 0;
+    const viewBottom = window.innerHeight;
+    const { top } = card.getBoundingClientRect();
+    const { bottom } = panel.getBoundingClientRect();
+    if (top >= viewTop && bottom <= viewBottom) return;
+    const gap = 16;
+    const fits = bottom - top <= viewBottom - viewTop - gap * 2;
+    const delta = !fits || top < viewTop ? top - viewTop - gap : bottom - viewBottom + gap;
+    window.scrollBy({ top: delta, behavior: reduceMotion ? "instant" : "smooth" });
+  };
 
   return (
     <section
@@ -116,14 +156,17 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
             </p>
           )
         )}
-        <div className="grid grid-cols-2 items-start gap-x-6 gap-y-12 lg:grid-cols-3">
+        {/* Row spacing lives on the cards (and inside the panel) rather than in the grid gap,
+            so a collapsing panel takes its spacing with it. */}
+        <div className="-mb-12 grid grid-cols-2 items-start gap-x-6 lg:grid-cols-3">
           {items.map((it, i) => (
             <Fragment key={it._key}>
               <AriaButton
-                id={`item-${category.slug}-${i}`}
-                onPress={() => setOpen(open === i ? null : i)}
+                id={cardId(i)}
+                onPress={() => toggle(i)}
                 aria-expanded={open === i}
-                className="group flex cursor-pointer flex-col items-center gap-x-4 gap-y-[22px] text-center"
+                aria-controls={open === i ? panelId(i) : undefined}
+                className="group mb-12 flex cursor-pointer flex-col items-center gap-x-4 gap-y-[22px] text-center"
               >
                 <motion.div whileHover={{ y: -8, rotate: i % 2 ? 1.5 : -1.5 }} className="w-[min(100%,250px)]">
                   <Plate media={it.image} alt="" disc={open === i ? palette.black : color} sizes="250px" />
@@ -142,15 +185,21 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
                   </span>
                 </div>
               </AriaButton>
-              {i === rowEnd && open != null && (
-                <AnimatePresence>
-                  <ItemDetail
-                    key={`detail-${open}`}
-                    item={items[open]}
-                    tone={tone}
-                    orderCta={orderCta}
-                    onClose={() => closeDetail(open)}
-                  />
+              {/* Every row end keeps a mounted AnimatePresence so the panel animates out too;
+                  the panel opens after the last card of the pressed card's row. */}
+              {(i % cols === cols - 1 || i === items.length - 1) && (
+                <AnimatePresence initial={false} mode="wait">
+                  {open != null && openRow === Math.floor(i / cols) && (
+                    <ItemDetail
+                      key={items[open]._key}
+                      id={panelId(open)}
+                      item={items[open]}
+                      tone={tone}
+                      orderCta={orderCta}
+                      onClose={() => closeDetail(open)}
+                      onExpanded={(panel) => revealDetail(open, panel)}
+                    />
+                  )}
                 </AnimatePresence>
               )}
             </Fragment>
@@ -163,31 +212,44 @@ function CategoryBand({ category, index, orderCta }: { category: MenuCategory; i
 
 /** Expanded detail panel — spans the full row, flooded with the category color (or `PANEL_TONE`). */
 function ItemDetail({
+  id,
   item,
   tone,
   orderCta,
   onClose,
+  onExpanded,
 }: {
+  id: string;
   item: MenuItem;
   tone: Tone;
   orderCta?: Cta;
   onClose: () => void;
+  onExpanded: (panel: HTMLElement) => void;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  // MotionConfig only drops transforms for reduced motion; height and opacity are made instant here.
+  const reduceMotion = useReducedMotion();
   const field = PANEL_TONE[tone] ?? tone;
   const inkTone = inkOnField(field);
   const style = toneVars({ field: palette[field], ink: palette[inkTone] });
   return (
     <motion.div
-      initial={{ opacity: 0, y: -12 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      ref={ref}
+      id={id}
+      variants={{ collapsed: { height: 0, opacity: 0 }, open: { height: "auto", opacity: 1 } }}
+      initial="collapsed"
+      animate="open"
+      exit="collapsed"
+      transition={reduceMotion ? { duration: 0 } : { duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      onAnimationComplete={(definition) => {
+        if (definition === "open" && ref.current) onExpanded(ref.current);
+      }}
       role="region"
       aria-label={`${item.name} details`}
       onKeyDown={(e) => {
         if (e.key === "Escape") onClose();
       }}
-      className="col-span-full"
+      className="col-span-full overflow-hidden"
       style={style}
     >
       <div className="relative mt-1 grid grid-cols-12 items-center gap-x-4 gap-y-8 md:gap-x-8 rounded-3xl bg-(--field) p-[clamp(24px,3.4vw,44px)]">
@@ -248,6 +310,8 @@ function ItemDetail({
           )}
         </div>
       </div>
+      {/* Row spacing below the panel (see the grid in CategoryBand); collapses with it. */}
+      <div aria-hidden className="h-12" />
     </motion.div>
   );
 }
