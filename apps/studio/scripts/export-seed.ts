@@ -25,6 +25,8 @@ const ARRAY_MEMBER_TYPES: Record<string, string> = {
   columns: "footerColumn",
   links: "cta",
   legalLinks: "cta",
+  hours: "openingHours",
+  locations: "businessLocation",
 };
 
 function withTypes(value: unknown, field?: string): unknown {

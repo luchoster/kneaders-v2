@@ -7,6 +7,21 @@ export const siteSettings: SiteSettings = {
   title: "Kneaders Bakery & Café",
   description:
     "Hearth-baked breads, sandwiches, soups, and pastries — baked at dawn since 1997.",
+  business: {
+    url: "https://www.kneaders.com",
+    email: "hello@kneaders.com",
+    phone: "(801) 555-0100",
+    priceRange: "$$",
+    cuisines: ["Bakery", "Café", "Sandwiches", "Soup"],
+    foundingYear: 1997,
+    hours: keyed("hours", [
+      { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "06:00", closes: "20:00" },
+      { days: ["Saturday"], opens: "07:00", closes: "21:00" },
+      { days: ["Sunday"], opens: "07:00", closes: "19:00" },
+    ]),
+    // Real café addresses get entered in the Studio — the seed doesn't invent any.
+    locations: [],
+  },
   announcements: [
     "Hot bread out of the oven at 6 AM",
     "Soup of the day · Tomato Basil",

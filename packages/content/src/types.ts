@@ -183,11 +183,52 @@ export interface FooterColumn {
   links: Keyed<Cta>[];
 }
 
+export type DayOfWeek = "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday";
+
+/** One row of opening hours; times are 24-hour "HH:MM", local to the café. */
+export interface OpeningHours {
+  days: DayOfWeek[];
+  opens: string;
+  closes: string;
+}
+
+export interface BusinessLocation {
+  name: string;
+  street: string;
+  city: string;
+  region: string;
+  postalCode: string;
+  country?: string;
+  phone?: string;
+  latitude?: number;
+  longitude?: number;
+  mapUrl?: string;
+  /** Overrides the company-wide hours. */
+  hours?: Keyed<OpeningHours>[];
+}
+
+/** Facts about the business itself — drives the schema.org JSON-LD. */
+export interface BusinessInfo {
+  /** Canonical site origin, e.g. https://www.kneaders.com */
+  url: string;
+  logo?: Media;
+  email?: string;
+  phone?: string;
+  priceRange?: string;
+  cuisines?: string[];
+  foundingYear?: number;
+  /** Social / directory profile URLs. */
+  sameAs?: string[];
+  hours?: Keyed<OpeningHours>[];
+  locations?: Keyed<BusinessLocation>[];
+}
+
 export interface SiteSettings {
   _id: string;
   _type: "siteSettings";
   title: string;
   description?: string;
+  business?: BusinessInfo;
   announcements: string[];
   navLinks: Keyed<NavLink>[];
   rewardsLink?: Cta;
