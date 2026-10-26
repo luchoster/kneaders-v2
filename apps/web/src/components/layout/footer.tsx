@@ -13,7 +13,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         <div className="grid grid-cols-12 gap-x-4 gap-y-8 md:gap-x-8">
           <div className="col-span-12 md:col-span-5">
             <div className="mb-7">
-              <Wordmark href="" height={64} inverted />
+              <Wordmark href="" height={64} inverted preload={false} />
             </div>
             <div className="font-display text-[clamp(40px,6vw,88px)] leading-[0.95] tracking-[-0.03em]">
               {f.tagline.map((line, i) => (
@@ -43,7 +43,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
                 <ul className="mt-4 flex flex-col gap-2">
                   {col.links.map((l) => (
                     <li key={l._key}>
-                      <SmartLink href={l.href} className="font-display text-[15px] tracking-[-0.01em] text-k-bg">
+                      <SmartLink href={l.href} className="hit-area relative font-display text-[15px] tracking-[-0.01em] text-k-bg [--hit-y:4px]">
                         <span className="link-anim">{l.label}</span>
                       </SmartLink>
                     </li>
@@ -57,7 +57,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
           <div className="font-condensed text-[11px] uppercase tracking-[0.14em] text-k-gold">{f.copyright}</div>
           <div className="flex gap-6 font-condensed text-[11px] uppercase tracking-[0.14em]">
             {f.legalLinks.map((l) => (
-              <SmartLink key={l._key} href={l.href}>
+              <SmartLink key={l._key} href={l.href} className="hit-area relative [--hit-y:8px]">
                 {l.label}
               </SmartLink>
             ))}

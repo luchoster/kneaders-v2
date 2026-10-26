@@ -124,13 +124,17 @@
   * {
     scrollbar-color: var(--color-k-line) transparent;
   }
+  /* The halo fills the outline offset so the ring stays visible (≥ 3:1) on red, brown, sage, blue
+     and gold fields too; on the page background it is invisible. */
   :focus-visible {
     outline: 2px solid var(--color-k-red);
     outline-offset: 3px;
     border-radius: 2px;
+    box-shadow: 0 0 0 3px var(--color-k-bg);
   }
   [data-tone="ink"] :focus-visible {
     outline-color: var(--color-k-gold);
+    box-shadow: 0 0 0 3px var(--color-k-black);
   }
 }
 
@@ -181,6 +185,16 @@ a:hover > .link-anim {
   animation: k-marquee 40s linear infinite;
   @media (prefers-reduced-motion: reduce) {
     animation: none;
+  }
+}
+
+/* Enlarges the pointer/touch target without changing the rendered box (WCAG 2.5.8, Lighthouse tap
+   targets). The element must be positioned; set --hit-y / --hit-x to extend each side. */
+@utility hit-area {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: calc(-1 * var(--hit-y, 8px)) calc(-1 * var(--hit-x, 0px));
   }
 }
 

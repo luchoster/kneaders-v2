@@ -48,7 +48,7 @@ export function PackageGrid({ anchorId, heading, headingTone = "brown", packages
                   <span className="font-condensed text-[11px] uppercase tracking-[0.12em] text-(--ink) opacity-80">{p.minimum}</span>
                   <SmartLink
                     href={inquireHref}
-                    className="font-condensed text-xs font-bold uppercase tracking-[0.14em] text-(--ink) underline underline-offset-[3px]"
+                    className="hit-area relative font-condensed text-xs font-bold uppercase tracking-[0.14em] text-(--ink) underline underline-offset-[3px] [--hit-y:13px]"
                   >
                     Inquire →
                   </SmartLink>

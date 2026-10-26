@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, m, useReducedMotion } from "motion/react";
 import { Fragment, useEffect, useRef, useState, type RefObject } from "react";
 import { Button as AriaButton } from "react-aria-components";
 import {
@@ -68,7 +68,7 @@ function CategoryBar({ categories, navRef }: { categories: MenuCategory[]; navRe
           <a
             key={c._id}
             href={`#${c.slug}`}
-            className="whitespace-nowrap font-display text-[15px] font-bold tracking-[-0.01em] text-k-tan"
+            className="hit-area relative whitespace-nowrap font-display text-[15px] font-bold tracking-[-0.01em] text-k-tan [--hit-y:12px]"
           >
             <span className="link-anim inline-flex items-center gap-2">
               <span aria-hidden className="size-2 rounded-full" style={{ background: palette[toneOf(c)] }} />
@@ -168,9 +168,9 @@ function CategoryBand({
                 aria-controls={open === i ? panelId(i) : undefined}
                 className="group mb-12 flex cursor-pointer flex-col items-center gap-x-4 gap-y-[22px] text-center"
               >
-                <motion.div whileHover={{ y: -8, rotate: i % 2 ? 1.5 : -1.5 }} className="w-[min(100%,250px)]">
+                <m.div whileHover={{ y: -8, rotate: i % 2 ? 1.5 : -1.5 }} className="w-[min(100%,250px)]">
                   <Plate media={it.image} alt="" disc={open === i ? palette.black : color} sizes="250px" />
-                </motion.div>
+                </m.div>
                 <div className="flex flex-col items-center gap-1">
                   <span className="font-headline text-[clamp(17px,1.6vw,22px)] uppercase leading-[1.05] tracking-[-0.01em] text-k-black">
                     {it.name}
@@ -247,7 +247,7 @@ function ItemDetail({
   const inkTone = inkOnField(field);
   const style = toneVars({ field: palette[field], ink: palette[inkTone] });
   return (
-    <motion.div
+    <m.div
       ref={ref}
       id={id}
       variants={{ collapsed: { height: 0, opacity: 0 }, open: { height: "auto", opacity: 1 } }}
@@ -270,7 +270,7 @@ function ItemDetail({
         <AriaButton
           onPress={onClose}
           aria-label={`Close ${item.name} details`}
-          className="absolute top-4 right-5 z-20 size-10 cursor-pointer rounded-full bg-(--ink) font-display text-base font-bold text-(--field)"
+          className="hit-area absolute top-4 right-5 z-20 size-10 cursor-pointer rounded-full bg-(--ink) font-display text-base font-bold text-(--field) [--hit-x:2px] [--hit-y:2px]"
         >
           <span aria-hidden>✕</span>
         </AriaButton>
@@ -326,6 +326,6 @@ function ItemDetail({
       </div>
       {/* Row spacing below the panel (see the grid in CategoryBand); collapses with it. */}
       <div aria-hidden className="h-12" />
-    </motion.div>
+    </m.div>
   );
 }

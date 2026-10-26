@@ -27,7 +27,7 @@ export function Article({ post }: { post: PostDetail }) {
       <section data-cms-block="article.hero" className="relative bg-k-bg">
         <Container>
           <div className="pt-8 pb-4">
-            <Link href="/journal" className={meta}>
+            <Link href="/journal" className={`hit-area relative [--hit-y:12px] ${meta}`}>
               ← Back to Journal
             </Link>
           </div>

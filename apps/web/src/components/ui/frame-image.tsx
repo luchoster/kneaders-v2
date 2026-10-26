@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { Media } from "@kneaders/content";
+import { imageLoader } from "@/lib/image-loader";
 import { mediaSrc } from "@/lib/media";
 
 /** Rectangular image frame with striped placeholder + hover zoom (`HLImage`). */
@@ -39,7 +40,9 @@ export function FrameImage({
           alt={alt}
           fill
           sizes={sizes}
-          priority={eager}
+          loader={imageLoader(src)}
+          preload={eager}
+          fetchPriority={eager ? "high" : undefined}
           onLoad={() => setLoaded(true)}
           onError={() => setErrored(true)}
           className={`object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"} ${zoom}`}

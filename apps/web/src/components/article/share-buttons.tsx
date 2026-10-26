@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "react-aria-components";
 
 const btn =
-  "cursor-pointer rounded-full border border-k-line bg-transparent px-2.5 py-1.5 font-condensed text-[10px] uppercase tracking-[0.14em]";
+  "hit-area relative cursor-pointer rounded-full border border-k-line bg-transparent px-2.5 py-1.5 font-condensed text-[10px] uppercase tracking-[0.14em] [--hit-y:8px]";
 
 export function ShareButtons({ title }: { title: string }) {
   const [copied, setCopied] = useState(false);

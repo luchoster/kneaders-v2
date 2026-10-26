@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, m } from "motion/react";
 import { useEffect, useState } from "react";
 import { Button as AriaButton } from "react-aria-components";
 import { categoryTone, palette, type Keyed, type PromoCarouselSection } from "@kneaders/content";
@@ -50,8 +50,10 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
       <Container>
         <div className="grid grid-cols-12 items-center gap-x-4 gap-y-8 md:gap-x-8 pt-14 pb-[72px]">
           <div className="order-2 col-span-12 md:order-1 md:col-span-5">
-            <AnimatePresence mode="wait">
-              <motion.div
+            {/* initial={false}: the first slide is the page's LCP content, so it is server-rendered visible
+                instead of waiting for hydration to fade in; slide changes still animate. */}
+            <AnimatePresence mode="wait" initial={false}>
+              <m.div
                 key={s._key}
                 role="group"
                 aria-roledescription="slide"
@@ -79,7 +81,7 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
                     {s.cta.label}
                   </Button>
                 )}
-              </motion.div>
+              </m.div>
             </AnimatePresence>
             {count > 1 && (
               <div role="group" aria-label="Choose slide" className="mt-8 flex gap-2">
@@ -89,7 +91,8 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
                     onPress={() => setI(j)}
                     aria-label={`Slide ${j + 1} of ${count}`}
                     aria-current={j === i ? "true" : undefined}
-                    className={`h-2.5 cursor-pointer rounded-full transition-[width,background-color] duration-300 ${
+                    // hit-area: 44px-tall touch target around the 10px dot, no layout change.
+                    className={`hit-area relative h-2.5 cursor-pointer rounded-full transition-[width,background-color] duration-300 [--hit-x:4px] [--hit-y:17px] ${
                       j === i ? "w-7 bg-k-red" : "w-2.5 bg-k-tan-deep"
                     }`}
                   />
@@ -98,8 +101,8 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
             )}
           </div>
           <div className="relative order-1 col-span-12 md:order-2 md:col-span-7">
-            <AnimatePresence mode="wait">
-              <motion.div
+            <AnimatePresence mode="wait" initial={false}>
+              <m.div
                 key={s._key}
                 initial={{ opacity: 0, scale: 0.96, rotate: 2 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -121,7 +124,7 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
                     </Sticker>
                   </div>
                 )}
-              </motion.div>
+              </m.div>
             </AnimatePresence>
           </div>
         </div>

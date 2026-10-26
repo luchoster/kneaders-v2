@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { preconnect } from "react-dom";
 import { Providers } from "@/components/providers";
 import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 import { fontVariables } from "./fonts";
@@ -28,6 +29,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  // Hero plates are served straight from Sanity's CDN; open the connection before the HTML finishes parsing.
+  preconnect("https://cdn.sanity.io");
   return (
     <html lang="en" className={fontVariables}>
       <body>
