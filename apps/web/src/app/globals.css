@@ -175,9 +175,13 @@
   &:hover {
     background-size: 100% 1px;
   }
+  &.link-anim-active {
+    background-size: 100% 1px;
+  }
 }
 /* Nav/footer: the underline draws when hovering the whole link. */
-a:hover > .link-anim {
+a:hover > .link-anim,
+a[aria-current="true"] > .link-anim {
   background-size: 100% 1px;
 }
 

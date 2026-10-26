@@ -61,21 +61,66 @@ export function MenuBoard({ categories = [], orderCta }: Keyed<MenuBoardSection>
 }
 
 function CategoryBar({ categories, navRef }: { categories: MenuCategory[]; navRef: RefObject<HTMLElement | null> }) {
+  const [activeSlug, setActiveSlug] = useState(categories[0]?.slug ?? "");
+  const linkRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+
+  // Highlight the category whose section sits under the sticky bars (scroll or click).
+  useEffect(() => {
+    const sections = categories
+      .map((c) => document.getElementById(c.slug))
+      .filter((el): el is HTMLElement => Boolean(el));
+    if (!sections.length) return;
+
+    // Top offset ≈ main nav (72) + category bar (~46). Bottom cuts the viewport so the
+    // "active" band is a strip just below the sticky bars.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]?.target instanceof HTMLElement && visible[0].target.id) {
+          setActiveSlug(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-120px 0px -55% 0px", threshold: [0, 0.1, 0.25] },
+    );
+
+    for (const el of sections) observer.observe(el);
+    return () => observer.disconnect();
+  }, [categories]);
+
+  // Keep the active chip in view inside the horizontal scroller.
+  useEffect(() => {
+    const el = linkRefs.current.get(activeSlug);
+    el?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  }, [activeSlug]);
+
   return (
     <nav ref={navRef} aria-label="Menu categories" className="sticky top-[72px] z-40 bg-k-black">
       <Container className="no-scrollbar flex items-center gap-x-6 gap-y-1 overflow-x-auto py-3">
-        {categories.map((c) => (
-          <a
-            key={c._id}
-            href={`#${c.slug}`}
-            className="hit-area relative whitespace-nowrap font-display text-[15px] font-bold tracking-[-0.01em] text-k-tan [--hit-y:12px]"
-          >
-            <span className="link-anim inline-flex items-center gap-2">
-              <span aria-hidden className="size-2 rounded-full" style={{ background: palette[toneOf(c)] }} />
-              {c.title}
-            </span>
-          </a>
-        ))}
+        {categories.map((c) => {
+          const active = c.slug === activeSlug;
+          return (
+            <a
+              key={c._id}
+              ref={(node) => {
+                if (node) linkRefs.current.set(c.slug, node);
+                else linkRefs.current.delete(c.slug);
+              }}
+              href={`#${c.slug}`}
+              aria-current={active ? "true" : undefined}
+              onClick={() => setActiveSlug(c.slug)}
+              className="hit-area relative whitespace-nowrap font-display text-[15px] font-bold tracking-[-0.01em] text-k-tan [--hit-y:12px]"
+            >
+              <span
+                className={`link-anim inline-flex items-center gap-2${active ? " link-anim-active" : ""}`}
+              >
+                <span aria-hidden className="size-2 rounded-full" style={{ background: palette[toneOf(c)] }} />
+                {c.title}
+              </span>
+            </a>
+          );
+        })}
       </Container>
     </nav>
   );
