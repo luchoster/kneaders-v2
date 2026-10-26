@@ -50,7 +50,7 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
               key={l._key}
               href={l.href}
               aria-current={active === l.key ? "page" : undefined}
-              className={`relative font-display text-sm font-medium tracking-[0.01em] ${
+              className={`relative py-3 font-display text-sm font-medium tracking-[0.01em] ${
                 active === l.key ? "text-k-brown" : "text-k-black"
               }`}
             >
@@ -60,7 +60,7 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
         </nav>
         <div className="hidden items-center gap-3 md:flex">
           {rewardsLink && (
-            <Link href={rewardsLink.href} className="font-display text-sm tracking-[-0.01em] text-k-black">
+            <Link href={rewardsLink.href} className="py-3 font-display text-sm tracking-[-0.01em] text-k-black">
               <span className="link-anim">{rewardsLink.label}</span>
             </Link>
           )}
@@ -70,7 +70,7 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
         </div>
         <AriaButton
           ref={toggleRef}
-          className="inline-flex cursor-pointer items-center rounded-full border border-k-black px-3.5 py-2 font-display text-[13px] font-bold uppercase tracking-[0.04em] text-k-black transition-colors duration-200 hover:bg-k-black hover:text-k-bg md:hidden"
+          className="hit-area relative inline-flex cursor-pointer items-center rounded-full border border-k-black px-3.5 py-2 font-display text-[13px] font-bold uppercase tracking-[0.04em] text-k-black transition-colors duration-200 [--hit-y:6px] hover:bg-k-black hover:text-k-bg md:hidden"
           onPress={() => setOpen((o) => !o)}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -87,7 +87,7 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
                 href={l.href}
                 onPress={() => setOpen(false)}
                 aria-current={active === l.key ? "page" : undefined}
-                className="font-display text-lg tracking-[-0.01em]"
+                className="hit-area relative font-display text-lg tracking-[-0.01em] [--hit-y:6px]"
               >
                 {l.label}
               </Link>

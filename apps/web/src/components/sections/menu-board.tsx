@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, m, useReducedMotion } from "motion/react";
 import { Fragment, useEffect, useRef, useState, type RefObject } from "react";
 import { Button as AriaButton } from "react-aria-components";
 import {
@@ -61,21 +61,66 @@ export function MenuBoard({ categories = [], orderCta }: Keyed<MenuBoardSection>
 }
 
 function CategoryBar({ categories, navRef }: { categories: MenuCategory[]; navRef: RefObject<HTMLElement | null> }) {
+  const [activeSlug, setActiveSlug] = useState(categories[0]?.slug ?? "");
+  const linkRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+
+  // Highlight the category whose section sits under the sticky bars (scroll or click).
+  useEffect(() => {
+    const sections = categories
+      .map((c) => document.getElementById(c.slug))
+      .filter((el): el is HTMLElement => Boolean(el));
+    if (!sections.length) return;
+
+    // Top offset ≈ main nav (72) + category bar (~46). Bottom cuts the viewport so the
+    // "active" band is a strip just below the sticky bars.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]?.target instanceof HTMLElement && visible[0].target.id) {
+          setActiveSlug(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-120px 0px -55% 0px", threshold: [0, 0.1, 0.25] },
+    );
+
+    for (const el of sections) observer.observe(el);
+    return () => observer.disconnect();
+  }, [categories]);
+
+  // Keep the active chip in view inside the horizontal scroller.
+  useEffect(() => {
+    const el = linkRefs.current.get(activeSlug);
+    el?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  }, [activeSlug]);
+
   return (
     <nav ref={navRef} aria-label="Menu categories" className="sticky top-[72px] z-40 bg-k-black">
       <Container className="no-scrollbar flex items-center gap-x-6 gap-y-1 overflow-x-auto py-3">
-        {categories.map((c) => (
-          <a
-            key={c._id}
-            href={`#${c.slug}`}
-            className="whitespace-nowrap font-display text-[15px] font-bold tracking-[-0.01em] text-k-tan"
-          >
-            <span className="link-anim inline-flex items-center gap-2">
-              <span aria-hidden className="size-2 rounded-full" style={{ background: palette[toneOf(c)] }} />
-              {c.title}
-            </span>
-          </a>
-        ))}
+        {categories.map((c) => {
+          const active = c.slug === activeSlug;
+          return (
+            <a
+              key={c._id}
+              ref={(node) => {
+                if (node) linkRefs.current.set(c.slug, node);
+                else linkRefs.current.delete(c.slug);
+              }}
+              href={`#${c.slug}`}
+              aria-current={active ? "true" : undefined}
+              onClick={() => setActiveSlug(c.slug)}
+              className="hit-area relative whitespace-nowrap font-display text-[15px] font-bold tracking-[-0.01em] text-k-tan [--hit-y:12px]"
+            >
+              <span
+                className={`link-anim inline-flex items-center gap-2${active ? " link-anim-active" : ""}`}
+              >
+                <span aria-hidden className="size-2 rounded-full" style={{ background: palette[toneOf(c)] }} />
+                {c.title}
+              </span>
+            </a>
+          );
+        })}
       </Container>
     </nav>
   );
@@ -168,9 +213,9 @@ function CategoryBand({
                 aria-controls={open === i ? panelId(i) : undefined}
                 className="group mb-12 flex cursor-pointer flex-col items-center gap-x-4 gap-y-[22px] text-center"
               >
-                <motion.div whileHover={{ y: -8, rotate: i % 2 ? 1.5 : -1.5 }} className="w-[min(100%,250px)]">
+                <m.div whileHover={{ y: -8, rotate: i % 2 ? 1.5 : -1.5 }} className="w-[min(100%,250px)]">
                   <Plate media={it.image} alt="" disc={open === i ? palette.black : color} sizes="250px" />
-                </motion.div>
+                </m.div>
                 <div className="flex flex-col items-center gap-1">
                   <span className="font-headline text-[clamp(17px,1.6vw,22px)] uppercase leading-[1.05] tracking-[-0.01em] text-k-black">
                     {it.name}
@@ -247,7 +292,7 @@ function ItemDetail({
   const inkTone = inkOnField(field);
   const style = toneVars({ field: palette[field], ink: palette[inkTone] });
   return (
-    <motion.div
+    <m.div
       ref={ref}
       id={id}
       variants={{ collapsed: { height: 0, opacity: 0 }, open: { height: "auto", opacity: 1 } }}
@@ -270,7 +315,7 @@ function ItemDetail({
         <AriaButton
           onPress={onClose}
           aria-label={`Close ${item.name} details`}
-          className="absolute top-4 right-5 z-20 size-10 cursor-pointer rounded-full bg-(--ink) font-display text-base font-bold text-(--field)"
+          className="hit-area absolute top-4 right-5 z-20 size-10 cursor-pointer rounded-full bg-(--ink) font-display text-base font-bold text-(--field) [--hit-x:2px] [--hit-y:2px]"
         >
           <span aria-hidden>✕</span>
         </AriaButton>
@@ -326,6 +371,6 @@ function ItemDetail({
       </div>
       {/* Row spacing below the panel (see the grid in CategoryBand); collapses with it. */}
       <div aria-hidden className="h-12" />
-    </motion.div>
+    </m.div>
   );
 }

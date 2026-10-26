@@ -4,7 +4,18 @@ import Image from "next/image";
 import { Link } from "react-aria-components";
 
 /** Official Kneaders logo (250×104 source). */
-export function Wordmark({ href = "/", height = 33, inverted = false }: { href?: string; height?: number; inverted?: boolean }) {
+export function Wordmark({
+  href = "/",
+  height = 33,
+  inverted = false,
+  preload = true,
+}: {
+  href?: string;
+  height?: number;
+  inverted?: boolean;
+  /** Header logo is above the fold; pass `false` for below-the-fold copies (footer). */
+  preload?: boolean;
+}) {
   const img = (
     <Image
       src="/kneaders-logo.png"
@@ -12,7 +23,7 @@ export function Wordmark({ href = "/", height = 33, inverted = false }: { href?:
       alt={href ? "" : "Kneaders Bakery & Café"}
       width={250}
       height={104}
-      priority
+      preload={preload}
       className={`block w-auto ${inverted ? "invert brightness-[1.05]" : ""}`}
       style={{ height }}
     />

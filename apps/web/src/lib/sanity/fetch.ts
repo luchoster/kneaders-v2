@@ -1,5 +1,6 @@
 import "server-only";
 import type { Page, PostDetail, SiteSettings } from "@kneaders/content";
+import { SITE_URL } from "../site";
 import { client } from "./client";
 import { isSanityConfigured } from "./env";
 import {
@@ -18,9 +19,28 @@ async function query<T>(groq: string, params: Record<string, string> = {}): Prom
   return client.fetch<T>(groq, params, { next: { revalidate } });
 }
 
+/**
+ * A Sanity settings document that predates the "Business info" fields has no `business.url`,
+ * which silently disables all JSON-LD. Fill gaps from the seed and the canonical site origin.
+ */
+function withBusinessDefaults(settings: SiteSettings): SiteSettings {
+  const fallback = seedSettings().business;
+  const business = settings.business;
+  return {
+    ...settings,
+    description: settings.description ?? seedSettings().description,
+    business: {
+      ...fallback,
+      ...business,
+      url: SITE_URL,
+      hours: business?.hours?.length ? business.hours : fallback?.hours,
+    },
+  };
+}
+
 export async function getSettings(): Promise<SiteSettings> {
-  if (!isSanityConfigured) return seedSettings();
-  return (await query<SiteSettings | null>(SETTINGS_QUERY)) ?? seedSettings();
+  if (!isSanityConfigured) return withBusinessDefaults(seedSettings());
+  return withBusinessDefaults((await query<SiteSettings | null>(SETTINGS_QUERY)) ?? seedSettings());
 }
 
 /** The home page comes only from the Sanity `homePage` document; there is no seed fallback. */

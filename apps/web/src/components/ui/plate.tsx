@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import type { Media } from "@kneaders/content";
+import { imageLoader } from "@/lib/image-loader";
 import { mediaSrc } from "@/lib/media";
 import { toneVars } from "@/lib/tones";
 
@@ -47,7 +48,9 @@ export function Plate({
             alt={label}
             fill
             sizes={sizes}
-            priority={eager}
+            loader={imageLoader(src)}
+            preload={eager}
+            fetchPriority={eager ? "high" : undefined}
             className="object-cover"
             onError={() => setErrored(true)}
           />

@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, type HTMLMotionProps } from "motion/react";
+import { m, type HTMLMotionProps } from "motion/react";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-const MotionLink = motion.create(Link);
+const MotionLink = m.create(Link);
 
 /** Hover lift + tilt (the prototype's `whileHover={{ y, rotate }}`), spring physics. */
 export function Lift({
@@ -28,8 +28,8 @@ export function Lift({
     );
   }
   return (
-    <motion.div whileHover={hover} {...rest}>
+    <m.div whileHover={hover} {...rest}>
       {children}
-    </motion.div>
+    </m.div>
   );
 }

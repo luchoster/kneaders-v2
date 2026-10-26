@@ -62,13 +62,13 @@ export function ColorCardGrid({ anchorId, heading, numbered, cards = [] }: Keyed
                   {c.email && (
                     <a
                       href={`mailto:${c.email}`}
-                      className="font-condensed text-[13px] font-semibold text-(--ink) underline underline-offset-[3px]"
+                      className="hit-area relative font-condensed text-[13px] font-semibold text-(--ink) underline underline-offset-[3px] [--hit-y:2px]"
                     >
                       {c.email}
                     </a>
                   )}
                   {c.phone && (
-                    <a href={`tel:${c.phone.replace(/[^\d+]/g, "")}`} className="font-condensed text-[13px] text-(--ink) opacity-85">
+                    <a href={`tel:${c.phone.replace(/[^\d+]/g, "")}`} className="hit-area relative font-condensed text-[13px] text-(--ink) opacity-85 [--hit-y:2px]">
                       {c.phone}
                     </a>
                   )}
@@ -77,7 +77,7 @@ export function ColorCardGrid({ anchorId, heading, numbered, cards = [] }: Keyed
               {c.cta && (
                 <SmartLink
                   href={c.cta.href}
-                  className="mt-auto font-condensed text-xs font-bold uppercase tracking-[0.14em] text-(--ink) underline underline-offset-[3px]"
+                  className="hit-area relative mt-auto font-condensed text-xs font-bold uppercase tracking-[0.14em] text-(--ink) underline underline-offset-[3px] [--hit-y:13px]"
                 >
                   {c.cta.label} →
                 </SmartLink>

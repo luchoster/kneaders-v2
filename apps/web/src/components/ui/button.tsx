@@ -6,7 +6,7 @@ import type { Tone } from "@kneaders/content";
 import { hex, toneVars } from "@/lib/tones";
 
 const base =
-  "inline-flex items-center gap-2 px-5 py-3 rounded-full font-display font-bold text-[13px] leading-normal tracking-[0.04em] uppercase whitespace-nowrap cursor-pointer transition-[transform,background-color,color,border-color] duration-200";
+  "hit-area relative inline-flex items-center gap-2 px-5 py-3 rounded-full font-display font-bold text-[13px] leading-normal tracking-[0.04em] uppercase whitespace-nowrap cursor-pointer transition-[transform,background-color,color,border-color] duration-200 [--hit-y:2px]";
 
 const variants = {
   /** Brand-colored pill (colors come from props). */
