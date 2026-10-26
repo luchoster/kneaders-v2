@@ -5,6 +5,7 @@ import { PageBuilder } from "@/components/sections";
 import { SiteShell } from "@/components/layout/site-shell";
 import { JsonLd } from "@/components/ui/json-ld";
 import { getHomePage, getPage, getSettings } from "@/lib/sanity/fetch";
+import { SITE_DESCRIPTION } from "@/lib/site";
 import { menuJsonLd } from "@/lib/structured-data";
 
 /** The `homePage` singleton renders at `/`; every other page is a `page` document. */
@@ -38,7 +39,7 @@ export async function pageMetadata(slug: string): Promise<Metadata> {
   if (!page) return {};
   const path = slug === "home" ? "/" : `/${slug}`;
   const title = page.seo?.title ?? page.title;
-  const description = page.seo?.description;
+  const description = page.seo?.description || SITE_DESCRIPTION;
   return {
     title: slug === "home" ? { absolute: title } : title,
     description,

@@ -7,5 +7,8 @@ export const SITE_URL = (
   "https://kneaders.zera.us"
 ).replace(/\/+$/, "");
 
+/** Default meta description, used when a page has no SEO description of its own. */
+export const SITE_DESCRIPTION = "Hearth-baked breads, sandwiches, soups, and pastries — baked at dawn since 1997.";
+
 /** Absolute URL for a site path. */
 export const absoluteUrl = (path: string) => `${SITE_URL}${path === "/" ? "" : path}`;
