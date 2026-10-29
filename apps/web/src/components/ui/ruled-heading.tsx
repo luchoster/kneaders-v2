@@ -22,7 +22,7 @@ export function RuledHeading({
     category: "text-[clamp(34px,4vw,56px)] leading-[0.95]",
   };
   return (
-    <div className={`flex items-center gap-5 ${className}`} style={toneVars({ rule: hex(tone, "maroon") })}>
+    <div className={`flex items-center gap-5 ${className}`} style={toneVars({ rule: hex(tone, "brown") })}>
       <div className="h-[3px] flex-1 rounded-[2px] bg-(--rule) opacity-85" />
       <h2
         className={`text-center font-headline uppercase tracking-[-0.01em] text-(--rule) ${sizes[size]} ${nowrap ? "whitespace-nowrap" : ""}`}

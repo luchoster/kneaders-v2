@@ -1,16 +1,16 @@
-import { journalTagTone, palette, type Keyed, type PageHeroSection } from "@kneaders/content";
+import { journalTagTone, type Keyed, type PageHeroSection } from "@kneaders/content";
 import { hex } from "@/lib/tones";
 import { Button } from "../ui/button";
 import { Chip } from "../ui/chip";
 import { Container } from "../ui/container";
-import { Plate } from "../ui/plate";
+import { Photo } from "../ui/photo";
 import { SplitHeadline } from "../ui/split-headline";
 import { Sticker } from "../ui/sticker";
 
 /**
  * Interior page hero. Layouts:
  *  - textOnly: headline + copy (+ tag chips) — Journal, Contact
- *  - balanced: 6 / 6 with a capped plate — Catering
+ *  - balanced: 6 / 6 with a capped photo — Catering
  *  - wide:     7 / 5 — Careers, Giving, Story (dark)
  */
 export function PageHero({
@@ -22,7 +22,6 @@ export function PageHero({
   body,
   buttons,
   image,
-  plateTone,
   sticker,
   stats,
   tags,
@@ -39,17 +38,17 @@ export function PageHero({
     <div className={`flex flex-col items-start ${dark ? "gap-6" : "gap-5"}`}>
       {eyebrow && (
         <span
-          className={`font-condensed text-sm font-semibold italic uppercase tracking-[0.2em] ${dark ? "text-k-gold" : "text-k-rust"}`}
+          className={`font-condensed text-sm font-semibold italic uppercase tracking-[0.2em] ${dark ? "text-k-tan" : "text-k-brown"}`}
         >
           {eyebrow}
         </span>
       )}
       <h1 className={`font-headline font-normal uppercase leading-[0.92] tracking-[0.01em] ${titleSize}`}>
-        <SplitHeadline headline={headline} leadTone={dark ? "tan" : "black"} restTone={dark ? "gold" : "black"} />
+        <SplitHeadline headline={headline} leadTone={dark ? "cream" : "black"} restTone={dark ? "tan" : "black"} onDark={dark} />
       </h1>
       {body && (
         <p
-          className={`font-body text-lg text-pretty ${bodyLeading} ${bodyWidth} ${dark ? "text-k-tan-deep" : "text-k-maroon"}`}
+          className={`font-body text-lg text-pretty ${bodyLeading} ${bodyWidth} ${dark ? "text-k-tan-deep" : "text-k-ink-2"}`}
         >
           {body}
         </p>
@@ -57,7 +56,7 @@ export function PageHero({
       {tags && tags.length > 0 && (
         <div className="flex flex-wrap gap-2">
           {tags.map((t) => (
-            <Chip key={t} color={palette[journalTagTone(t)]} className="font-semibold">
+            <Chip key={t} color={hex(journalTagTone(t), "brown")} className="font-semibold">
               {t}
             </Chip>
           ))}
@@ -71,7 +70,7 @@ export function PageHero({
                 {b.label}
               </Button>
             ) : (
-              <Button key={b._key} href={b.href} tone={b.tone ?? "red"} ink="tan" arrow>
+              <Button key={b._key} href={b.href} tone={b.tone ?? "brown"} ink={dark ? "black" : "cream"} arrow>
                 {b.label}
               </Button>
             ),
@@ -83,7 +82,7 @@ export function PageHero({
           {stats.map((s) => (
             <div key={s._key} className="flex flex-col">
               <span className="font-headline text-[clamp(26px,2.6vw,40px)] tracking-[-0.01em] text-k-tan">{s.value}</span>
-              <span className="font-condensed text-xs uppercase tracking-[0.18em] text-k-gold">{s.label}</span>
+              <span className="font-condensed text-xs uppercase tracking-[0.18em] text-k-tan">{s.label}</span>
             </div>
           ))}
         </div>
@@ -99,13 +98,12 @@ export function PageHero({
     );
   }
 
-  const disc = hex(plateTone, dark ? "gold" : "blue");
   const stickerEl = sticker && (
-    <Sticker tone={sticker.tone ?? "gold"} textTone={sticker.textTone} rotate={dark ? -7 : 7}>
+    <Sticker>
       {sticker.text}
     </Sticker>
   );
-  const stickerPos = dark ? "left-1 bottom-6" : layout === "balanced" ? "right-3 top-2" : "right-2 top-2";
+  const stickerPos = dark ? "left-4 bottom-4" : "right-4 top-4";
 
   return (
     <section
@@ -120,10 +118,10 @@ export function PageHero({
         <div className={`relative col-span-12 ${layout === "balanced" ? "md:col-span-6" : "md:col-span-5"}`}>
           {layout === "balanced" ? (
             <div className="ml-auto w-[min(100%,520px)]">
-              <Plate media={image} disc={disc} eager sizes="(min-width: 768px) 520px, 100vw" />
+              <Photo media={image} eager sizes="(min-width: 768px) 520px, 100vw" />
             </div>
           ) : (
-            <Plate media={image} disc={disc} eager />
+            <Photo media={image} eager />
           )}
           {stickerEl && <div className={`absolute ${stickerPos}`}>{stickerEl}</div>}
         </div>

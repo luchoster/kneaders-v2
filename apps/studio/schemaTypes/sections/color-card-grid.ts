@@ -24,8 +24,8 @@ export const colorCardGrid = defineType({
           fields: [
             defineField({ name: "title", type: "string", validation: (r) => r.required() }),
             defineField({ name: "body", type: "text", rows: 2 }),
-            toneField("tone", "Card color", { initialValue: "gold" }),
-            toneField("textTone", "Text color", { initialValue: "black" }),
+            toneField("tone", "Card color", { initialValue: "brown" }),
+            toneField("textTone", "Text color", { initialValue: "cream" }),
             defineField({ name: "sticker", type: "string" }),
             defineField({ name: "email", type: "string" }),
             defineField({ name: "phone", type: "string" }),

@@ -17,7 +17,7 @@ export const ctaBand = defineType({
       initialValue: "large",
       options: { list: ["large", "medium"], layout: "radio", direction: "horizontal" },
     }),
-    toneField("tone", "Band color", { initialValue: "red" }),
+    toneField("tone", "Band color", { initialValue: "brown" }),
     defineField({ name: "primaryCta", title: "Primary button", type: "cta" }),
     defineField({ name: "secondaryCta", title: "Secondary button", type: "cta" }),
     defineField({

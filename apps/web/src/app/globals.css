@@ -14,22 +14,15 @@
 }
 
 @theme {
-  /* Brand palette (kdrs Simple Style Guide) */
+  /* The four brand colors: black, brown, green, cream (tan = cream's deeper shade).
+     Mirrors brandPalette in packages/content/src/palette.ts. The menu's full
+     style-guide colors are applied inline from `palette`, not from these classes. */
   --color-k-black: #231f20;
-  --color-k-tan: #efe1c5;
-  --color-k-tan-deep: #d9c79e;
-  --color-k-cream: #fdfbf7;
-  --color-k-gold: #c7812a;
-  --color-k-gold-deep: #ab6d26;
-  --color-k-rust: #a4541c;
   --color-k-brown: #803b24;
-  --color-k-red: #801b21;
-  --color-k-maroon: #56252a;
-  --color-k-sage: #74813b;
-  --color-k-sage-light: #afbd90;
-  --color-k-blue: #4b8496;
-  --color-k-blue-light: #b7cbda;
-  --color-k-gray: #b8bbbd;
+  --color-k-green: #5e6a2c;
+  --color-k-cream: #fdfbf7;
+  --color-k-tan: #efe1c5;
+  --color-k-tan-deep: #d9c79e; /* hairlines + placeholders only */
 
   /* Surfaces + ink (light theme) */
   --color-k-bg: #fdfbf7;
@@ -37,7 +30,7 @@
   --color-k-bg-deep: #efe1c5;
   --color-k-line: #d9c79e;
   --color-k-line-soft: #e9dfc6;
-  --color-k-ink-2: #56252a;
+  --color-k-ink-2: #4f4a4b; /* secondary copy: black at ~80% on cream */
   --color-k-ink-3: #803b24;
   --color-k-line-dark: #4a4140; /* hairlines on black sections */
 
@@ -125,12 +118,20 @@
     scrollbar-color: var(--color-k-line) transparent;
   }
   :focus-visible {
-    outline: 2px solid var(--color-k-red);
+    outline: 2px solid var(--color-k-brown);
     outline-offset: 3px;
     border-radius: 2px;
   }
   [data-tone="ink"] :focus-visible {
-    outline-color: var(--color-k-gold);
+    outline-color: var(--color-k-cream);
+  }
+
+  /* Photo shape — square by default; the review toggle switches every photo to a circle. */
+  :root {
+    --photo-radius: 0px;
+  }
+  :root[data-photo-shape="circle"] {
+    --photo-radius: 9999px;
   }
 }
 
@@ -177,11 +178,9 @@ a:hover > .link-anim {
   background-size: 100% 1px;
 }
 
-@utility animate-marquee {
-  animation: k-marquee 40s linear infinite;
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
+@utility photo-shape {
+  border-radius: var(--photo-radius);
+  transition: border-radius 0.35s var(--ease-k);
 }
 
 @utility no-scrollbar {
@@ -191,11 +190,3 @@ a:hover > .link-anim {
   }
 }
 
-@keyframes k-marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}

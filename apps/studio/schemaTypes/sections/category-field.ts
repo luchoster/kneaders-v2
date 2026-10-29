@@ -8,7 +8,7 @@ export const categoryField = defineType({
   title: "Category field",
   type: "object",
   icon: ThLargeIcon,
-  description: "Sage field of squircle category plates linking into the menu.",
+  description: "Green field of category photos linking into the menu.",
   fields: [
     defineField({
       name: "tiles",
@@ -22,7 +22,7 @@ export const categoryField = defineType({
             defineField({
               name: "category",
               title: "Menu category",
-              description: "Links to /menu#category and sets the plate color.",
+              description: "Links to /menu#category.",
               type: "string",
               options: { list: Object.keys(categoryTones) },
               validation: (r) => r.required(),

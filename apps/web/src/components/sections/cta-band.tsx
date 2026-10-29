@@ -8,7 +8,7 @@ import { SplitHeadline } from "../ui/split-headline";
 export function CtaBand({
   headline,
   size = "large",
-  tone = "red",
+  tone = "brown",
   primaryCta,
   secondaryCta,
   secondaryStyle = "solid",
@@ -18,7 +18,7 @@ export function CtaBand({
       data-cms-block="ctaBand"
       data-tone="ink"
       className="bg-(--band) py-20 text-center"
-      style={toneVars({ band: hex(tone, "red") })}
+      style={toneVars({ band: hex(tone, "brown") })}
     >
       <Container className="flex flex-col items-center gap-6">
         <h2
@@ -26,7 +26,7 @@ export function CtaBand({
             size === "large" ? "text-[clamp(36px,5vw,72px)]" : "text-[clamp(34px,4.6vw,66px)]"
           }`}
         >
-          <SplitHeadline headline={headline} leadTone="tan" restTone="gold" />
+          <SplitHeadline headline={headline} leadTone="cream" restTone="tan" onDark />
         </h2>
         <div className="flex flex-wrap justify-center gap-3">
           {primaryCta && (

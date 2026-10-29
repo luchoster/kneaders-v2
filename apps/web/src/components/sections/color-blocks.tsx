@@ -1,13 +1,13 @@
 import type { ColorBlocksSection, Keyed } from "@kneaders/content";
-import { hex, toneVars } from "@/lib/tones";
+import { hex, isLightField, readableInk, toneVars } from "@/lib/tones";
 import { Button } from "../ui/button";
 import { Container } from "../ui/container";
-import { Plate } from "../ui/plate";
+import { Photo } from "../ui/photo";
 import { Sticker } from "../ui/sticker";
 
 /**
  * Two saturated color blocks side by side (home "order / catering" split band,
- * story "giving / careers" doors). Blocks with an image get the plate layout.
+ * story "giving / careers" doors). Blocks with an image get the photo layout.
  */
 export function ColorBlocks({ blocks, tuckUnder }: Keyed<ColorBlocksSection>) {
   return (
@@ -17,8 +17,8 @@ export function ColorBlocks({ blocks, tuckUnder }: Keyed<ColorBlocksSection>) {
     >
       <Container className="grid grid-cols-12 gap-6">
         {blocks?.map((b) => {
-          const ink = b.textTone ?? "cream";
-          const style = toneVars({ bg: hex(b.tone, "red"), ink: hex(ink, "cream") });
+          const ink = readableInk(b.tone, b.textTone);
+          const style = toneVars({ bg: hex(b.tone, "brown"), ink: hex(ink, "cream") });
           const text = (
             <>
               <h3 className="font-headline text-[clamp(28px,2.8vw,42px)] uppercase leading-[0.95] tracking-[-0.01em] text-(--ink)">
@@ -46,13 +46,13 @@ export function ColorBlocks({ blocks, tuckUnder }: Keyed<ColorBlocksSection>) {
             >
               <div className="flex flex-wrap items-center gap-6">
                 <div className="w-[132px] shrink-0">
-                  <Plate media={b.image} alt={b.image.alt ?? ""} disc="rgba(35,31,32,0.25)" sizes="132px" />
+                  <Photo media={b.image} alt={b.image.alt ?? ""} sizes="132px" />
                 </div>
                 <div className="flex min-w-[220px] flex-1 flex-col items-start gap-3">{text}</div>
               </div>
               {b.sticker && (
                 <div className="absolute top-[18px] right-[18px]">
-                  <Sticker tone={b.sticker.tone} textTone={b.sticker.textTone} rotate={6} size="sm">
+                  <Sticker variant={isLightField(b.tone, "brown") ? "brown" : "cream"} size="sm">
                     {b.sticker.text}
                   </Sticker>
                 </div>

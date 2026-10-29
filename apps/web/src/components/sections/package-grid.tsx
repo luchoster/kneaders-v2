@@ -1,15 +1,14 @@
 import type { Keyed, PackageGridSection, Tone } from "@kneaders/content";
-import { palette } from "@kneaders/content";
-import { inkOnField, toneVars } from "@/lib/tones";
+import { hex, inkOnField, isLightField, toneVars } from "@/lib/tones";
 import { Container } from "../ui/container";
 import { Lift } from "../ui/lift";
-import { Plate } from "../ui/plate";
+import { Photo } from "../ui/photo";
 import { RuledHeading } from "../ui/ruled-heading";
 import { SmartLink } from "../ui/smart-link";
 
-const CYCLE: Tone[] = ["gold", "sage", "red", "blue"];
+const CYCLE: Tone[] = ["brown", "sage", "black"];
 
-/** Catering packages — color-blocked cards with plate, inclusions, and minimums. */
+/** Catering packages — color-blocked cards with photo, inclusions, and minimums. */
 export function PackageGrid({ anchorId, heading, headingTone = "brown", packages, inquireHref = "#inquire" }: Keyed<PackageGridSection>) {
   return (
     <section id={anchorId} data-cms-block="packageGrid" className="scroll-mt-[90px] bg-k-tan pt-20 pb-[88px]">
@@ -17,17 +16,18 @@ export function PackageGrid({ anchorId, heading, headingTone = "brown", packages
         <RuledHeading tone={headingTone}>{heading}</RuledHeading>
         <div className="grid grid-cols-12 items-start gap-6">
           {packages?.map((p, i) => {
-            const tone = p.tone ?? CYCLE[i % CYCLE.length];
-            const ink = palette[inkOnField(tone)];
+            // Cards sit on tan, so a light card color falls back to the cycle.
+            const tone = p.tone && !isLightField(p.tone, "brown") ? p.tone : CYCLE[i % CYCLE.length];
+            const ink = hex(inkOnField(tone), "cream");
             return (
               <Lift
                 key={p._key}
                 y={-6}
                 className="relative col-span-12 flex flex-col gap-4 rounded-3xl bg-(--field) p-5 sm:col-span-6 lg:col-span-3"
-                style={toneVars({ field: palette[tone], ink, rule: `${ink}55` })}
+                style={toneVars({ field: hex(tone, "brown"), ink, rule: `${ink}55` })}
               >
-                <div className="mx-auto -mt-1 w-[78%]">
-                  <Plate media={p.image} alt="" disc="rgba(35,31,32,0.22)" sizes="280px" />
+                <div className="mx-auto w-[78%]">
+                  <Photo media={p.image} alt="" sizes="280px" />
                 </div>
                 <div className="flex items-baseline justify-between gap-2">
                   <span className="font-condensed text-xs font-semibold uppercase tracking-[0.18em] text-(--ink) opacity-85">

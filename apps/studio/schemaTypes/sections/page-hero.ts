@@ -11,7 +11,7 @@ export const pageHero = defineType({
   title: "Page hero",
   type: "object",
   icon: HomeIcon,
-  description: "Interior page intro — text only, or paired with a squircle plate.",
+  description: "Interior page intro — text only, or paired with a photo.",
   fields: [
     defineField({
       name: "layout",
@@ -59,14 +59,14 @@ export const pageHero = defineType({
               initialValue: "solid",
               options: { list: ["solid", "outline"], layout: "radio", direction: "horizontal" },
             }),
-            toneField("tone", "Color (solid)", { initialValue: "red" }),
+            toneField("tone", "Color (solid)", { initialValue: "brown" }),
           ],
           preview: { select: { title: "label", subtitle: "href" } },
         }),
       ],
     }),
     defineField({ name: "image", type: "media", hidden: noImage }),
-    toneField("plateTone", "Plate color", { hidden: false }),
+    toneField("plateTone", "Plate color", { hidden: true }),
     defineField({ name: "sticker", type: "sticker", hidden: noImage }),
     defineField({
       name: "stats",

@@ -5,11 +5,12 @@ export const sticker = defineType({
   name: "sticker",
   title: "Sticker",
   type: "object",
-  description: "Small rotated label (e.g. “Limited time”).",
+  description: "Small label (e.g. “Limited time”). Colors are set by the design.",
   options: { columns: 3 },
   fields: [
     defineField({ name: "text", type: "string", validation: (r) => r.required().max(24) }),
-    toneField("tone", "Background"),
-    toneField("textTone", "Text"),
+    // Kept so existing content stays valid; stickers now use one fixed style.
+    toneField("tone", "Background", { hidden: true }),
+    toneField("textTone", "Text", { hidden: true }),
   ],
 });

@@ -66,7 +66,7 @@ export const formSection = defineType({
       ],
     }),
     defineField({ name: "submitLabel", type: "string", initialValue: "Send", validation: (r) => r.required() }),
-    toneField("submitTone", "Submit button color", { initialValue: "red" }),
+    toneField("submitTone", "Submit button color", { initialValue: "brown" }),
   ],
   preview: preview("Form"),
 });

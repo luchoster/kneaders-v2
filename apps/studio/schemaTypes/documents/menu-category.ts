@@ -28,6 +28,7 @@ export const menuCategory = defineType({
     }),
     defineField({ name: "description", type: "richText", group: "content" }),
     toneField("tone", "Category color", {
+      fullPalette: true,
       description: "Style-guide color-coding: breakfast/sandwiches = gold, salads/soups = sage, breads/pastries = brick red, beverages = lake blue, kids = rust.",
     }),
     defineField({

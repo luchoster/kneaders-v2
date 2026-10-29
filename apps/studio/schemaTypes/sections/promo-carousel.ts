@@ -8,7 +8,7 @@ export const promoCarousel = defineType({
   title: "Promo carousel",
   type: "object",
   icon: ImagesIcon,
-  description: "Rotating banner: big squircle plate, sticker, two-tone headline.",
+  description: "Rotating banner: big photo, sticker, two-tone headline.",
   fields: [
     defineField({
       name: "slides",
@@ -27,7 +27,7 @@ export const promoCarousel = defineType({
             defineField({
               name: "category",
               title: "Menu category",
-              description: "Sets the plate color from the style-guide category color-coding.",
+              description: "Menu category this slide promotes.",
               type: "string",
               options: { list: Object.keys(categoryTones) },
             }),

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Providers } from "@/components/providers";
+import { PhotoShapeToggle, photoShapeScript } from "@/components/ui/photo-shape-toggle";
 import { fontVariables } from "./fonts";
 import "./globals.css";
 
@@ -11,9 +12,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={fontVariables}>
+    // suppressHydrationWarning: the <head> script may set data-photo-shape before React hydrates.
+    <html lang="en" className={fontVariables} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: photoShapeScript }} />
+      </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <PhotoShapeToggle />
+        </Providers>
       </body>
     </html>
   );

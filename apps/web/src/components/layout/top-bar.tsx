@@ -1,18 +1,17 @@
-/** Scrolling announcement marquee above the nav. */
+/** Static announcement row above the nav — up to three items (one on phones). */
 export function TopBar({ items }: { items: string[] }) {
-  if (!items?.length) return null;
-  const loop = [...items, ...items, ...items]; // duplicated for a seamless loop
+  const shown = items?.filter(Boolean).slice(0, 3) ?? [];
+  if (!shown.length) return null;
   return (
-    <div role="region" aria-label="Announcements" className="overflow-hidden border-b border-k-line bg-k-bg-warm">
-      <div className="animate-marquee inline-flex gap-[60px] whitespace-nowrap py-3.5 font-condensed text-[11px] uppercase tracking-[0.14em] text-k-ink-3">
-        {loop.map((text, i) => (
-          // Only the first copy is exposed to assistive tech; the repeats are visual filler.
-          <span key={`m-${i}-${text}`} aria-hidden={i >= items.length || undefined} className="inline-flex items-center gap-3">
-            <span aria-hidden>✦</span>
+    <div role="region" aria-label="Announcements" className="border-b border-k-line bg-k-bg-warm">
+      <ul className="flex items-center justify-center gap-x-6 px-(--k-gutter) py-3 font-condensed text-[11px] uppercase tracking-[0.14em] text-k-ink-3">
+        {shown.map((text, i) => (
+          <li key={text} className={`items-center gap-6 ${i === 0 ? "flex" : "hidden md:flex"}`}>
+            {i > 0 && <span aria-hidden>·</span>}
             {text}
-          </span>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

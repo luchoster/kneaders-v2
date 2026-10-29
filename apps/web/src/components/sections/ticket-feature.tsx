@@ -23,7 +23,7 @@ export function TicketFeature({
   const dark = theme === "dark";
   const left = ticketPosition === "left";
   const textWidth = left || dark ? "max-w-[520px]" : "max-w-[440px]";
-  const para = `font-body text-[17px] leading-[1.55] text-pretty ${textWidth} ${dark ? "text-k-tan-deep" : "text-k-maroon"}`;
+  const para = `font-body text-[17px] leading-[1.55] text-pretty ${textWidth} ${dark ? "text-k-tan-deep" : "text-k-ink-2"}`;
 
   const copyCols = dark ? "md:col-span-7" : left ? "md:col-span-6 md:col-start-7" : "md:col-span-6";
   const ticketCols = left ? "md:col-span-5" : dark ? "md:col-span-5" : "md:col-span-5 md:col-start-8";
@@ -31,14 +31,14 @@ export function TicketFeature({
   const copy = (
     <div className={`col-span-12 flex flex-col items-start gap-5 ${copyCols}`}>
       {eyebrow && (
-        <span className="font-condensed text-[13px] font-semibold uppercase tracking-[0.2em] text-k-gold">{eyebrow}</span>
+        <span className={`font-condensed text-[13px] font-semibold uppercase tracking-[0.2em] ${dark ? "text-k-tan" : "text-k-brown"}`}>{eyebrow}</span>
       )}
       <h2
         className={`font-headline uppercase leading-[0.95] tracking-[-0.01em] text-balance ${
           dark ? "text-[clamp(32px,4.4vw,60px)]" : "text-[clamp(30px,4vw,56px)]"
         }`}
       >
-        <SplitHeadline headline={headline} leadTone={dark ? "tan" : "black"} restTone={dark ? "gold" : "rust"} />
+        <SplitHeadline headline={headline} leadTone={dark ? "cream" : "black"} restTone={dark ? "tan" : "brown"} onDark={dark} />
       </h2>
       {paragraphs?.map((p) => (
         <p key={p} className={para}>
@@ -54,7 +54,7 @@ export function TicketFeature({
         </div>
       )}
       {cta && (
-        <Button href={cta.href} tone={dark ? "gold" : "black"} ink={dark ? "black" : "tan"} arrow>
+        <Button href={cta.href} tone={dark ? "tan" : "black"} ink={dark ? "black" : "cream"} arrow>
           {cta.label}
         </Button>
       )}

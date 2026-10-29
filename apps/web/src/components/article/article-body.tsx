@@ -21,7 +21,7 @@ export function ArticleBody({ body }: { body: PortableTextBlock[] }) {
         <h2 className="mt-12 mb-3 font-display text-[clamp(24px,2.6vw,32px)] font-semibold tracking-[-0.018em]">{children}</h2>
       ),
       blockquote: ({ children }) => (
-        <blockquote className="my-10 max-w-[36ch] border-l-[3px] border-k-red pl-6 font-body text-[clamp(24px,2.4vw,32px)] italic leading-[1.25] tracking-[-0.01em] text-k-black">
+        <blockquote className="my-10 max-w-[36ch] border-l-[3px] border-k-brown pl-6 font-body text-[clamp(24px,2.4vw,32px)] italic leading-[1.25] tracking-[-0.01em] text-k-black">
           {children}
         </blockquote>
       ),

@@ -1,11 +1,14 @@
 import { defineField } from "sanity";
-import { toneOptions, type Tone } from "@kneaders/content";
+import { brandToneOptions, toneOptions, type Tone } from "@kneaders/content";
 
-/** Brand-palette picker (kdrs Simple Style Guide). Stores the palette key, e.g. "sage". */
+/**
+ * Brand color picker — the site's four colors. Stores the style-guide key, e.g. "sage" (green).
+ * `fullPalette` offers every style-guide color (menu categories only).
+ */
 export const toneField = (
   name: string,
   title: string,
-  opts: { description?: string; initialValue?: Tone; hidden?: boolean } = {},
+  opts: { description?: string; initialValue?: Tone; hidden?: boolean; fullPalette?: boolean } = {},
 ) =>
   defineField({
     name,
@@ -14,7 +17,7 @@ export const toneField = (
     description: opts.description,
     initialValue: opts.initialValue,
     hidden: opts.hidden,
-    options: { list: toneOptions, layout: "dropdown" },
+    options: { list: opts.fullPalette ? toneOptions : brandToneOptions, layout: "dropdown" },
   });
 
 /** In-page anchor (e.g. `inquire` → links like `#inquire`). */

@@ -8,7 +8,7 @@ export const teamGrid = defineType({
   title: "Team bios",
   type: "object",
   icon: UsersIcon,
-  description: "Executive / founder bios with squircle headshots.",
+  description: "Executive / founder bios with headshots.",
   fields: [
     defineField({ name: "heading", type: "string", validation: (r) => r.required() }),
     defineField({
@@ -23,7 +23,7 @@ export const teamGrid = defineType({
             defineField({ name: "role", type: "string" }),
             defineField({ name: "photo", type: "media" }),
             defineField({ name: "bio", type: "text", rows: 4 }),
-            toneField("tone", "Plate color", { description: "Defaults to the gold/sage/blue/red cycle." }),
+            toneField("tone", "Plate color", { hidden: true }),
           ],
           preview: { select: { title: "name", subtitle: "role", media: "photo.image" } },
         }),

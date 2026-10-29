@@ -7,7 +7,7 @@ export const differenceBand = defineType({
   title: "Difference band",
   type: "object",
   icon: StarIcon,
-  description: "Black band: photo plate + four numbered brand values.",
+  description: "Black band: photo + four numbered brand values.",
   fields: [
     defineField({ name: "headline", type: "splitHeadline", validation: (r) => r.required() }),
     defineField({ name: "image", type: "media" }),

@@ -8,7 +8,7 @@ import { Button } from "./button";
 import { Eyebrow } from "./eyebrow";
 
 const input =
-  "w-full rounded-[10px] border border-k-line bg-k-bg-warm px-4 py-3.5 font-body text-[15px] text-k-black focus:border-k-red focus:outline-none";
+  "w-full rounded-[10px] border border-k-line bg-k-bg-warm px-4 py-3.5 font-body text-[15px] text-k-black focus:border-k-brown focus:outline-none";
 
 const autoComplete: Partial<Record<FormField["kind"], string>> = { email: "email", tel: "tel" };
 
@@ -125,13 +125,13 @@ export function InquiryForm({
             ) : (
               <Input min={f.min} placeholder={f.placeholder} className={input} />
             )}
-            <FieldError className="font-body text-sm text-k-red" />
+            <FieldError className="font-body text-sm text-k-brown" />
           </TextField>
         ),
       )}
       <div className="col-span-2 flex items-center justify-end gap-4">
         {/* Always mounted so screen readers announce the message when it appears. */}
-        <span role="status" className="font-body text-sm italic text-k-maroon empty:absolute">
+        <span role="status" className="font-body text-sm italic text-k-ink-2 empty:absolute">
           {message}
         </span>
         <Button type="submit" tone={submitTone} ink="tan" arrow>

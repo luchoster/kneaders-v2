@@ -1,20 +1,22 @@
 import type { ReactNode } from "react";
-import type { Tone } from "@kneaders/content";
-import { hex, toneVars } from "@/lib/tones";
 
-/** Rotated menu-board sticker (Amnesia caps on a brand block). */
+const variants = {
+  brown: "bg-k-brown text-k-cream",
+  cream: "bg-k-cream text-k-black",
+  black: "bg-k-black text-k-cream",
+} as const;
+
+export type StickerVariant = keyof typeof variants;
+
+/** Flat label tag (Amnesia caps). One look site-wide; `variant` only flips it for contrast. */
 export function Sticker({
   children,
-  tone,
-  textTone,
-  rotate = -6,
+  variant = "brown",
   size = "md",
   className = "",
 }: {
   children: ReactNode;
-  tone?: Tone;
-  textTone?: Tone;
-  rotate?: number;
+  variant?: StickerVariant;
   size?: "md" | "sm" | "xs" | "tag";
   className?: string;
 }) {
@@ -26,11 +28,7 @@ export function Sticker({
   };
   return (
     <span
-      className={`inline-flex items-center rounded-lg bg-(--st-bg) font-headline uppercase tracking-[0.04em] text-(--st-fg) shadow-[0_2px_0_rgba(35,31,32,0.18)] ${sizes[size]} ${className}`}
-      style={{
-        ...toneVars({ "st-bg": hex(tone, "gold"), "st-fg": hex(textTone, "black") }),
-        transform: `rotate(${rotate}deg)`,
-      }}
+      className={`inline-flex items-center rounded-md font-headline uppercase tracking-[0.04em] ${variants[variant]} ${sizes[size]} ${className}`}
     >
       {children}
     </span>

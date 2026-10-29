@@ -8,7 +8,7 @@ export const menuHero = defineType({
   title: "Menu hero",
   type: "object",
   icon: HomeIcon,
-  description: "Menu page intro: headline + bullets, featured plate, how-to ticket.",
+  description: "Menu page intro: headline + bullets, featured photo, how-to ticket.",
   fields: [
     defineField({ name: "headline", type: "splitHeadline", validation: (r) => r.required() }),
     defineField({ name: "bullets", type: "array", of: [defineArrayMember({ type: "string" })] }),
@@ -20,7 +20,7 @@ export const menuHero = defineType({
         defineField({ name: "kicker", type: "string" }),
         defineField({ name: "title", type: "string", validation: (r) => r.required() }),
         defineField({ name: "image", type: "media" }),
-        toneField("tone", "Plate color", { initialValue: "sage" }),
+        toneField("tone", "Plate color", { hidden: true }),
         defineField({ name: "sticker", type: "sticker" }),
       ],
     }),

@@ -27,7 +27,7 @@ export const packageGrid = defineType({
             defineField({ name: "title", type: "string", validation: (r) => r.required() }),
             defineField({ name: "includes", type: "array", of: [defineArrayMember({ type: "string" })] }),
             defineField({ name: "image", type: "media" }),
-            toneField("tone", "Card color", { description: "Defaults to the gold/sage/red/blue cycle." }),
+            toneField("tone", "Card color", { description: "Defaults to the brown/green/black cycle." }),
           ],
           preview: { select: { title: "title", subtitle: "tier", media: "image.image" } },
         }),

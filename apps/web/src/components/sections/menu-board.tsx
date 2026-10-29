@@ -14,9 +14,8 @@ import {
   type Tone,
 } from "@kneaders/content";
 import { formatPrice } from "@/lib/format";
-import { inkOnField, toneVars } from "@/lib/tones";
 import { Container } from "../ui/container";
-import { Plate } from "../ui/plate";
+import { Photo } from "../ui/photo";
 import { RuledHeading } from "../ui/ruled-heading";
 import { Sticker } from "../ui/sticker";
 import { Button } from "../ui/button";
@@ -37,16 +36,7 @@ function useColumns() {
 
 const toneOf = (c: MenuCategory): Tone => c.tone ?? categoryTone(c.slug);
 
-/**
- * WCAG AA: these category tones are too dark for black text and too light for
- * tan, so the detail panel uses a lighter tone from the same family (≥ 7:1 with
- * black). The category color still marks the band, plates and nav dots.
- */
-const PANEL_TONE: Partial<Record<Tone, Tone>> = { blue: "blueLight", sage: "sageLight", rust: "tanDeep" };
-/** Gold is under 3:1 on the tan bands; deep gold passes on both tan and cream. */
-const HEADING_TONE: Partial<Record<Tone, Tone>> = { gold: "goldDeep" };
-
-/** Menu 02 + 03 — sticky category bar and one color-coded band per category. */
+/** Menu 02 + 03 — sticky category bar and one band per category; item photos carry the category color. */
 export function MenuBoard({ categories = [], orderCta }: Keyed<MenuBoardSection>) {
   const cats = categories.filter((c) => c.items?.length);
   const navRef = useRef<HTMLElement>(null);
@@ -141,17 +131,17 @@ function CategoryBand({
       className={`scroll-mt-[130px] pt-[72px] pb-20 ${index % 2 ? "bg-k-tan" : "bg-k-cream"}`}
     >
       <Container>
-        <RuledHeading tone={HEADING_TONE[tone] ?? tone} size="category" className="mb-3" nowrap>
+        <RuledHeading tone="brown" size="category" className="mb-3" nowrap>
           {category.title}
         </RuledHeading>
         {category.description?.length ? (
           <RichText
             value={category.description}
-            className="mx-auto mb-10 max-w-[520px] text-center font-body text-base text-k-maroon"
+            className="mx-auto mb-10 max-w-[520px] text-center font-body text-base text-k-ink-2"
           />
         ) : (
           category.subtitle && (
-            <p className="mx-auto mb-10 max-w-[520px] text-center font-body text-base text-k-maroon">
+            <p className="mx-auto mb-10 max-w-[520px] text-center font-body text-base text-k-ink-2">
               {category.subtitle}
             </p>
           )
@@ -168,8 +158,8 @@ function CategoryBand({
                 aria-controls={open === i ? panelId(i) : undefined}
                 className="group mb-12 flex cursor-pointer flex-col items-center gap-x-4 gap-y-[22px] text-center"
               >
-                <motion.div whileHover={{ y: -8, rotate: i % 2 ? 1.5 : -1.5 }} className="w-[min(100%,250px)]">
-                  <Plate media={it.image} alt="" disc={open === i ? palette.black : color} sizes="250px" />
+                <motion.div whileHover={{ y: -6 }} className="w-[min(100%,250px)]">
+                  <Photo media={it.image} alt="" mat={open === i ? palette.black : color} sizes="250px" />
                 </motion.div>
                 <div className="flex flex-col items-center gap-1">
                   <span className="font-headline text-[clamp(17px,1.6vw,22px)] uppercase leading-[1.05] tracking-[-0.01em] text-k-black">
@@ -180,7 +170,7 @@ function CategoryBand({
                       {formatPrice(it.price)}
                     </span>
                   )}
-                  <span className="font-condensed text-xs uppercase tracking-[0.16em] text-k-maroon underline underline-offset-[3px]">
+                  <span className="font-condensed text-xs uppercase tracking-[0.16em] text-k-ink-2 underline underline-offset-[3px]">
                     {open === i ? "Close" : "See more"}
                   </span>
                 </div>
@@ -194,7 +184,6 @@ function CategoryBand({
                       key={items[open]._key}
                       id={panelId(open)}
                       item={items[open]}
-                      tone={tone}
                       orderCta={orderCta}
                       onClose={() => closeDetail(open)}
                       onExpanded={(panel) => revealDetail(open, panel)}
@@ -210,18 +199,16 @@ function CategoryBand({
   );
 }
 
-/** Expanded detail panel — spans the full row, flooded with the category color (or `PANEL_TONE`). */
+/** Expanded detail panel — spans the full row; black with cream text for every category. */
 function ItemDetail({
   id,
   item,
-  tone,
   orderCta,
   onClose,
   onExpanded,
 }: {
   id: string;
   item: MenuItem;
-  tone: Tone;
   orderCta?: Cta;
   onClose: () => void;
   onExpanded: (panel: HTMLElement) => void;
@@ -243,9 +230,6 @@ function ItemDetail({
     });
     return () => cancelAnimationFrame(frame);
   }, [reduceMotion]);
-  const field = PANEL_TONE[tone] ?? tone;
-  const inkTone = inkOnField(field);
-  const style = toneVars({ field: palette[field], ink: palette[inkTone] });
   return (
     <motion.div
       ref={ref}
@@ -263,8 +247,8 @@ function ItemDetail({
       onKeyDown={(e) => {
         if (e.key === "Escape") onClose();
       }}
-      className="col-span-full overflow-hidden"
-      style={style}
+      data-tone="ink"
+      className="col-span-full overflow-hidden [--field:var(--color-k-black)] [--ink:var(--color-k-cream)]"
     >
       <div className="relative isolate mt-1 grid grid-cols-12 items-center gap-x-4 gap-y-8 md:gap-x-8 rounded-3xl bg-(--field) p-[clamp(24px,3.4vw,44px)]">
         <AriaButton
@@ -275,7 +259,7 @@ function ItemDetail({
           <span aria-hidden>✕</span>
         </AriaButton>
         <div className="col-span-12 md:col-span-4">
-          <Plate media={item.image} alt={item.name} disc="rgba(35,31,32,0.22)" sizes="(min-width: 768px) 30vw, 90vw" />
+          <Photo media={item.image} alt={item.name} sizes="(min-width: 768px) 30vw, 90vw" />
         </div>
         <div className="col-span-12 flex flex-col items-start gap-4 md:col-span-8">
           <div className="flex flex-wrap items-center gap-4 pr-11">
@@ -311,14 +295,14 @@ function ItemDetail({
                 Pairs with
               </span>
               {item.pairsWith.map((p) => (
-                <Sticker key={p} tone={inkTone} textTone={field} rotate={-2} size="tag">
+                <Sticker key={p} variant="cream" size="tag">
                   {p}
                 </Sticker>
               ))}
             </div>
           )}
           {orderCta && (
-            <Button href={item.orderUrl || orderCta.href} tone={inkTone} ink={field} arrow className="mt-2">
+            <Button href={item.orderUrl || orderCta.href} tone="cream" ink="black" arrow className="mt-2">
               {orderCta.label}
             </Button>
           )}

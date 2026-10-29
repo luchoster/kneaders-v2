@@ -54,7 +54,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
           </div>
         </div>
         <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-[rgba(246,241,228,0.18)] pt-6">
-          <div className="font-condensed text-[11px] uppercase tracking-[0.14em] text-k-gold">{f.copyright}</div>
+          <div className="font-condensed text-[11px] uppercase tracking-[0.14em] text-k-tan">{f.copyright}</div>
           <div className="flex gap-6 font-condensed text-[11px] uppercase tracking-[0.14em]">
             {f.legalLinks.map((l) => (
               <SmartLink key={l._key} href={l.href}>

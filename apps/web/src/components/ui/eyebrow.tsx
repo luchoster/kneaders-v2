@@ -13,7 +13,7 @@ export function Eyebrow({
   return (
     <span
       className={`inline-flex w-fit items-center rounded-[2px] px-2.5 pt-[5px] pb-1 font-condensed text-xs font-medium uppercase tracking-[0.18em] ${
-        onDark ? "bg-k-gold text-k-black" : "bg-k-red text-k-tan"
+        onDark ? "bg-k-tan text-k-black" : "bg-k-brown text-k-cream"
       } ${className}`}
     >
       {children}

@@ -7,21 +7,22 @@ import { mediaSrc } from "@/lib/media";
 import { toneVars } from "@/lib/tones";
 
 /**
- * Squircle food shot sitting on a matching offset squircle "plate".
- * The plate color carries the style-guide category color-coding.
+ * Square photo, shown whole. Its shape follows the site-wide `--photo-radius`
+ * (square by default, a circle when the photo-shape toggle is on).
+ * `mat` puts a solid color border around the photo (the menu's category colors).
  */
-export function Plate({
+export function Photo({
   media,
   alt,
-  disc,
+  mat,
   eager = false,
   sizes = "(min-width: 768px) 40vw, 90vw",
   className = "",
 }: {
   media?: Media | null;
   alt?: string;
-  /** Any CSS color (palette hex or rgba). */
-  disc: string;
+  /** Any CSS color. */
+  mat?: string;
   eager?: boolean;
   sizes?: string;
   className?: string;
@@ -31,10 +32,10 @@ export function Plate({
   const label = alt ?? media?.alt ?? "";
   return (
     <div
-      className={`relative aspect-square w-full drop-shadow-[0_14px_24px_rgba(35,31,32,0.20)] ${className}`}
+      className={`photo-shape relative aspect-square w-full overflow-hidden ${mat ? "bg-(--mat) p-2" : "bg-k-bg-deep"} ${className}`}
+      style={mat ? toneVars({ mat }) : undefined}
     >
-      <div className="mask-squircle absolute inset-[5%_-3%_-3%_5%] bg-(--disc)" style={toneVars({ disc })} />
-      <div className="mask-squircle absolute inset-[0_3%_3%_0] overflow-hidden bg-k-tan-deep">
+      <div className="photo-shape relative size-full overflow-hidden bg-k-bg-deep">
         {errored || !src ? (
           <div className="bg-placeholder absolute inset-0">
             <span className="absolute bottom-[38%] left-1/2 -translate-x-1/2 font-condensed text-[11px] uppercase tracking-[0.14em] text-k-ink-3">

@@ -1,6 +1,6 @@
 import type { ColorCardGridSection, Keyed } from "@kneaders/content";
-import { palette } from "@kneaders/content";
-import { toneVars } from "@/lib/tones";
+import { brandTone } from "@kneaders/content";
+import { hex, readableInk, toneVars } from "@/lib/tones";
 import { Container } from "../ui/container";
 import { Lift } from "../ui/lift";
 import { RuledHeading } from "../ui/ruled-heading";
@@ -27,21 +27,20 @@ export function ColorCardGrid({ anchorId, heading, numbered, cards = [] }: Keyed
             <Lift
               key={c._key}
               y={-6}
-              rotate={i % 2 ? 0.8 : -0.8}
               className={`relative col-span-12 flex flex-col gap-3 rounded-3xl bg-(--field) ${
                 threeUp
                   ? "min-h-[200px] p-[clamp(24px,3vw,40px)] md:col-span-4"
                   : `p-6 sm:col-span-6 lg:col-span-3 ${hasContact ? "min-h-[220px]" : "min-h-[190px]"}`
               }`}
               style={toneVars({
-                field: palette[c.tone],
-                ink: palette[c.textTone ?? "cream"],
-                rule: `${palette[c.textTone ?? "cream"]}55`,
+                field: hex(c.tone, "brown"),
+                ink: hex(readableInk(c.tone, c.textTone), "cream"),
+                rule: `${hex(readableInk(c.tone, c.textTone), "cream")}55`,
               })}
             >
               {c.sticker && (
                 <div className="absolute -top-3 right-3.5">
-                  <Sticker tone="black" textTone="tan" rotate={5} size="xs">
+                  <Sticker variant={brandTone(c.tone) === "brown" ? "black" : "brown"} size="xs">
                     {c.sticker}
                   </Sticker>
                 </div>

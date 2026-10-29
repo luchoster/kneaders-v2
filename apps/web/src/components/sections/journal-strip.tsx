@@ -13,7 +13,7 @@ export function JournalStrip({ headline, cta, limit = 3, posts = [] }: Keyed<Jou
       <Container>
         <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
           <h2 className="font-headline text-[clamp(32px,4.2vw,56px)] uppercase leading-[0.95] tracking-[-0.01em]">
-            <SplitHeadline headline={headline} leadTone="maroon" restTone="red" />
+            <SplitHeadline headline={headline} leadTone="black" restTone="brown" />
           </h2>
           {cta && (
             <Button href={cta.href} tone="black" ink="tan" arrow>
@@ -22,17 +22,16 @@ export function JournalStrip({ headline, cta, limit = 3, posts = [] }: Keyed<Jou
           )}
         </div>
         <div className="grid grid-cols-12 gap-6">
-          {posts.slice(0, limit).map((p, i) => (
+          {posts.slice(0, limit).map((p) => (
             <Lift
               key={p._id}
               href={`/journal/${p.slug}`}
               y={-6}
-              rotate={i % 2 ? 1 : -1}
-              className="col-span-12 flex flex-col gap-4 rounded-[20px] bg-k-cream p-4 shadow-[0_8px_24px_rgba(35,31,32,0.08)] md:col-span-4"
+              className="col-span-12 flex flex-col gap-4 rounded-[20px] border border-k-line bg-k-cream p-4 md:col-span-4"
             >
-              <FrameImage media={p.image} label={p.tag} ratio="5/4" className="rounded-xl" />
+              <FrameImage media={p.image} label={p.tag} ratio="5/4" />
               <div className="flex items-center gap-3 px-1">
-                <span className="font-condensed text-xs font-semibold uppercase tracking-[0.16em] text-k-rust">
+                <span className="font-condensed text-xs font-semibold uppercase tracking-[0.16em] text-k-brown">
                   {p.tag} · {p.readTime}
                 </span>
               </div>

@@ -1,7 +1,7 @@
 /**
- * Kneaders brand palette — kdrs Simple Style Guide.
- * Single source of truth for the web app (Tailwind theme mirrors these hexes)
- * and for the Studio's "tone" pickers. Change a hex here → update globals.css @theme.
+ * Full kdrs Simple Style Guide palette. Only the menu uses all of it (product
+ * color-coding); everything else renders through the four-color `brandPalette`.
+ * Change a hex here → update globals.css @theme.
  */
 export const palette = {
   black: "#231F20", // PMS Black C — primary
@@ -23,6 +23,55 @@ export const palette = {
 
 export type Tone = keyof typeof palette;
 
+/**
+ * The site's four colors: black, brown, green, and cream (tan is cream's deeper
+ * shade, used for alternating section grounds). Green is a deeper shade of
+ * PMS 7496C so normal-size text on it passes WCAG AA (5.7:1 with cream).
+ */
+export const brandPalette = {
+  black: palette.black,
+  brown: palette.brown,
+  green: "#5E6A2C",
+  cream: palette.cream,
+  tan: palette.tan,
+} as const;
+
+export type BrandTone = keyof typeof brandPalette;
+
+/** Folds any stored style-guide tone into the four-color brand set. */
+const BRAND_TONE: Record<Tone, BrandTone> = {
+  black: "black",
+  maroon: "black",
+  brown: "brown",
+  red: "brown",
+  rust: "brown",
+  gold: "brown",
+  goldDeep: "brown",
+  sage: "green",
+  blue: "green",
+  cream: "cream",
+  tan: "tan",
+  tanDeep: "tan",
+  sageLight: "tan",
+  blueLight: "tan",
+  gray: "tan",
+};
+
+export const brandTone = (tone: Tone | undefined, fallback: Tone = "brown"): BrandTone =>
+  BRAND_TONE[tone ?? fallback] ?? BRAND_TONE[fallback];
+
+export const brandHex = (tone: Tone | undefined, fallback: Tone = "brown") => brandPalette[brandTone(tone, fallback)];
+
+/** Studio picker for everything except menu categories. Stores the style-guide keys. */
+export const brandToneOptions: { title: string; value: Tone }[] = [
+  { title: "Black", value: "black" },
+  { title: "Brown", value: "brown" },
+  { title: "Green", value: "sage" },
+  { title: "Cream", value: "cream" },
+  { title: "Tan (deeper cream)", value: "tan" },
+];
+
+/** Full style-guide picker — menu category colors only. */
 export const toneOptions: { title: string; value: Tone }[] = [
   { title: "Black (Black C)", value: "black" },
   { title: "Tan (7501C 50%)", value: "tan" },
@@ -65,9 +114,6 @@ export const journalTagTones: Record<string, Tone> = {
 };
 
 export const journalTags = Object.keys(journalTagTones);
-
-export const toneHex = (tone: Tone | undefined, fallback: Tone = "brown") =>
-  palette[tone ?? fallback] ?? palette[fallback];
 
 export const categoryTone = (slug: string | undefined): Tone =>
   (slug && categoryTones[slug]) || "brown";

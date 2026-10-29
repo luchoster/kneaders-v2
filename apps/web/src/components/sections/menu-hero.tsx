@@ -1,12 +1,11 @@
 import type { Keyed, MenuHeroSection } from "@kneaders/content";
-import { hex } from "@/lib/tones";
 import { Container } from "../ui/container";
-import { Plate } from "../ui/plate";
+import { Photo } from "../ui/photo";
 import { SplitHeadline } from "../ui/split-headline";
 import { Sticker } from "../ui/sticker";
 import { Ticket } from "../ui/ticket";
 
-/** Menu 01 — "Our Menu" + featured plate + order-ticket how-to. */
+/** Menu 01 — "Our Menu" + featured photo + order-ticket how-to. */
 export function MenuHero({ headline, bullets, featured, ticket }: Keyed<MenuHeroSection>) {
   return (
     <section data-cms-block="menuHero" className="bg-k-cream">
@@ -19,8 +18,8 @@ export function MenuHero({ headline, bullets, featured, ticket }: Keyed<MenuHero
             {bullets && bullets.length > 0 && (
               <ul className="mt-6 flex flex-col gap-2">
                 {bullets.map((x) => (
-                  <li key={x} className="flex gap-2 font-body text-[15px] text-k-maroon">
-                    <span className="text-k-rust">·</span>
+                  <li key={x} className="flex gap-2 font-body text-[15px] text-k-ink-2">
+                    <span className="text-k-brown">·</span>
                     {x}
                   </li>
                 ))}
@@ -28,17 +27,17 @@ export function MenuHero({ headline, bullets, featured, ticket }: Keyed<MenuHero
             )}
           </div>
           <div className="relative col-span-12 md:col-span-5">
-            <Plate media={featured.image} alt="" disc={hex(featured.tone, "sage")} eager />
+            <Photo media={featured.image} alt="" eager />
             {featured.sticker && (
-              <div className="absolute top-3 right-0">
-                <Sticker tone={featured.sticker.tone ?? "red"} textTone={featured.sticker.textTone ?? "tan"} rotate={7}>
+              <div className="absolute top-4 right-4">
+                <Sticker>
                   {featured.sticker.text}
                 </Sticker>
               </div>
             )}
             <div className="mt-4 text-center">
               {featured.kicker && (
-                <span className="font-condensed text-[13px] font-semibold uppercase tracking-[0.2em] text-k-rust">
+                <span className="font-condensed text-[13px] font-semibold uppercase tracking-[0.2em] text-k-brown">
                   {featured.kicker}
                 </span>
               )}

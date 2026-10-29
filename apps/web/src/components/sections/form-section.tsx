@@ -30,12 +30,12 @@ export function FormSection({
             <SplitHeadline headline={headline} leadTone="black" restTone="rust" />
           </h2>
           {body && (
-            <p className={`font-body text-base leading-[1.55] text-pretty text-k-maroon ${ticket ? "max-w-[400px]" : ""}`}>
+            <p className={`font-body text-base leading-[1.55] text-pretty text-k-ink-2 ${ticket ? "max-w-[400px]" : ""}`}>
               {body}
             </p>
           )}
           {contactLine && (
-            <div className="font-condensed text-[13px] font-semibold uppercase tracking-[0.14em] text-k-rust">
+            <div className="font-condensed text-[13px] font-semibold uppercase tracking-[0.14em] text-k-brown">
               {contactLine}
             </div>
           )}

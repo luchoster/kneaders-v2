@@ -3,14 +3,14 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Button as AriaButton } from "react-aria-components";
-import { categoryTone, palette, type Keyed, type PromoCarouselSection } from "@kneaders/content";
+import type { Keyed, PromoCarouselSection } from "@kneaders/content";
 import { Button } from "../ui/button";
 import { Container } from "../ui/container";
-import { Plate } from "../ui/plate";
+import { Photo } from "../ui/photo";
 import { SplitHeadline } from "../ui/split-headline";
 import { Sticker } from "../ui/sticker";
 
-/** Home 01 — rotating promo banner: squircle hero plate + sticker, two-tone headline. */
+/** Home 01 — rotating promo banner: hero photo + sticker, two-tone headline. */
 export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCarouselSection>) {
   const [i, setI] = useState(0);
   const count = slides?.length ?? 0;
@@ -64,15 +64,15 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
                 className="flex flex-col items-start gap-5"
               >
                 {s.eyebrow && (
-                  <span className="font-condensed text-sm font-semibold italic uppercase tracking-[0.2em] text-k-rust">
+                  <span className="font-condensed text-sm font-semibold italic uppercase tracking-[0.2em] text-k-brown">
                     {s.eyebrow}
                   </span>
                 )}
                 <h1 className="font-headline text-[clamp(52px,6.6vw,110px)] font-normal uppercase leading-[0.92] tracking-[0.01em]">
-                  <SplitHeadline headline={{ stacked: true, ...s.headline }} leadTone="red" restTone="black" />
+                  <SplitHeadline headline={{ stacked: true, ...s.headline }} leadTone="brown" restTone="black" />
                 </h1>
                 {s.body && (
-                  <p className="max-w-[400px] font-body text-lg leading-normal text-pretty text-k-maroon">{s.body}</p>
+                  <p className="max-w-[400px] font-body text-lg leading-normal text-pretty text-k-ink-2">{s.body}</p>
                 )}
                 {s.cta && (
                   <Button href={s.cta.href} tone="black" ink="tan" arrow>
@@ -90,7 +90,7 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
                     aria-label={`Slide ${j + 1} of ${count}`}
                     aria-current={j === i ? "true" : undefined}
                     className={`h-2.5 cursor-pointer rounded-full transition-[width,background-color] duration-300 ${
-                      j === i ? "w-7 bg-k-red" : "w-2.5 bg-k-tan-deep"
+                      j === i ? "w-7 bg-k-brown" : "w-2.5 bg-k-tan-deep"
                     }`}
                   />
                 ))}
@@ -101,22 +101,21 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
             <AnimatePresence mode="wait">
               <motion.div
                 key={s._key}
-                initial={{ opacity: 0, scale: 0.96, rotate: 2 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="relative ml-auto w-[min(100%,540px)]"
               >
-                <Plate
+                <Photo
                   media={s.image}
                   alt={s.image?.alt || [s.headline.lead, s.headline.rest].filter(Boolean).join(" ")}
-                  disc={palette[categoryTone(s.category)]}
                   eager
                   sizes="(min-width: 768px) 540px, 100vw"
                 />
                 {s.sticker && (
-                  <div className="absolute right-[18px] bottom-[38px]">
-                    <Sticker tone={s.sticker.tone ?? "gold"} textTone={s.sticker.textTone} rotate={-8}>
+                  <div className="absolute right-4 bottom-4">
+                    <Sticker>
                       {s.sticker.text}
                     </Sticker>
                   </div>
