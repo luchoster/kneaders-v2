@@ -4,12 +4,12 @@ import { useState } from "react";
 import { Button } from "react-aria-components";
 
 const btn =
-  "cursor-pointer rounded-full border border-k-line bg-transparent px-2.5 py-1.5 font-condensed text-[10px] uppercase tracking-[0.14em]";
+  "cursor-pointer rounded-full border border-k-line-strong bg-transparent px-3.5 py-1.5 font-body text-[13px] font-medium text-k-ink transition-colors duration-[250ms] hover:border-k-ink";
 
 export function ShareButtons({ title }: { title: string }) {
   const [copied, setCopied] = useState(false);
   return (
-    <div role="group" aria-label="Share this article" className="mt-3 flex gap-2">
+    <div role="group" aria-label="Share this article" className="mt-3 flex flex-wrap gap-2">
       <Button
         className={btn}
         onPress={async () => {

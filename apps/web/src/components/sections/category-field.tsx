@@ -1,45 +1,51 @@
-import { categoryTone, palette, type CategoryFieldSection, type Keyed } from "@kneaders/content";
-import { Button } from "../ui/button";
+import type { CategoryFieldSection, Keyed } from "@kneaders/content";
 import { Container } from "../ui/container";
-import { Lift } from "../ui/lift";
-import { Plate } from "../ui/plate";
+import { Intro } from "../ui/intro";
+import { Photo } from "../ui/photo";
+import { Reveal } from "../ui/reveal";
+import { Section, type Surface } from "../ui/section";
+import { SmartLink } from "../ui/smart-link";
+import { TextLink } from "../ui/text-link";
 
-/** Home 03 — full-bleed sage field of squircle category plates in style-guide colors. */
-export function CategoryField({ tiles, tagline, cta }: Keyed<CategoryFieldSection>) {
+/** Explore the menu — a centered intro over square photo tiles, one per menu category. */
+export function CategoryField({ tiles, tagline, cta, surface }: Keyed<CategoryFieldSection> & { surface?: Surface }) {
   return (
-    <section data-cms-block="categoryField" data-tone="ink" className="relative bg-k-sage pt-[140px] pb-[88px]">
+    <Section block="categoryField" surface={surface}>
       <Container>
-        <div className="grid grid-cols-12 gap-x-6 gap-y-14">
+        {(tagline || cta) && (
+          <Reveal className="mb-14">
+            {tagline ? (
+              <Intro align="center" title={tagline} action={cta && <TextLink href={cta.href}>{cta.label}</TextLink>} />
+            ) : (
+              cta && (
+                <div className="text-center">
+                  <TextLink href={cta.href}>{cta.label}</TextLink>
+                </div>
+              )
+            )}
+          </Reveal>
+        )}
+        <ul className="grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4 md:gap-x-8">
           {tiles?.map((c, i) => (
-            <Lift
-              key={c._key}
-              href={`/menu#${c.category}`}
-              y={-8}
-              rotate={i % 2 ? 1.5 : -1.5}
-              className="col-span-6 flex flex-col items-center gap-5 md:col-span-3"
-            >
-              <div className="w-[min(100%,240px)]">
-                <Plate media={c.image} alt="" disc={palette[categoryTone(c.category)]} sizes="240px" />
-              </div>
-              <span className="text-center font-headline text-[clamp(20px,2vw,28px)] uppercase tracking-[0.03em] text-k-cream">
+            <Reveal as="li" key={c._key} delay={(i % 4) * 70} className="group/card relative flex flex-col gap-4">
+              {/* The label next to it names the tile, so the photo is decorative. */}
+              <Photo media={c.image} alt="" ratio="1/1" sizes="(min-width: 1280px) 290px, (min-width: 768px) 22vw, 45vw" />
+              <SmartLink
+                href={`/menu#${c.category}`}
+                className="type-h4 flex items-center gap-2 after:absolute after:inset-0 after:content-['']"
+              >
                 {c.label}
-              </span>
-            </Lift>
+                <span
+                  aria-hidden
+                  className="text-[15px] text-k-ink-3 transition-transform duration-[250ms] group-hover/card:translate-x-[3px]"
+                >
+                  →
+                </span>
+              </SmartLink>
+            </Reveal>
           ))}
-        </div>
-        <div className="mt-16 flex flex-col items-center gap-6 text-center">
-          {tagline && (
-            <div className="font-body text-[clamp(24px,3vw,40px)] font-semibold italic text-balance text-k-cream">
-              {tagline}
-            </div>
-          )}
-          {cta && (
-            <Button href={cta.href} tone="black" ink="tan" arrow>
-              {cta.label}
-            </Button>
-          )}
-        </div>
+        </ul>
       </Container>
-    </section>
+    </Section>
   );
 }

@@ -2,70 +2,54 @@
 
 import type { ReactNode } from "react";
 import { Button as AriaButton, Link } from "react-aria-components";
-import type { Tone } from "@kneaders/content";
-import { hex, toneVars } from "@/lib/tones";
 
 const base =
-  "inline-flex items-center gap-2 px-5 py-3 rounded-full font-display font-bold text-[13px] leading-normal tracking-[0.04em] uppercase whitespace-nowrap cursor-pointer transition-[transform,background-color,color,border-color] duration-200";
+  "inline-flex items-center justify-center gap-2.5 rounded-full border font-body font-medium tracking-[0.01em] whitespace-nowrap cursor-pointer transition-colors duration-[250ms]";
 
 const variants = {
-  /** Brand-colored pill (colors come from props). */
-  solid: "bg-(--btn-bg) text-(--btn-fg) hover:text-(--btn-fg)",
-  /** `.hl-btn-ghost` — 1px outline that fills on hover. */
-  outline:
-    "border border-(--btn-fg) bg-transparent text-(--btn-fg) hover:bg-(--btn-fg) hover:text-(--btn-bg)",
-  /** `.hl-btn-primary` — nav "Order Now". */
-  primary: "bg-k-black text-k-bg hover:bg-k-brown hover:text-k-bg",
+  /** Brick red — the one primary action in a view. */
+  primary: "border-transparent bg-k-accent text-k-bg hover:bg-k-accent-hover",
+  ink: "border-transparent bg-k-ink text-k-bg hover:bg-[#3a3334]",
+  /** Hairline outline for secondary actions. */
+  quiet: "border-k-line-strong bg-transparent text-k-ink hover:border-k-ink",
+} as const;
+
+const sizes = {
+  md: "px-[26px] py-3.5 text-[15px]",
+  sm: "px-[22px] py-[11px] text-sm",
 } as const;
 
 export interface ButtonProps {
   href?: string;
   children: ReactNode;
   variant?: keyof typeof variants;
-  /** Background (solid) — or the hover fill text color (outline). */
-  tone?: Tone;
-  /** Text color (solid) — or the outline color (outline). */
-  ink?: Tone;
-  arrow?: boolean;
+  size?: keyof typeof sizes;
   className?: string;
   type?: "button" | "submit";
   onClick?: () => void;
 }
 
+/** Pill button; renders a link when given an `href`. */
 export function Button({
   href,
   children,
-  variant = "solid",
-  tone,
-  ink,
-  arrow,
+  variant = "primary",
+  size = "md",
   className = "",
   type = "button",
   onClick,
 }: ButtonProps) {
-  const style =
-    variant === "outline"
-      ? toneVars({ "btn-fg": hex(ink, "black"), "btn-bg": hex(tone, "cream") })
-      : variant === "solid"
-        ? toneVars({ "btn-bg": hex(tone, "black"), "btn-fg": hex(ink, "tan") })
-        : undefined;
-  const cls = `${base} ${variants[variant]} ${className}`;
-  const content = (
-    <>
-      {children}
-      {arrow && <span aria-hidden>→</span>}
-    </>
-  );
+  const cls = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
   if (!href) {
     return (
-      <AriaButton type={type} onPress={onClick} className={cls} style={style}>
-        {content}
+      <AriaButton type={type} onPress={onClick} className={cls}>
+        {children}
       </AriaButton>
     );
   }
   return (
-    <Link href={href} className={cls} style={style}>
-      {content}
+    <Link href={href} className={cls}>
+      {children}
     </Link>
   );
 }

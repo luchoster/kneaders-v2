@@ -37,40 +37,31 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
   return (
     <header
       className={`sticky top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${
-        scrolled
-          ? "border-k-line-soft bg-[color-mix(in_oklab,var(--color-k-bg)_88%,transparent)] backdrop-blur-[10px] backdrop-saturate-[1.4]"
-          : "border-transparent bg-k-bg"
+        scrolled ? "border-k-line bg-k-bg/94 backdrop-blur-[10px]" : "border-transparent bg-k-bg"
       }`}
     >
-      <Container className="flex h-[72px] items-center justify-between">
+      <Container className="flex h-(--k-header-h) items-center justify-between gap-6">
         <Wordmark />
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-9 md:flex" aria-label="Primary">
           {navLinks.map((l) => (
-            <Link
-              key={l._key}
-              href={l.href}
-              aria-current={active === l.key ? "page" : undefined}
-              className={`relative font-display text-sm font-medium tracking-[0.01em] ${
-                active === l.key ? "text-k-brown" : "text-k-black"
-              }`}
-            >
-              <span className="link-anim">{l.label}</span>
+            <Link key={l._key} href={l.href} aria-current={active === l.key ? "page" : undefined} className="nav-link">
+              {l.label}
             </Link>
           ))}
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {rewardsLink && (
-            <Link href={rewardsLink.href} className="font-display text-sm tracking-[-0.01em] text-k-black">
-              <span className="link-anim">{rewardsLink.label}</span>
+            <Link href={rewardsLink.href} className="nav-link">
+              {rewardsLink.label}
             </Link>
           )}
-          <Button href={orderCta.href} variant="primary" arrow>
+          <Button href={orderCta.href} size="sm">
             {orderCta.label}
           </Button>
         </div>
         <AriaButton
           ref={toggleRef}
-          className="inline-flex cursor-pointer items-center rounded-full border border-k-black px-3.5 py-2 font-display text-[13px] font-bold uppercase tracking-[0.04em] text-k-black transition-colors duration-200 hover:bg-k-black hover:text-k-bg md:hidden"
+          className="inline-flex cursor-pointer items-center rounded-full border border-k-line-strong px-4 py-[9px] font-body text-sm font-medium text-k-ink transition-colors duration-[250ms] hover:border-k-ink md:hidden"
           onPress={() => setOpen((o) => !o)}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -79,21 +70,26 @@ export function Nav({ settings, active }: { settings: SiteSettings; active?: str
         </AriaButton>
       </Container>
       {open && (
-        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-k-line-soft md:hidden">
-          <Container className="flex flex-col gap-3 py-4">
+        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-k-line bg-k-bg md:hidden">
+          <Container className="flex flex-col gap-4 pt-5 pb-6">
             {navLinks.map((l) => (
               <Link
                 key={l._key}
                 href={l.href}
                 onPress={() => setOpen(false)}
                 aria-current={active === l.key ? "page" : undefined}
-                className="font-display text-lg tracking-[-0.01em]"
+                className="type-h4"
               >
                 {l.label}
               </Link>
             ))}
-            <Button href={orderCta.href} variant="primary" className="mt-2 self-start">
-              {orderCta.label} →
+            {rewardsLink && (
+              <Link href={rewardsLink.href} onPress={() => setOpen(false)} className="type-h4">
+                {rewardsLink.label}
+              </Link>
+            )}
+            <Button href={orderCta.href} className="mt-2 self-start">
+              {orderCta.label}
             </Button>
           </Container>
         </nav>

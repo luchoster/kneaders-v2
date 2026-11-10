@@ -1,34 +1,20 @@
-import type { Keyed, Tone, ValuesGridSection } from "@kneaders/content";
-import { palette } from "@kneaders/content";
-import { toneVars } from "@/lib/tones";
+import type { Keyed, ValuesGridSection } from "@kneaders/content";
 import { Container } from "../ui/container";
-import { Lift } from "../ui/lift";
-import { RuledHeading } from "../ui/ruled-heading";
+import { Intro } from "../ui/intro";
+import { Reveal } from "../ui/reveal";
+import { Section, type Surface } from "../ui/section";
+import { ValueList } from "../ui/value-list";
 
-const CYCLE: Tone[] = ["gold", "sage", "blue", "red"];
-
-/** Numbered value cards; each number takes the card's accent color. */
-export function ValuesGrid({ heading, values }: Keyed<ValuesGridSection>) {
+/** Values — the heading on the left, a 2×2 of hairline entries on the right. */
+export function ValuesGrid({ heading, values, surface }: Keyed<ValuesGridSection> & { surface?: Surface }) {
   return (
-    <section data-cms-block="valuesGrid" className="bg-k-cream pt-20 pb-[88px]">
-      <Container>
-        <RuledHeading>{heading}</RuledHeading>
-        <div className="grid grid-cols-12 gap-6">
-          {values?.map((v, i) => (
-            <Lift
-              key={v._key}
-              y={-6}
-              rotate={i % 2 ? 0.8 : -0.8}
-              className="col-span-12 flex flex-col gap-3 rounded-[20px] bg-k-tan p-6 sm:col-span-6 lg:col-span-3"
-              style={toneVars({ accent: palette[v.tone ?? CYCLE[i % CYCLE.length]] })}
-            >
-              <span className="font-headline text-[34px] tracking-[-0.01em] text-(--accent)">{v.number}</span>
-              <h3 className="font-display text-xl font-bold tracking-[-0.01em] text-k-black">{v.title}</h3>
-              <p className="font-body text-sm leading-normal text-pretty text-k-maroon">{v.body}</p>
-            </Lift>
-          ))}
-        </div>
+    <Section block="valuesGrid" surface={surface}>
+      <Container className="grid grid-cols-12 gap-y-12 md:gap-x-16">
+        <Reveal className="col-span-12 md:col-span-4">
+          <Intro title={heading} />
+        </Reveal>
+        {values?.length > 0 && <ValueList values={values} className="col-span-12 md:col-span-7 md:col-start-6" />}
       </Container>
-    </section>
+    </Section>
   );
 }

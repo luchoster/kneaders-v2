@@ -1,74 +1,38 @@
 import type { ColorBlocksSection, Keyed } from "@kneaders/content";
-import { hex, toneVars } from "@/lib/tones";
-import { Button } from "../ui/button";
 import { Container } from "../ui/container";
-import { Plate } from "../ui/plate";
-import { Sticker } from "../ui/sticker";
+import { Photo } from "../ui/photo";
+import { Reveal } from "../ui/reveal";
+import { Section, type Surface } from "../ui/section";
+import { TextLink } from "../ui/text-link";
 
 /**
- * Two saturated color blocks side by side (home "order / catering" split band,
- * story "giving / careers" doors). Blocks with an image get the plate layout.
+ * Two panels side by side (home "order ahead / catering", story "giving /
+ * careers"): a 3:2 photo, a title, a short paragraph and one link. A panel
+ * without a photo opens with a hairline instead.
  */
-export function ColorBlocks({ blocks, tuckUnder }: Keyed<ColorBlocksSection>) {
+export function ColorBlocks({ blocks, surface }: Keyed<ColorBlocksSection> & { surface?: Surface }) {
   return (
-    <section
-      data-cms-block="colorBlocks"
-      className={`bg-k-cream ${tuckUnder ? "pt-2 pb-[88px]" : "py-[72px]"}`}
-    >
-      <Container className="grid grid-cols-12 gap-6">
-        {blocks?.map((b) => {
-          const ink = b.textTone ?? "cream";
-          const style = toneVars({ bg: hex(b.tone, "red"), ink: hex(ink, "cream") });
-          const text = (
-            <>
-              <h3 className="font-headline text-[clamp(28px,2.8vw,42px)] uppercase leading-[0.95] tracking-[-0.01em] text-(--ink)">
-                {b.title}
-              </h3>
-              {b.body && (
-                <p
-                  className={`font-body text-[15px] leading-normal text-pretty text-(--ink) ${b.image ? "opacity-92" : "opacity-94"}`}
-                >
-                  {b.body}
-                </p>
-              )}
+    <Section block="colorBlocks" surface={surface}>
+      <Container className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2">
+        {blocks?.map((b, i) => (
+          <Reveal key={b._key} delay={i * 100} className="group/card relative flex flex-col gap-6">
+            {b.image ? (
+              <Photo media={b.image} ratio="3/2" sizes="(min-width: 1280px) 590px, (min-width: 768px) 45vw, 100vw" />
+            ) : (
+              <div aria-hidden className="h-px bg-k-line" />
+            )}
+            <div className="flex max-w-[480px] flex-col items-start gap-3">
+              <h2 className="type-h2-sm">{b.title}</h2>
+              {b.body && <p className="type-body">{b.body}</p>}
               {b.cta && (
-                <Button href={b.cta.href} tone={ink} ink={b.tone} arrow className={b.image ? "" : "mt-1"}>
+                <TextLink href={b.cta.href} stretched className="mt-2">
                   {b.cta.label}
-                </Button>
-              )}
-            </>
-          );
-          return b.image ? (
-            <div
-              key={b._key}
-              className="relative col-span-12 overflow-hidden rounded-[28px] bg-(--bg) p-[clamp(28px,3.6vw,48px)] md:col-span-6"
-              style={style}
-            >
-              <div className="flex flex-wrap items-center gap-6">
-                <div className="w-[132px] shrink-0">
-                  <Plate media={b.image} alt={b.image.alt ?? ""} disc="rgba(35,31,32,0.25)" sizes="132px" />
-                </div>
-                <div className="flex min-w-[220px] flex-1 flex-col items-start gap-3">{text}</div>
-              </div>
-              {b.sticker && (
-                <div className="absolute top-[18px] right-[18px]">
-                  <Sticker tone={b.sticker.tone} textTone={b.sticker.textTone} rotate={6} size="sm">
-                    {b.sticker.text}
-                  </Sticker>
-                </div>
+                </TextLink>
               )}
             </div>
-          ) : (
-            <div
-              key={b._key}
-              className="col-span-12 flex flex-col items-start gap-3 rounded-[28px] bg-(--bg) p-[clamp(28px,3.6vw,48px)] md:col-span-6"
-              style={style}
-            >
-              {text}
-            </div>
-          );
-        })}
+          </Reveal>
+        ))}
       </Container>
-    </section>
+    </Section>
   );
 }

@@ -1,91 +1,99 @@
-import type { ColorCardGridSection, Keyed } from "@kneaders/content";
-import { palette } from "@kneaders/content";
-import { toneVars } from "@/lib/tones";
+import type { ColorCard, ColorCardGridSection, Keyed } from "@kneaders/content";
 import { Container } from "../ui/container";
-import { Lift } from "../ui/lift";
-import { RuledHeading } from "../ui/ruled-heading";
-import { SmartLink } from "../ui/smart-link";
-import { Sticker } from "../ui/sticker";
+import { Intro } from "../ui/intro";
+import { Reveal } from "../ui/reveal";
+import { Section, type Surface } from "../ui/section";
+import { TextLink } from "../ui/text-link";
 
 /**
- * Grid of saturated cards — contact "doors", careers roles, giving pillars.
- * Four-up by default; three cards switch to the roomier three-up layout.
+ * A set of short entries separated by hairlines. The content picks the arrangement:
+ *  - columns: contact "doors" (cards with an email or phone) and numbered
+ *    pillars, or any set of three or fewer
+ *  - rows: everything else, e.g. careers roles — title / description / tag / link
  */
-export function ColorCardGrid({ anchorId, heading, numbered, cards = [] }: Keyed<ColorCardGridSection>) {
-  const threeUp = cards.length === 3;
+export function ColorCardGrid({
+  anchorId,
+  heading,
+  numbered,
+  cards = [],
+  surface,
+}: Keyed<ColorCardGridSection> & { surface?: Surface }) {
   const hasContact = cards.some((c) => c.email || c.phone);
+  const rows = !numbered && !hasContact && cards.length > 3;
+  // Card titles sit under the section heading when there is one.
+  const Title = heading ? "h3" : "h2";
   return (
-    <section
-      id={anchorId}
-      data-cms-block="colorCardGrid"
-      className={`scroll-mt-[90px] bg-k-tan ${heading ? "pt-20 pb-[88px]" : "pt-[72px] pb-20"}`}
-    >
+    <Section id={anchorId} block="colorCardGrid" surface={surface} className="scroll-mt-[90px]">
       <Container>
-        {heading && <RuledHeading>{heading}</RuledHeading>}
-        <div className={`grid grid-cols-12 gap-6 ${hasContact ? "items-start" : ""}`}>
-          {cards.map((c, i) => (
-            <Lift
-              key={c._key}
-              y={-6}
-              rotate={i % 2 ? 0.8 : -0.8}
-              className={`relative col-span-12 flex flex-col gap-3 rounded-3xl bg-(--field) ${
-                threeUp
-                  ? "min-h-[200px] p-[clamp(24px,3vw,40px)] md:col-span-4"
-                  : `p-6 sm:col-span-6 lg:col-span-3 ${hasContact ? "min-h-[220px]" : "min-h-[190px]"}`
-              }`}
-              style={toneVars({
-                field: palette[c.tone],
-                ink: palette[c.textTone ?? "cream"],
-                rule: `${palette[c.textTone ?? "cream"]}55`,
-              })}
-            >
-              {c.sticker && (
-                <div className="absolute -top-3 right-3.5">
-                  <Sticker tone="black" textTone="tan" rotate={5} size="xs">
-                    {c.sticker}
-                  </Sticker>
-                </div>
-              )}
-              {numbered && (
-                <span className="font-headline text-[34px] tracking-[-0.01em] text-(--ink) opacity-90">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              )}
-              <h3 className="font-headline text-2xl uppercase leading-none tracking-[-0.01em] text-(--ink)">{c.title}</h3>
-              {c.body && (
-                <p className={`font-body leading-normal text-pretty text-(--ink) opacity-94 ${threeUp ? "text-[15px]" : "text-sm"}`}>
-                  {c.body}
-                </p>
-              )}
-              {(c.email || c.phone) && (
-                <div className="mt-auto flex flex-col gap-1 border-t border-dashed border-(--rule) pt-3">
-                  {c.email && (
-                    <a
-                      href={`mailto:${c.email}`}
-                      className="font-condensed text-[13px] font-semibold text-(--ink) underline underline-offset-[3px]"
-                    >
-                      {c.email}
-                    </a>
-                  )}
-                  {c.phone && (
-                    <a href={`tel:${c.phone.replace(/[^\d+]/g, "")}`} className="font-condensed text-[13px] text-(--ink) opacity-85">
-                      {c.phone}
-                    </a>
-                  )}
-                </div>
-              )}
-              {c.cta && (
-                <SmartLink
-                  href={c.cta.href}
-                  className="mt-auto font-condensed text-xs font-bold uppercase tracking-[0.14em] text-(--ink) underline underline-offset-[3px]"
-                >
-                  {c.cta.label} →
-                </SmartLink>
-              )}
-            </Lift>
-          ))}
-        </div>
+        {heading && (
+          <Reveal className="mb-14">
+            <Intro align={rows ? "left" : "center"} title={heading} />
+          </Reveal>
+        )}
+        {rows ? (
+          <ul className="flex flex-col border-b border-k-line">
+            {cards.map((c, i) => (
+              <Reveal
+                as="li"
+                key={c._key}
+                delay={i * 60}
+                className="group/card relative grid grid-cols-12 items-baseline gap-x-4 gap-y-3 border-t border-k-line py-7"
+              >
+                <Title className="type-h3 col-span-12 md:col-span-4">{c.title}</Title>
+                {c.body && <p className="type-body col-span-12 md:col-span-5">{c.body}</p>}
+                {c.sticker && <span className="type-meta col-span-6 md:col-span-2">{c.sticker}</span>}
+                {c.cta && (
+                  <TextLink href={c.cta.href} stretched className="col-span-6 col-start-7 justify-self-end text-sm md:col-span-1 md:col-start-12">
+                    {c.cta.label}
+                    <span className="sr-only">: {c.title}</span>
+                  </TextLink>
+                )}
+              </Reveal>
+            ))}
+          </ul>
+        ) : (
+          <ul
+            className={`grid grid-cols-1 gap-y-12 ${
+              cards.length === 3 ? "gap-x-12 md:grid-cols-3" : "gap-x-10 sm:grid-cols-2 lg:grid-cols-4"
+            }`}
+          >
+            {cards.map((c, i) => (
+              <Reveal as="li" key={c._key} delay={i * 70} className="flex flex-col gap-3 border-t border-k-line pt-6">
+                {numbered && <span className="type-numeral">{i + 1}.</span>}
+                <Title className={cards.length === 3 ? "type-h3" : "type-h4"}>{c.title}</Title>
+                {c.body && <p className={cards.length === 3 ? "type-body" : "type-small"}>{c.body}</p>}
+                <CardLinks card={c} />
+              </Reveal>
+            ))}
+          </ul>
+        )}
       </Container>
-    </section>
+    </Section>
+  );
+}
+
+function CardLinks({ card }: { card: ColorCard }) {
+  if (!card.email && !card.phone && !card.cta) return null;
+  return (
+    <div className="mt-3 flex flex-col items-start gap-2">
+      {card.email && (
+        <TextLink href={`mailto:${card.email}`} arrow={false} className="text-sm">
+          {card.email}
+        </TextLink>
+      )}
+      {card.phone && (
+        <a
+          href={`tel:${card.phone.replace(/[^\d+]/g, "")}`}
+          className="type-small text-k-ink-3 transition-colors duration-200 hover:text-k-ink"
+        >
+          {card.phone}
+        </a>
+      )}
+      {card.cta && (
+        <TextLink href={card.cta.href} className="text-sm">
+          {card.cta.label}
+        </TextLink>
+      )}
+    </div>
   );
 }

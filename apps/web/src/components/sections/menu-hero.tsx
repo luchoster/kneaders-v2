@@ -1,55 +1,50 @@
 import type { Keyed, MenuHeroSection } from "@kneaders/content";
-import { hex } from "@/lib/tones";
 import { Container } from "../ui/container";
-import { Plate } from "../ui/plate";
-import { SplitHeadline } from "../ui/split-headline";
-import { Sticker } from "../ui/sticker";
-import { Ticket } from "../ui/ticket";
+import { Eyebrow } from "../ui/eyebrow";
+import { Headline } from "../ui/headline";
+import { Photo } from "../ui/photo";
+import { Reveal } from "../ui/reveal";
+import { Section, type Surface } from "../ui/section";
+import { Steps } from "../ui/steps";
 
-/** Menu 01 — "Our Menu" + featured plate + order-ticket how-to. */
-export function MenuHero({ headline, bullets, featured, ticket }: Keyed<MenuHeroSection>) {
+/** Menu intro — headline and notes beside the featured item's photo, with the how-to list beneath. */
+export function MenuHero({ headline, bullets, featured, ticket, surface }: Keyed<MenuHeroSection> & { surface?: Surface }) {
   return (
-    <section data-cms-block="menuHero" className="bg-k-cream">
-      <Container className="pt-14 pb-16">
-        <div className="grid grid-cols-12 items-center gap-x-4 gap-y-10 md:gap-x-10">
-          <div className="col-span-12 md:col-span-3">
-            <h1 className="font-headline text-[clamp(56px,7vw,120px)] font-normal uppercase leading-[0.9] tracking-[0.01em]">
-              <SplitHeadline headline={headline} leadTone="sage" restTone="black" />
+    <Section block="menuHero" surface={surface} size="none">
+      <Container className="pt-[clamp(40px,5vw,72px)] pb-[clamp(72px,9vw,128px)]">
+        <div className="grid grid-cols-12 items-center gap-y-12 md:gap-x-16">
+          <Reveal immediate className="col-span-12 flex flex-col items-start gap-7 md:col-span-5">
+            <h1 className="type-h1">
+              <Headline headline={headline} />
             </h1>
             {bullets && bullets.length > 0 && (
-              <ul className="mt-6 flex flex-col gap-2">
+              <ul className="flex w-full max-w-[440px] flex-col">
                 {bullets.map((x) => (
-                  <li key={x} className="flex gap-2 font-body text-[15px] text-k-maroon">
-                    <span className="text-k-rust">·</span>
+                  <li key={x} className="type-body border-t border-k-line py-3">
                     {x}
                   </li>
                 ))}
               </ul>
             )}
-          </div>
-          <div className="relative col-span-12 md:col-span-5">
-            <Plate media={featured.image} alt="" disc={hex(featured.tone, "sage")} eager />
-            {featured.sticker && (
-              <div className="absolute top-3 right-0">
-                <Sticker tone={featured.sticker.tone ?? "red"} textTone={featured.sticker.textTone ?? "tan"} rotate={7}>
-                  {featured.sticker.text}
-                </Sticker>
-              </div>
-            )}
-            <div className="mt-4 text-center">
-              {featured.kicker && (
-                <span className="font-condensed text-[13px] font-semibold uppercase tracking-[0.2em] text-k-rust">
-                  {featured.kicker}
-                </span>
-              )}
-              <h2 className="font-headline text-[clamp(26px,2.6vw,38px)] uppercase tracking-[-0.01em] text-k-black">
-                {featured.title}
-              </h2>
-            </div>
-          </div>
-          <div className="col-span-12 md:col-span-4">{ticket && <Ticket ticket={ticket} />}</div>
+          </Reveal>
+          <Reveal immediate delay={120} className="col-span-12 md:col-span-7">
+            <figure className="flex flex-col gap-4">
+              <Photo
+                media={featured.image}
+                alt={featured.image?.alt || featured.title}
+                ratio="5/4"
+                eager
+                sizes="(min-width: 1280px) 700px, (min-width: 768px) 55vw, 100vw"
+              />
+              <figcaption className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                {featured.kicker && <Eyebrow>{featured.kicker}</Eyebrow>}
+                <span className="type-h4">{featured.title}</span>
+              </figcaption>
+            </figure>
+          </Reveal>
         </div>
+        {ticket && <Steps ticket={ticket} heading="h3" className="mt-[clamp(56px,7vw,96px)] max-w-[760px]" />}
       </Container>
-    </section>
+    </Section>
   );
 }

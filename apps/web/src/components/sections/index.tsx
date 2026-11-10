@@ -1,4 +1,5 @@
 import type { KeyedSection } from "@kneaders/content";
+import type { Surface } from "../ui/section";
 import { CategoryField } from "./category-field";
 import { ColorBlocks } from "./color-blocks";
 import { ColorCardGrid } from "./color-card-grid";
@@ -24,51 +25,53 @@ export function PageBuilder({ sections }: { sections: KeyedSection[] | null | un
   if (!Array.isArray(sections)) return null;
   return (
     <>
-      {sections.map((s) => {
+      {sections.map((s, i) => {
+        // Sections alternate cream → white → cream; nothing sits on a colored field.
+        const surface: Surface = i % 2 ? "white" : "cream";
         switch (s._type) {
           case "promoCarousel":
-            return <PromoCarousel key={s._key} {...s} />;
+            return <PromoCarousel key={s._key} {...s} surface={surface} />;
           case "pillBand":
-            return <PillBand key={s._key} {...s} />;
+            return <PillBand key={s._key} {...s} surface={surface} />;
           case "categoryField":
-            return <CategoryField key={s._key} {...s} />;
+            return <CategoryField key={s._key} {...s} surface={surface} />;
           case "colorBlocks":
-            return <ColorBlocks key={s._key} {...s} />;
+            return <ColorBlocks key={s._key} {...s} surface={surface} />;
           case "differenceBand":
-            return <DifferenceBand key={s._key} {...s} />;
+            return <DifferenceBand key={s._key} {...s} surface={surface} />;
           case "journalStrip":
-            return <JournalStrip key={s._key} {...s} />;
+            return <JournalStrip key={s._key} {...s} surface={surface} />;
           case "menuHero":
-            return <MenuHero key={s._key} {...s} />;
+            return <MenuHero key={s._key} {...s} surface={surface} />;
           case "menuBoard":
             return <MenuBoard key={s._key} {...s} />;
           case "ctaBand":
-            return <CtaBand key={s._key} {...s} />;
+            return <CtaBand key={s._key} {...s} surface={surface} />;
           case "pageHero":
-            return <PageHero key={s._key} {...s} />;
+            return <PageHero key={s._key} {...s} surface={surface} />;
           case "packageGrid":
-            return <PackageGrid key={s._key} {...s} />;
+            return <PackageGrid key={s._key} {...s} surface={surface} />;
           case "ticketFeature":
-            return <TicketFeature key={s._key} {...s} />;
+            return <TicketFeature key={s._key} {...s} surface={surface} />;
           case "formSection":
-            return <FormSection key={s._key} {...s} />;
+            return <FormSection key={s._key} {...s} surface={surface} />;
           case "teamGrid":
-            return <TeamGrid key={s._key} {...s} />;
+            return <TeamGrid key={s._key} {...s} surface={surface} />;
           case "valuesGrid":
-            return <ValuesGrid key={s._key} {...s} />;
+            return <ValuesGrid key={s._key} {...s} surface={surface} />;
           case "featuredPost":
-            return <FeaturedPost key={s._key} {...s} />;
+            return <FeaturedPost key={s._key} {...s} surface={surface} />;
           case "postGrid":
-            return <PostGrid key={s._key} {...s} />;
+            return <PostGrid key={s._key} {...s} surface={surface} />;
           case "newsletterBand":
-            return <NewsletterBand key={s._key} {...s} />;
+            return <NewsletterBand key={s._key} {...s} surface={surface} />;
           case "colorCardGrid":
-            return <ColorCardGrid key={s._key} {...s} />;
+            return <ColorCardGrid key={s._key} {...s} surface={surface} />;
           default: {
             const unknown = s as { _type: string; _key: string };
             if (process.env.NODE_ENV !== "production") {
               return (
-                <div key={unknown._key} className="bg-k-tan p-6 text-center font-condensed text-sm uppercase">
+                <div key={unknown._key} className="bg-k-wash p-6 text-center font-condensed text-sm uppercase text-k-ink-2">
                   Missing component for section “{unknown._type}”
                 </div>
               );

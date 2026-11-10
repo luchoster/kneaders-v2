@@ -1,17 +1,25 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Button as AriaButton } from "react-aria-components";
-import { categoryTone, palette, type Keyed, type PromoCarouselSection } from "@kneaders/content";
+import type { Keyed, PromoCarouselSection } from "@kneaders/content";
 import { Button } from "../ui/button";
 import { Container } from "../ui/container";
-import { Plate } from "../ui/plate";
-import { SplitHeadline } from "../ui/split-headline";
-import { Sticker } from "../ui/sticker";
+import { Eyebrow } from "../ui/eyebrow";
+import { Headline, headlineText } from "../ui/headline";
+import { Photo } from "../ui/photo";
+import { Section, type Surface } from "../ui/section";
 
-/** Home 01 — rotating promo banner: squircle hero plate + sticker, two-tone headline. */
-export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCarouselSection>) {
+/**
+ * Home hero — short headline beside one large photograph. With several slides
+ * it cross-fades between them; the slides share one grid cell, so the hero
+ * keeps the height of its tallest slide and nothing below it moves.
+ */
+export function PromoCarousel({
+  slides,
+  intervalSeconds = 6.5,
+  surface,
+}: Keyed<PromoCarouselSection> & { surface?: Surface }) {
   const [i, setI] = useState(0);
   const count = slides?.length ?? 0;
   // WCAG 2.2.2: auto-rotation stops while the pointer or keyboard focus is inside,
@@ -34,98 +42,95 @@ export function PromoCarousel({ slides, intervalSeconds = 6.5 }: Keyed<PromoCaro
   }, [count, intervalSeconds, paused, reduceMotion]);
 
   if (!count) return null;
-  const s = slides[i % count];
+  const current = i % count;
+  const fade = "transition-[opacity,visibility] duration-700 ease-out";
 
   return (
-    <section
-      data-cms-block="promoCarousel"
+    <Section
+      block="promoCarousel"
+      surface={surface}
+      size="none"
       aria-roledescription="carousel"
       aria-label="Featured promotions"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
-      className="relative overflow-hidden bg-k-cream"
     >
-      <Container>
-        <div className="grid grid-cols-12 items-center gap-x-4 gap-y-8 md:gap-x-8 pt-14 pb-[72px]">
-          <div className="order-2 col-span-12 md:order-1 md:col-span-5">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={s._key}
-                role="group"
-                aria-roledescription="slide"
-                aria-label={`${i + 1} of ${count}`}
-                aria-live={paused || reduceMotion ? "polite" : "off"}
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
-                className="flex flex-col items-start gap-5"
-              >
-                {s.eyebrow && (
-                  <span className="font-condensed text-sm font-semibold italic uppercase tracking-[0.2em] text-k-rust">
-                    {s.eyebrow}
-                  </span>
-                )}
-                <h1 className="font-headline text-[clamp(52px,6.6vw,110px)] font-normal uppercase leading-[0.92] tracking-[0.01em]">
-                  <SplitHeadline headline={{ stacked: true, ...s.headline }} leadTone="red" restTone="black" />
-                </h1>
-                {s.body && (
-                  <p className="max-w-[400px] font-body text-lg leading-normal text-pretty text-k-maroon">{s.body}</p>
-                )}
-                {s.cta && (
-                  <Button href={s.cta.href} tone="black" ink="tan" arrow>
-                    {s.cta.label}
-                  </Button>
-                )}
-              </motion.div>
-            </AnimatePresence>
+      <Container className="pt-[clamp(40px,5vw,72px)] pb-[clamp(72px,9vw,128px)]">
+        <div className="grid grid-cols-12 items-center gap-y-12 md:gap-x-16">
+          <div className="reveal-now col-span-12 md:col-span-5">
+            <div className="grid" aria-live={paused || reduceMotion ? "polite" : "off"}>
+              {slides.map((s, j) => {
+                const active = j === current;
+                // One <h1> per page: only the slide on show carries it.
+                const Title = active ? "h1" : "p";
+                return (
+                  <div
+                    key={s._key}
+                    role="group"
+                    aria-roledescription="slide"
+                    aria-label={`${j + 1} of ${count}`}
+                    inert={!active}
+                    className={`col-start-1 row-start-1 flex flex-col items-start gap-7 ${fade} ${
+                      active ? "visible opacity-100" : "invisible opacity-0"
+                    }`}
+                  >
+                    {s.eyebrow && <Eyebrow>{s.eyebrow}</Eyebrow>}
+                    <Title className="type-h1">
+                      <Headline headline={s.headline} />
+                    </Title>
+                    {s.body && <p className="type-lede max-w-[440px]">{s.body}</p>}
+                    {s.cta && (
+                      <Button href={s.cta.href} className="mt-2">
+                        {s.cta.label}
+                      </Button>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
             {count > 1 && (
-              <div role="group" aria-label="Choose slide" className="mt-8 flex gap-2">
+              <div role="group" aria-label="Choose slide" className="mt-8 -ml-2 flex">
                 {slides.map((x, j) => (
                   <AriaButton
                     key={x._key}
                     onPress={() => setI(j)}
                     aria-label={`Slide ${j + 1} of ${count}`}
-                    aria-current={j === i ? "true" : undefined}
-                    className={`h-2.5 cursor-pointer rounded-full transition-[width,background-color] duration-300 ${
-                      j === i ? "w-7 bg-k-red" : "w-2.5 bg-k-tan-deep"
-                    }`}
-                  />
+                    aria-current={j === current ? "true" : undefined}
+                    className="group/dot flex size-6 cursor-pointer items-center justify-center"
+                  >
+                    <span
+                      className={`h-1.5 rounded-full transition-[width,background-color] duration-300 ${
+                        j === current ? "w-5 bg-k-ink" : "w-1.5 bg-k-field-line group-hover/dot:bg-k-ink"
+                      }`}
+                    />
+                  </AriaButton>
                 ))}
               </div>
             )}
           </div>
-          <div className="relative order-1 col-span-12 md:order-2 md:col-span-7">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={s._key}
-                initial={{ opacity: 0, scale: 0.96, rotate: 2 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="relative ml-auto w-[min(100%,540px)]"
-              >
-                <Plate
-                  media={s.image}
-                  alt={s.image?.alt || [s.headline.lead, s.headline.rest].filter(Boolean).join(" ")}
-                  disc={palette[categoryTone(s.category)]}
-                  eager
-                  sizes="(min-width: 768px) 540px, 100vw"
-                />
-                {s.sticker && (
-                  <div className="absolute right-[18px] bottom-[38px]">
-                    <Sticker tone={s.sticker.tone ?? "gold"} textTone={s.sticker.textTone} rotate={-8}>
-                      {s.sticker.text}
-                    </Sticker>
-                  </div>
-                )}
-              </motion.div>
-            </AnimatePresence>
+          <div className="reveal-now col-span-12 [animation-delay:120ms] md:col-span-7">
+            <div className="grid">
+              {slides.map((s, j) => (
+                <div
+                  key={s._key}
+                  aria-hidden={j !== current}
+                  className={`col-start-1 row-start-1 ${fade} ${j === current ? "visible opacity-100" : "invisible opacity-0"}`}
+                >
+                  <Photo
+                    media={s.image}
+                    alt={s.image?.alt || headlineText(s.headline)}
+                    ratio="5/4"
+                    eager={j === 0}
+                    sizes="(min-width: 1280px) 700px, (min-width: 768px) 55vw, 100vw"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Container>
-    </section>
+    </Section>
   );
 }

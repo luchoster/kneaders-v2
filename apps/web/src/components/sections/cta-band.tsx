@@ -1,51 +1,37 @@
 import type { CtaBandSection, Keyed } from "@kneaders/content";
-import { hex, toneVars } from "@/lib/tones";
 import { Button } from "../ui/button";
 import { Container } from "../ui/container";
-import { SplitHeadline } from "../ui/split-headline";
+import { Headline } from "../ui/headline";
+import { Reveal } from "../ui/reveal";
+import { Section, type Surface } from "../ui/section";
 
-/** Loud closing band (menu "Hungry yet?", story "Taste what the fuss is about"). */
+/** Closing call to action (menu, story): a centered heading and up to two buttons. */
 export function CtaBand({
   headline,
-  size = "large",
-  tone = "red",
   primaryCta,
   secondaryCta,
   secondaryStyle = "solid",
-}: Keyed<CtaBandSection>) {
+  surface,
+}: Keyed<CtaBandSection> & { surface?: Surface }) {
   return (
-    <section
-      data-cms-block="ctaBand"
-      data-tone="ink"
-      className="bg-(--band) py-20 text-center"
-      style={toneVars({ band: hex(tone, "red") })}
-    >
-      <Container className="flex flex-col items-center gap-6">
-        <h2
-          className={`font-headline uppercase leading-[0.95] tracking-[-0.01em] text-balance ${
-            size === "large" ? "text-[clamp(36px,5vw,72px)]" : "text-[clamp(34px,4.6vw,66px)]"
-          }`}
-        >
-          <SplitHeadline headline={headline} leadTone="tan" restTone="gold" />
-        </h2>
-        <div className="flex flex-wrap justify-center gap-3">
-          {primaryCta && (
-            <Button href={primaryCta.href} tone="tan" ink={tone} arrow>
-              {primaryCta.label}
-            </Button>
+    <Section block="ctaBand" surface={surface} size="small">
+      <Container narrow>
+        <Reveal className="flex flex-col items-center gap-7 text-center">
+          <h2 className="type-h2">
+            <Headline headline={headline} />
+          </h2>
+          {(primaryCta || secondaryCta) && (
+            <div className="flex flex-wrap justify-center gap-3">
+              {primaryCta && <Button href={primaryCta.href}>{primaryCta.label}</Button>}
+              {secondaryCta && (
+                <Button href={secondaryCta.href} variant={secondaryStyle === "outline" ? "quiet" : "ink"}>
+                  {secondaryCta.label}
+                </Button>
+              )}
+            </div>
           )}
-          {secondaryCta &&
-            (secondaryStyle === "outline" ? (
-              <Button href={secondaryCta.href} variant="outline" ink="tan" tone={tone}>
-                {secondaryCta.label}
-              </Button>
-            ) : (
-              <Button href={secondaryCta.href} tone="black" ink="tan">
-                {secondaryCta.label}
-              </Button>
-            ))}
-        </div>
+        </Reveal>
       </Container>
-    </section>
+    </Section>
   );
 }

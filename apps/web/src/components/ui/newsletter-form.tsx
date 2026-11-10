@@ -3,19 +3,22 @@
 import { useState } from "react";
 import { Button, Form, Input, TextField } from "react-aria-components";
 
-/** Email capture pill. TODO: wire `onSubmit` to the ESP (Mailchimp/Klaviyo/etc). */
+const buttons = {
+  primary: "bg-k-accent hover:bg-k-accent-hover",
+  ink: "bg-k-ink hover:bg-[#3a3334]",
+} as const;
+
+/** Email capture: pill input + pill button. TODO: wire `onSubmit` to the ESP (Mailchimp/Klaviyo/etc). */
 export function NewsletterForm({
-  placeholder = "you@goodmorning.com",
+  placeholder = "Your email",
   buttonLabel = "Subscribe",
+  variant = "primary",
   className = "",
-  inputClassName = "",
-  buttonClassName = "",
 }: {
   placeholder?: string;
   buttonLabel?: string;
+  variant?: keyof typeof buttons;
   className?: string;
-  inputClassName?: string;
-  buttonClassName?: string;
 }) {
   const [done, setDone] = useState(false);
   return (
@@ -30,12 +33,12 @@ export function NewsletterForm({
       <TextField type="email" name="email" isRequired aria-label="Email address" autoComplete="email" className="flex min-w-0 flex-1">
         <Input
           placeholder={placeholder}
-          className={`min-w-0 flex-1 rounded-full border bg-transparent px-4 py-3 font-body text-sm placeholder:opacity-60 ${inputClassName}`}
+          className="min-w-0 flex-1 rounded-full border border-k-field-line bg-white px-[18px] py-3 font-body text-[15px] text-k-ink transition-colors duration-200 placeholder:text-k-ink-3 focus:border-k-ink"
         />
       </TextField>
       <Button
         type="submit"
-        className={`inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-full px-5 py-3 font-display text-[13px] font-bold uppercase tracking-[0.04em] ${buttonClassName}`}
+        className={`inline-flex cursor-pointer items-center whitespace-nowrap rounded-full px-5 py-3 font-body text-sm font-medium tracking-[0.01em] text-k-bg transition-colors duration-[250ms] ${buttons[variant]}`}
       >
         {done ? "Thanks!" : buttonLabel}
       </Button>

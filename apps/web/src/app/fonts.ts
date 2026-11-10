@@ -2,15 +2,7 @@ import localFont from "next/font/local";
 
 /* Official brand fonts per the kdrs Simple Style Guide (self-hosted, licensed files). */
 
-/** Amnesia Distressed — page headlines, ALL CAPS. */
-export const amnesia = localFont({
-  src: "../fonts/Amnesia-Distressed.otf",
-  variable: "--font-amnesia",
-  weight: "400",
-  display: "swap",
-});
-
-/** Archer Pro — sub-headlines / display. */
+/** Archer Pro — headings, prices and pull quotes (Light 300 for H1/H2). */
 export const archer = localFont({
   src: [
     { path: "../fonts/ArcherLightPro.otf", weight: "300", style: "normal" },
@@ -64,6 +56,6 @@ export const barlowCondensed = localFont({
   display: "swap",
 });
 
-export const fontVariables = [amnesia, archer, arvo, barlow, barlowCondensed]
+export const fontVariables = [archer, arvo, barlow, barlowCondensed]
   .map((f) => f.variable)
   .join(" ");
